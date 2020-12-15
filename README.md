@@ -17,11 +17,9 @@ _This packages doesn't handle the communication with the API. Check out [notion-
 
 🎨 **Custom Styles** – Styles are easily adaptable. Optional styles included
 
+_coming soon_ 🔮 **Code Highlighting** – Automatic code highlighting with [prismjs](https://prismjs.com/)
 
-## Coming Soon
-
-- [ ] 🔮 **Code Highlighting** – Automatic code highlighting with [prismjs](https://prismjs.com/)
-- [ ] 🌎 **SSR / Static Generation Support** – Functions to work with Nuxt and other frameworks
+_coming soon_ 🌎 **SSR / Static Generation Support** – Functions to work with Nuxt and other frameworks
 
 ## Install
 
