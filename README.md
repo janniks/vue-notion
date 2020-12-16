@@ -8,7 +8,9 @@
   <span> · </span>
   <a href="#install">Install</a>
   <span> · </span>
-  <a href="#how-to">How To</a>
+  <a href="#minimal-example">Example</a>
+  <span> · </span>
+  <a href="#docs">Docs</a>
   <span> · </span>
   <a href="#credits">Credits</a>
 </h3>
@@ -84,9 +86,9 @@ export default {
 
 A working example using Nuxt can be found inside the `example` directory.
 
-### API
+### Docs
 
-The full API specification is available at [`docs/API.md`](docs/API.md).
+The full `NotionRenderer` API specification is available at [`docs/API.md`](docs/API.md).
 
 ## Sites using vue-notion
 
