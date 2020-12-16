@@ -55,7 +55,7 @@ _coming soon_ 🌎 **SSR / Static Generation Support** – Functions to work wit
 npm install vue-notion
 ```
 
-## How to use
+## How To
 
 ### Minimal Example
 
