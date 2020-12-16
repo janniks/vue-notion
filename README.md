@@ -1,7 +1,7 @@
-<p align="center">
-  <img src="docs/img/vue-notion.png" alt="vue-notion" />
-  An unofficial Notion renderer
-</p>
+<div align="center">
+  <img src="docs/img/vue-notion.png" alt="vue-notion" width="384px" />
+  <p>An unofficial Notion renderer</p>
+</div>
 
 <p align="center">
   <a href="https://www.npmjs.org/package/vue-notion">
