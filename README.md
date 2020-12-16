@@ -3,6 +3,16 @@
   <p>An unofficial Notion renderer</p>
 </div>
 
+<h3 align="center">
+  <a href="#features">Features</a>
+  <span> · </span>
+  <a href="#install">Install</a>
+  <span> · </span>
+  <a href="#how-to">How To</a>
+  <span> · </span>
+  <a href="#credits">Credits</a>
+</h3>
+
 <p align="center">
   <a href="https://www.npmjs.org/package/vue-notion">
     <img src="https://img.shields.io/npm/v/vue-notion.svg" alt="Package version" />
@@ -20,16 +30,6 @@
     <img src="https://img.shields.io/twitter/follow/jnnksbrt.svg?label=Follow%20@jnnksbrt" alt="Follow @jnnksbrt on Twitter" />
   </a>
 </p>
-
-<h3 align="center">
-  <a href="#features">Features</a>
-  <span> · </span>
-  <a href="#install">Install</a>
-  <span> · </span>
-  <a href="#how-to">How To</a>
-  <span> · </span>
-  <a href="#credits">Credits</a>
-</h3>
 
 A Vue renderer for Notion pages.
 Use Notion as CMS for your blog, documentation or personal site.
