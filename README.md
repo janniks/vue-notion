@@ -31,6 +31,8 @@
   </a>
 </p>
 
+---
+
 A Vue renderer for Notion pages.
 Use Notion as CMS for your blog, documentation or personal site.
 
