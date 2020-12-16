@@ -33,7 +33,7 @@
 A Vue renderer for Notion pages.
 Use Notion as CMS for your blog, documentation or personal site.
 
-> `vue-notion` was ported to Vue from [`react-notion`](https://github.com/splitbee/react-notion) (developed by [Splitbee](https://splitbee.io/) – a fast, reliable, free, and modern analytics for any team)
+> `vue-notion` was ported to Vue from [`react-notion`](https://github.com/splitbee/react-notion) (developed by [Splitbee 🐝](https://splitbee.io/) – a fast, reliable, free, and modern analytics for any team)
 
 > This packages doesn't handle the communication with the API. Check out [notion-api-worker](https://github.com/splitbee/notion-api-worker) from [Splitbee](https://splitbee.io/) for an easy solution.
 
