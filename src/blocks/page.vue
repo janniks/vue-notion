@@ -2,11 +2,12 @@
   <div v-if="level === 0" class="notion">
     <!-- todo: add header -->
     <!-- <NotionPageHeader v-bind="passProps" /> -->
+    <!-- todo: hide image if no .format is available -->
     <img
       class="notion-page-cover"
-      :style="coverStyle"
+      :style="format && coverStyle"
       :alt="getTextContent(titles)"
-      :src="mapImageUrl(format.page_cover, block)"
+      :src="format && mapImageUrl(format.page_cover, block)"
     />
     <main class="notion-page">
       <NotionPageIcon v-bind="passProps" big />

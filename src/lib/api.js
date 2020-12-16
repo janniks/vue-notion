@@ -1,11 +1,13 @@
-import fetch from "node-fetch";
+import fetch from "cross-fetch";
 
-export const getBlogTable = async (
-  blogId,
+const getPageTable = async (
+  pageId,
   apiUrl = "https://notion-api.splitbee.io/v1"
-) => await fetch(`${apiUrl}/table/${blogId}`).then((res) => res.json());
+) => await fetch(`${apiUrl}/table/${pageId}`).then((res) => res.json());
 
-export const getPageBlocks = async (
+const getPageBlocks = async (
   pageId,
   apiUrl = "https://notion-api.splitbee.io/v1"
 ) => await fetch(`${apiUrl}/page/${pageId}`).then((res) => res.json());
+
+export { getPageTable, getPageBlocks };

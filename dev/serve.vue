@@ -16,6 +16,7 @@ export default {
     return { blockMap: null };
   },
   async created() {
+    // react-notion tester: 2e22de6b770e4166be301490f6ffd420
     this.blockMap = await getPageBlocks("2e22de6b770e4166be301490f6ffd420");
   },
 };

@@ -37,7 +37,7 @@ export const blockComputed = {
     return this.value?.format;
   },
   icon() {
-    return this.format.page_icon || "";
+    return this.format?.page_icon || "";
   },
   properties() {
     return this.value?.properties;

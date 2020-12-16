@@ -2,7 +2,7 @@
   <img
     v-if="icon.includes('http')"
     :class="big ? 'notion-page-icon-cover' : 'notion-page-icon'"
-    :src="mapImageUrl(format.page_icon, block)"
+    :src="mapImageUrl(icon, block)"
     :alt="titles ? getTextContent(titles) : 'Icon'"
   />
   <span
