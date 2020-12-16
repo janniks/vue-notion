@@ -20,9 +20,6 @@
   <a href="https://npmcharts.com/compare/vue-notion?minimal=true">
     <img src="https://img.shields.io/npm/dm/vue-notion.svg" alt="Downloads per month" />
   </a>
-  <a href="https://npmcharts.com/compare/vue-notion?minimal=true">
-    <img src="https://img.shields.io/npm/dt/vue-notion.svg" alt="Total downloads" />
-  </a>
   <a href="https://github.com/janniks/vue-notion/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license" />
   </a>
