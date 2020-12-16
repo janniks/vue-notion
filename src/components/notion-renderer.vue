@@ -30,6 +30,7 @@ export default {
     level: { type: Number, default: 0 },
     mapImageUrl: { type: Function, default: defaultMapImageUrl },
     mapPageUrl: { type: Function, default: defaultMapPageUrl },
+    pageLinkOptions: Object,
     todo: { type: Boolean, default: false },
   },
 };

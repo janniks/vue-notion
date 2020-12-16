@@ -8,6 +8,7 @@ export const blockProps = {
   level: { type: Number, default: 0 },
   mapImageUrl: Function,
   mapPageUrl: Function,
+  pageLinkOptions: Object,
   todo: { type: Boolean, default: false },
 };
 
@@ -21,6 +22,7 @@ export const blockComputed = {
       level: this.level,
       mapImageUrl: this.mapImageUrl,
       mapPageUrl: this.mapPageUrl,
+      pageLinkOptions: this.pageLinkOptions,
       todo: this.todo,
     };
   },

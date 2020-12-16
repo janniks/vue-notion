@@ -38,3 +38,5 @@ export * from "@/components/index";
 
 // export additional js methods
 export * from "@/lib/api";
+
+// todo: remove .esm from default packaging for cleaner imports

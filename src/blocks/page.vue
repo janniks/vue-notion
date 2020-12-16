@@ -16,6 +16,19 @@
       <slot />
     </main>
   </div>
+  <component
+    v-else-if="hasPageLinkOptions"
+    class="notion-page-link"
+    v-bind="pageLinkProps"
+    :is="pageLinkOptions.component"
+  >
+    <div class="notion-page-icon">
+      <NotionPageIcon v-bind="passProps" />
+    </div>
+    <div class="notion-page-text">
+      <NotionDecorator v-for="(t, i) in titles" :key="i" :content="t" />
+    </div>
+  </component>
   <a v-else class="notion-page-link" :href="mapPageUrl(value.id)">
     <div class="notion-page-icon">
       <NotionPageIcon v-bind="passProps" />
@@ -42,6 +55,12 @@ export default {
       const coverPosition =
         (1 - (this.format.page_cover_position || 0.5)) * 100;
       return { objectPosition: `center ${coverPosition}%` };
+    },
+    hasPageLinkOptions() {
+      return this.pageLinkOptions?.component && this.pageLinkOptions?.href;
+    },
+    pageLinkProps() {
+      return { [this.pageLinkOptions.href]: this.mapPageUrl(this.value.id) };
     },
   },
 };

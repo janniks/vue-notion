@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { NotionRenderer } from "@/entry";
+import { NotionRenderer, getPageBlocks } from "@/entry";
 
 export default {
   name: "ServeDev",
@@ -16,13 +16,14 @@ export default {
     return { blockMap: null };
   },
   async created() {
-    this.blockMap = await fetch(
-      "https://notion-api.splitbee.io/v1/page/2e22de6b770e4166be301490f6ffd420"
-    ).then((res) => res.json());
+    this.blockMap = await getPageBlocks("2e22de6b770e4166be301490f6ffd420");
   },
 };
 </script>
 
 <style>
 @import "./../src/styles.css";
+body {
+  margin: 0;
+}
 </style>
