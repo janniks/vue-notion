@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/NotionX/react-notion-x/master/media/notion-ts.png" alt="vue-notion" />
+  <img src="docs/img/vue-notion.png" alt="vue-notion" />
   An unofficial Notion renderer
 </p>
 
