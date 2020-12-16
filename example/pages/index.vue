@@ -18,7 +18,7 @@
             <b>{{ tag }}</b>
             <ul>
               <li v-for="(page, k) in pagesByTag.get(tag)" :key="k">
-                <NuxtLink :to="page.slug" class="button--grey">
+                <NuxtLink v-if="page.slug" :to="page.slug" class="button--grey">
                   <b>{{ page.title }}</b>
                   {{ page.preview }}
                 </NuxtLink>
