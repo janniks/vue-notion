@@ -87,9 +87,9 @@ A working example using Nuxt can be found inside the `example` directory.
 ## Sites using vue-notion
 
 List of pages that implement this library.
-If you're using `vue-notion`, we'd be happy to feature you here. 🌎
 
--
+- [StorePreviewer](https://www.storepreviewer.com)
+- _...if you're using `vue-notion`, we'd be happy to feature you here_
 
 ## Supported Blocks
 
