@@ -1,6 +1,35 @@
-![vue-notion](https://user-images.githubusercontent.com/1440854/79684011-6c948280-822e-11ea-9e23-1644903796fb.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/NotionX/react-notion-x/master/media/notion-ts.png" alt="vue-notion" />
+  An unofficial Notion renderer
+</p>
 
-![npm version](https://badgen.net/npm/v/vue-notion) ![minzipped sized](https://badgen.net/bundlephobia/minzip/vue-notion)
+<p align="center">
+  <a href="https://www.npmjs.org/package/vue-notion">
+    <img src="https://img.shields.io/npm/v/vue-notion.svg" alt="Package version" />
+  </a>
+  <a href="https://npmcharts.com/compare/vue-notion?minimal=true">
+    <img src="https://img.shields.io/npm/dm/vue-notion.svg" alt="Downloads per month" />
+  </a>
+  <a href="https://npmcharts.com/compare/vue-notion?minimal=true">
+    <img src="https://img.shields.io/npm/dt/vue-notion.svg" alt="Total downloads" />
+  </a>
+  <a href="https://github.com/janniks/vue-notion/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license" />
+  </a>
+  <a href="https://twitter.com/intent/follow?screen_name=jnnksbrt">
+    <img src="https://img.shields.io/twitter/follow/jnnksbrt.svg?label=Follow%20@jnnksbrt" alt="Follow @jnnksbrt on Twitter" />
+  </a>
+</p>
+
+<h3 align="center">
+  <a href="#features">Features</a>
+  <span> · </span>
+  <a href="#install">Install</a>
+  <span> · </span>
+  <a href="#how-to">How To</a>
+  <span> · </span>
+  <a href="#credits">Credits</a>
+</h3>
 
 A Vue renderer for Notion pages.
 Use Notion as CMS for your blog, documentation or personal site.
@@ -45,11 +74,11 @@ const blockMap = response.recordMap.block;
 
 export default {
   components: {
-    NotionRenderer
+    NotionRenderer,
   },
   data() {
     return { blockMap };
-  }
+  },
 };
 </script>
 ```
@@ -61,7 +90,7 @@ A working example using Nuxt can be found inside the `example` directory.
 List of pages that implement this library.
 If you're using `vue-notion`, we'd be happy to feature you here. 🌎
 
-- 
+-
 
 ## Supported Blocks
 
@@ -93,7 +122,7 @@ Most common block types are supported. We happily accept pull requests to add su
 
 ## Credits
 
-- [Jannik Siebert](https://twitter.com/jnnksbrt) – 
+- [Jannik Siebert](https://twitter.com/jnnksbrt) –
 - [Tobias Lins](https://tobi.sh) – react-notion Idea, Code
 - [Timo Lins](https://timo.sh) – react-notion Code, Documentation
 - [samwightt](https://github.com/samwightt) – react-notion Inspiration & API Typings
