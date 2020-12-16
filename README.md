@@ -84,6 +84,10 @@ export default {
 
 A working example using Nuxt can be found inside the `example` directory.
 
+### API
+
+The full API specification is available at [`docs/API.md`](docs/API.md).
+
 ## Sites using vue-notion
 
 List of pages that are using this library.
