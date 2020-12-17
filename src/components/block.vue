@@ -1,33 +1,33 @@
 <template>
-  <div v-if="type === 'page' && visible">
+  <div v-if="isType('page')">
     <NotionPage v-bind="passProps"><slot /></NotionPage>
   </div>
   <NotionHeader
+    v-else-if="isType(['header', 'sub_header', 'sub_sub_header'])"
     v-bind="passProps"
-    v-else-if="
-      ['header', 'sub_header', 'sub_sub_header'].includes(type) && visible
-    "
   />
-  <NotionText v-else-if="type === 'text' && visible" v-bind="passProps" />
-  <NotionQuote v-else-if="type === 'quote' && visible" v-bind="passProps" />
-  <NotionCallout v-else-if="type === 'callout' && visible" v-bind="passProps" />
-  <NotionToggle v-else-if="type === 'toggle' && visible" v-bind="passProps">
+  <NotionText v-else-if="isType('text')" v-bind="passProps" />
+  <NotionQuote v-else-if="isType('quote')" v-bind="passProps" />
+  <NotionCallout v-else-if="isType('callout')" v-bind="passProps" />
+  <NotionToggle v-else-if="isType('toggle')" v-bind="passProps">
     <slot />
   </NotionToggle>
-  <div v-else-if="type === 'column_list' && visible" class="notion-row">
+  <div v-else-if="isType('column_list')" class="notion-row">
     <slot />
   </div>
-  <NotionColumn v-else-if="type === 'column' && visible" :format="format">
+  <NotionColumn v-else-if="isType('column')" :format="format">
     <slot />
   </NotionColumn>
   <NotionList
-    v-else-if="['bulleted_list', 'numbered_list'].includes(type) && visible"
+    v-else-if="isType(['bulleted_list', 'numbered_list'])"
     v-bind="passProps"
   >
     <slot />
   </NotionList>
+  <hr v-else-if="isType('divider')" className="notion-hr" />
   <div v-else-if="todo && visible">todo: {{ type }}<slot /></div>
-  <div v-else-if="visible"><slot /></div>
+  <!-- todo: maybe add message on !production if block type unsupported -->
+  <!-- <div v-else-if="visible"><slot /></div> -->
 </template>
 
 <script>
@@ -58,6 +58,15 @@ export default {
     ...blockComputed,
     visible() {
       return !this.hideList.includes(this.type);
+    },
+  },
+  methods: {
+    isType(t) {
+      if (Array.isArray(t)) {
+        return t.includes(type) && this.visible;
+      }
+
+      return this.type === t && this.visible;
     },
   },
 };
