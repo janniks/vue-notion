@@ -35,7 +35,7 @@
 A Vue renderer for Notion pages.
 Use Notion as CMS for your blog, documentation or personal site.
 
-`vue-notion` was ported to Vue from [react-notion](https://github.com/splitbee/react-notion) (developed by [Splitbee 🐝](https://splitbee.io/) – a fast, reliable, free, and modern analytics for any team)
+vue-notion was ported to Vue from [react-notion](https://github.com/splitbee/react-notion) (developed by [Splitbee 🐝](https://splitbee.io/) – a fast, reliable, free, and modern analytics for any team)
 
 This package doesn't handle the communication with the API. Check out [notion-api-worker](https://github.com/splitbee/notion-api-worker) from [Splitbee](https://splitbee.io/) for an easy solution.
 
@@ -57,17 +57,14 @@ npm install vue-notion
 
 ## How To
 
-### Demo
-
-Check out the [demo ✨](https://vue-notion.now.sh/)
-
 ### Docs
 
-The full `NotionRenderer` specification, Notion API information and Nuxt docs are available at [`docs/`](https://github.com/janniks/vue-notion/blob/main/docs/).
+> Check out a demo at [vue-notion.now.sh](https://vue-notion.now.sh/) ✨
+
+The full `NotionRenderer` specification and more information on the Notion API and integration with Nuxt can be found at [`docs/`](https://github.com/janniks/vue-notion/docs/).
 
 ### Basic Example
 
-We can store the API response in a `.json` file and import it.
 This example is hosted at [vue-notion.now.sh/basic-example](https://vue-notion.now.sh/basic-example).
 
 ```vue
@@ -82,6 +79,7 @@ export default {
   components: { NotionRenderer },
   data: () => ({ blockMap: null }),
   async created() {
+    // get Notion blocks from the API via a Notion pageId
     this.blockMap = await getPageBlocks("8c1ab01960b049f6a282dda64a94afc7");
   },
 };
@@ -92,7 +90,16 @@ export default {
 </style>
 ```
 
-A [full working example using Nuxt and static generation](https://vue-notion.now.sh/basic-example) can be found inside the `example` directory.
+The example above uses a simple wrapper around the [notion-api-worker](https://github.com/splitbee/notion-api-worker).
+It is also possible to use stored plain `.json` objects received from the Notion API.
+
+> ⚠️ Use with caution.
+> The `getPageBlocks` and `getPageTable` are based on the private Notion API.
+> We can not gurantee it will stay stable.
+> The private API is warpped by [notion-api-worker](https://github.com/splitbee/notion-api-worker).
+> If you use these methods a lot, please consider hosting you own instance, as described in [`docs#notion-api`](docs#notion-api).
+
+A [full working example using Nuxt and static generation](https://vue-notion.now.sh/) can be found inside the `example` directory.
 
 ## Roadmap
 

@@ -63,7 +63,7 @@ html {
 }
 
 .links {
-  padding-top: 15px;
+  padding: 1em 0 1.5em 0;
 }
 
 .tags {
