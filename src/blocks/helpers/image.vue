@@ -33,7 +33,6 @@ export default {
     style() {
       const aspectRatio =
         this.f.block_aspect_ratio || this.f.block_height / this.f.block_width;
-      console.log(aspectRatio, this.f);
       return {
         paddingBottom: `${aspectRatio * 100}%`,
         position: "relative",
