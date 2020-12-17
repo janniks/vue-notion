@@ -92,6 +92,10 @@ export default {
 
 A working example using Nuxt can be found inside the `example` directory.
 
+## Roadmap
+
+Check out the [Roadmap](https://github.com/janniks/vue-notion/projects/1) and upvote issues that you want to see implemented soon.
+
 ## Sites using vue-notion
 
 List of pages that are using this library.
