@@ -59,6 +59,10 @@ npm install vue-notion
 
 ## How To
 
+### Demo
+
+Check out the [demo ✨](https://vue-notion.vercel.app)
+
 ### Docs
 
 The full `NotionRenderer` API specification is available at [`docs/API.md`](https://github.com/janniks/vue-notion/blob/main/docs/API.md).
