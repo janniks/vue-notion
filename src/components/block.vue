@@ -9,6 +9,7 @@
     "
   />
   <NotionText v-else-if="type === 'text' && visible" v-bind="passProps" />
+  <NotionQuote v-else-if="type === 'quote' && visible" v-bind="passProps" />
   <NotionCallout v-else-if="type === 'callout' && visible" v-bind="passProps" />
   <div v-else-if="type === 'column_list' && visible" class="notion-row">
     <slot />
@@ -34,6 +35,7 @@ import NotionList from "@/blocks/list";
 import NotionPage from "@/blocks/page";
 import NotionHeader from "@/blocks/header";
 import NotionText from "@/blocks/text";
+import NotionQuote from "@/blocks/quote";
 
 export default {
   extends: Blockable,
@@ -45,6 +47,7 @@ export default {
     NotionPage,
     NotionHeader,
     NotionText,
+    NotionQuote,
   },
   computed: {
     ...blockComputed,
