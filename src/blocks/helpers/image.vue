@@ -1,5 +1,5 @@
 <template>
-  <div v-if="format.block_aspect_ratio" :style="style">
+  <div v-if="f.block_aspect_ratio" :style="style">
     <img class="notion-image-inset" :alt="alt || 'Notion image'" :src="src" />
   </div>
   <img v-else :alt="caption" :src="src" />
