@@ -144,9 +144,14 @@ Please, feel free to [open an issue](https://github.com/janniks/vue-notion/issue
 
 ## Credits
 
-- [Jannik Siebert](https://twitter.com/jnnksbrt) –
+- [Jannik Siebert](https://twitter.com/jnnksbrt) – vue-notion Code
+- [Dominik Sobe](https://twitter.com/sobedominik) – vue-notion Inspiration, Debugging
 - [Tobias Lins](https://tobi.sh) – react-notion Idea, Code
 - [Timo Lins](https://timo.sh) – react-notion Code, Documentation
 - [samwightt](https://github.com/samwightt) – react-notion Inspiration & API Typings
 - [vue-notion Contributors 💕](https://github.com/janniks/vue-notion/graphs/contributors)
 - [react-notion Contributors 💕](https://github.com/splitbee/react-notion/graphs/contributors)
+
+## License ⚖️
+
+MIT ©️ [Jannik Siebert](https://twitter.com/jnnksbrt)
