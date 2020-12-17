@@ -9,6 +9,7 @@
   <NotionText v-else-if="isType('text')" v-bind="pass" />
   <NotionQuote v-else-if="isType('quote')" v-bind="pass" />
   <NotionCallout v-else-if="isType('callout')" v-bind="pass" />
+  <NotionCode v-else-if="isType('code')" v-bind="pass" />
   <NotionToggle v-else-if="isType('toggle')" v-bind="pass">
     <slot />
   </NotionToggle>
@@ -37,6 +38,7 @@
 <script>
 import Blockable, { blockComputed } from "@/lib/blockable";
 import NotionCallout from "@/blocks/callout";
+import NotionCode from "@/blocks/code";
 import NotionColumn from "@/blocks/column";
 import NotionFigure from "@/blocks/helpers/figure";
 import NotionList from "@/blocks/list";
@@ -51,6 +53,7 @@ export default {
   name: "NotionBlock",
   components: {
     NotionCallout,
+    NotionCode,
     NotionColumn,
     NotionFigure,
     NotionList,
