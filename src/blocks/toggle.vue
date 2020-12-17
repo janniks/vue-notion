@@ -1,7 +1,8 @@
 <template>
-  <blockquote v-if="properties" class="notion-quote">
-    <NotionTextRenderer :title="title" />
-  </blockquote>
+  <details class="notion-toggle">
+    <summary><NotionTextRenderer :title="title" /></summary>
+    <div><slot /></div>
+  </details>
 </template>
 
 <script>
@@ -10,7 +11,7 @@ import NotionTextRenderer from "@/blocks/helpers/text-renderer";
 
 export default {
   extends: Blockable,
-  name: "NotionQuote",
+  name: "NotionToggle",
   components: { NotionTextRenderer },
 };
 </script>

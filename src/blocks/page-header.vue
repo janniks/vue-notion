@@ -12,7 +12,7 @@ import Decorator from "@/blocks/decorator";
 
 export default {
   extends: Blockable,
-  name: "PageHeader",
+  name: "NotionPageHeader",
   components: { Decorator },
 };
 </script>
