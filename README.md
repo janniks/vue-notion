@@ -113,21 +113,23 @@ Most common block types are supported. We happily accept pull requests to add su
 | Image Caption     | ✅ Yes         |                          |
 | Bulleted List     | ✅ Yes         |                          |
 | Numbered List     | ✅ Yes         |                          |
-| Quote             | ✅ Soon        |                          |
+| Quote             | ✅ Yes         |                          |
 | Callout           | ✅ Yes         |                          |
 | Column            | ✅ Yes         |                          |
-| iframe            | ✅ Soon        |                          |
-| Video             | ✅ Soon        | Only embedded videos     |
-| Divider           | ✅ Soon        |                          |
+| iframe            | ✅ Yes         |                          |
+| Video             | ✅ Yes         | Only embedded videos     |
+| Divider           | ✅ Yes         |                          |
 | Link              | ✅ Yes         |                          |
-| Code              | ✅ Soon        | Highlighting coming soon |
+| Code              | ✅ Partially   | Highlighting coming soon |
 | Web Bookmark      | ✅ Soon        |                          |
-| Toggle List       | ✅ Soon        |                          |
+| Toggle List       | ✅ Yes         |                          |
 | Page Links        | ✅ Yes         |                          |
 | Header            | ✅ Yes         | Enable with `fullPage`   |
 | Databases         | ❌ Not planned |                          |
 | Checkbox          | ❌ Not planned |                          |
 | Table Of Contents | ❌ Not planned |                          |
+
+Please, feel free to [open an issue](https://github.com/janniks/vue-notion/issues/new) if you notice any missing blocks or anything wrong with existing blocks.
 
 ## Credits
 
