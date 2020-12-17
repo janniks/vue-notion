@@ -1,8 +1,8 @@
 {
   "name": "vue-notion",
-  "version": "0.1.5-beta",
+  "version": "0.1.6-beta",
   "description": "",
-  "main": "dist/vue-notion.ssr.js",
+  "main": "dist/vue-notion.esm.js",
   "browser": "dist/vue-notion.esm.js",
   "module": "dist/vue-notion.esm.js",
   "unpkg": "dist/vue-notion.min.js",

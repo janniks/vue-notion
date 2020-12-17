@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { getPageTable } from "../../dist/vue-notion.esm";
+import { getPageTable } from "vue-notion/dist/esm";
 
 export default {
   async asyncData({ params, error }) {

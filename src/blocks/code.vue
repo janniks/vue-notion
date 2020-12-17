@@ -1,8 +1,6 @@
 <template>
   <pre :class="['notion-code', langClass]">
-    <code :class="langClass">
-      {{ properties.title[0][0] }}
-    </code>
+    <code :class="langClass">{{ properties.title[0][0] }}</code>
   </pre>
 </template>
 

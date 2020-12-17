@@ -7,7 +7,7 @@ import {
   NotionRenderer,
   getPageBlocks,
   getPageTable,
-} from "../../dist/vue-notion.esm";
+} from "vue-notion/dist/esm";
 
 export default {
   components: {
@@ -34,5 +34,5 @@ export default {
 </script>
 
 <style>
-@import "../../src/styles.css";
+@import "vue-notion/src/styles.css";
 </style>
