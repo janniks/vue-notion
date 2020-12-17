@@ -3,7 +3,7 @@
     v-if="icon.includes('http')"
     :class="big ? 'notion-page-icon-cover' : 'notion-page-icon'"
     :src="mapImageUrl(icon, block)"
-    :alt="titles ? getTextContent(titles) : 'Icon'"
+    :alt="title ? getTextContent(title) : 'Icon'"
   />
   <span
     v-else-if="icon"

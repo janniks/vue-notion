@@ -42,7 +42,7 @@ export const blockComputed = {
   properties() {
     return this.value?.properties;
   },
-  titles() {
+  title() {
     return this.properties?.title;
   },
   type() {

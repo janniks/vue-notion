@@ -16,6 +16,12 @@
   <NotionColumn v-else-if="type === 'column' && visible" :format="format">
     <slot />
   </NotionColumn>
+  <NotionList
+    v-else-if="['bulleted_list', 'numbered_list'].includes(type) && visible"
+    v-bind="passProps"
+  >
+    <slot />
+  </NotionList>
   <div v-else-if="todo && visible">todo: {{ type }}<slot /></div>
   <div v-else-if="visible"><slot /></div>
 </template>
@@ -24,6 +30,7 @@
 import Blockable, { blockComputed } from "@/lib/blockable";
 import NotionCallout from "@/blocks/callout";
 import NotionColumn from "@/blocks/column";
+import NotionList from "@/blocks/list";
 import NotionPage from "@/blocks/page";
 import NotionHeader from "@/blocks/header";
 import NotionText from "@/blocks/text";
@@ -34,6 +41,7 @@ export default {
   components: {
     NotionCallout,
     NotionColumn,
+    NotionList,
     NotionPage,
     NotionHeader,
     NotionText,

@@ -6,13 +6,13 @@
     <img
       class="notion-page-cover"
       :style="format && coverStyle"
-      :alt="getTextContent(titles)"
+      :alt="getTextContent(title)"
       :src="format && mapImageUrl(format.page_cover, block)"
     />
     <main class="notion-page">
       <NotionPageIcon v-bind="passProps" big />
       <div class="notion-title">
-        <NotionDecorator v-for="(t, i) in titles" :key="i" :content="t" />
+        <NotionTextRenderer :title="title" />
       </div>
       <slot />
     </main>
@@ -27,7 +27,7 @@
       <NotionPageIcon v-bind="passProps" />
     </div>
     <div class="notion-page-text">
-      <NotionDecorator v-for="(t, i) in titles" :key="i" :content="t" />
+      <NotionTextRenderer :title="title" />
     </div>
   </component>
   <a v-else class="notion-page-link" :href="mapPageUrl(value.id)">
@@ -35,21 +35,21 @@
       <NotionPageIcon v-bind="passProps" />
     </div>
     <div class="notion-page-text">
-      <NotionDecorator v-for="(t, i) in titles" :key="i" :content="t" />
+      <NotionTextRenderer :title="title" />
     </div>
   </a>
 </template>
 
 <script>
 import Blockable, { blockComputed } from "@/lib/blockable";
-import NotionDecorator from "@/blocks/decorator";
 import NotionPageHeader from "@/blocks/page-header";
 import NotionPageIcon from "@/blocks/page-icon";
+import NotionTextRenderer from "@/blocks/helpers/text-renderer";
 
 export default {
   extends: Blockable,
   name: "NotionPage",
-  components: { NotionDecorator, NotionPageHeader, NotionPageIcon },
+  components: { NotionPageHeader, NotionPageIcon, NotionTextRenderer },
   computed: {
     ...blockComputed,
     coverStyle() {

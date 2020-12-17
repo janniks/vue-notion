@@ -1,24 +1,22 @@
 <template>
-  <div>
-    <h1 class="notion-h1" v-if="type === 'header'">
-      <NotionDecorator v-for="(t, i) in titles" :key="i" :content="t" />
-    </h1>
-    <h2 class="notion-h2" v-if="type === 'sub_header'">
-      <NotionDecorator v-for="(t, i) in titles" :key="i" :content="t" />
-    </h2>
-    <h3 class="notion-h3" v-if="type === 'sub_sub_header'">
-      <NotionDecorator v-for="(t, i) in titles" :key="i" :content="t" />
-    </h3>
-  </div>
+  <h1 class="notion-h1" v-if="type === 'header'">
+    <NotionTextRenderer :title="title" />
+  </h1>
+  <h2 class="notion-h2" v-else-if="type === 'sub_header'">
+    <NotionTextRenderer :title="title" />
+  </h2>
+  <h3 class="notion-h3" v-else-if="type === 'sub_sub_header'">
+    <NotionTextRenderer :title="title" />
+  </h3>
 </template>
 
 <script>
 import Blockable from "@/lib/blockable";
-import NotionDecorator from "@/blocks/decorator.vue";
+import NotionTextRenderer from "@/blocks/helpers/text-renderer";
 
 export default {
   extends: Blockable,
   name: "NotionHeader",
-  components: { NotionDecorator },
+  components: { NotionTextRenderer },
 };
 </script>

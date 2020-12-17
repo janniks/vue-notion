@@ -101,29 +101,29 @@ List of pages that are using this library.
 
 Most common block types are supported. We happily accept pull requests to add support for the missing blocks.
 
-| Block Type        | Supported      | Notes                  |
-| ----------------- | -------------- | ---------------------- |
-| Text              | ✅ Yes         |                        |
-| Heading           | ✅ Yes         |                        |
-| Image             | ✅ Yes         |                        |
-| Image Caption     | ✅ Yes         |                        |
-| Bulleted List     | ✅ Soon        |                        |
-| Numbered List     | ✅ Soon        |                        |
-| Quote             | ✅ Soon        |                        |
-| Callout           | ✅ Yes         |                        |
-| Column            | ✅ Yes         |                        |
-| iframe            | ✅ Soon        |                        |
-| Video             | ✅ Soon        | Only embedded videos   |
-| Divider           | ✅ Soon        |                        |
-| Link              | ✅ Yes         |                        |
-| Code              | ✅ Soon        | Highlighting coming    |
-| Web Bookmark      | ✅ Soon        |                        |
-| Toggle List       | ✅ Soon        |                        |
-| Page Links        | ✅ Yes         |                        |
-| Header            | ✅ Yes         | Enable with `fullPage` |
-| Databases         | ❌ Not planned |                        |
-| Checkbox          | ❌ Not planned |                        |
-| Table Of Contents | ❌ Not planned |                        |
+| Block Type        | Supported      | Notes                    |
+| ----------------- | -------------- | ------------------------ |
+| Text              | ✅ Yes         |                          |
+| Heading           | ✅ Yes         |                          |
+| Image             | ✅ Yes         |                          |
+| Image Caption     | ✅ Yes         |                          |
+| Bulleted List     | ✅ Yes         |                          |
+| Numbered List     | ✅ Yes         |                          |
+| Quote             | ✅ Soon        |                          |
+| Callout           | ✅ Yes         |                          |
+| Column            | ✅ Yes         |                          |
+| iframe            | ✅ Soon        |                          |
+| Video             | ✅ Soon        | Only embedded videos     |
+| Divider           | ✅ Soon        |                          |
+| Link              | ✅ Yes         |                          |
+| Code              | ✅ Soon        | Highlighting coming soon |
+| Web Bookmark      | ✅ Soon        |                          |
+| Toggle List       | ✅ Soon        |                          |
+| Page Links        | ✅ Yes         |                          |
+| Header            | ✅ Yes         | Enable with `fullPage`   |
+| Databases         | ❌ Not planned |                          |
+| Checkbox          | ❌ Not planned |                          |
+| Table Of Contents | ❌ Not planned |                          |
 
 ## Credits
 
