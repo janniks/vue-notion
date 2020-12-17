@@ -1,5 +1,9 @@
 <template>
-  <NotionRenderer :blockMap="blockMap" :pageLinkOptions="pageLinkOptions" />
+  <NotionRenderer
+    :blockMap="blockMap"
+    :pageLinkOptions="pageLinkOptions"
+    fullPage
+  />
 </template>
 
 <script>

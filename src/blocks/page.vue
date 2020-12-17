@@ -13,9 +13,9 @@
     <main
       :class="[
         'notion-page',
-        !format.page_cover && 'notion-page-offset',
-        format.page_full_width && 'notion-full-width',
-        format.page_small_text && 'notion-small-text',
+        format && !format.page_cover && 'notion-page-offset',
+        format && format.page_full_width && 'notion-full-width',
+        format && format.page_small_text && 'notion-small-text',
       ]"
     >
       <NotionPageIcon v-bind="pass" big />

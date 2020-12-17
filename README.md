@@ -8,7 +8,7 @@
   <span> · </span>
   <a href="#install">Install</a>
   <span> · </span>
-  <a href="#minimal-example">Example</a>
+  <a href="#basic-example">Example</a>
   <span> · </span>
   <a href="#docs">Docs</a>
   <span> · </span>
@@ -63,34 +63,36 @@ Check out the [demo ✨](https://vue-notion.now.sh/)
 
 ### Docs
 
-The full `NotionRenderer` API specification is available at [`docs/API.md`](https://github.com/janniks/vue-notion/blob/main/docs/API.md).
+The full `NotionRenderer` specification, Notion API information and Nuxt docs are available at [`docs/`](https://github.com/janniks/vue-notion/blob/main/docs/).
 
-### Minimal Example
+### Basic Example
 
 We can store the API response in a `.json` file and import it.
+This example is hosted at [vue-notion.now.sh/basic-example](https://vue-notion.now.sh/basic-example).
 
 ```vue
 <template>
-  <NotionRenderer :blockMap="blockMap" />
+  <NotionRenderer :blockMap="blockMap" fullPage />
 </template>
 
 <script>
-import { NotionRenderer } from "vue-notion";
-import response from "./load-page-chunk-response.json"; // https://www.notion.so/api/v3/loadPageChunk
-const blockMap = response.recordMap.block;
+import { NotionRenderer, getPageBlocks } from "vue-notion";
 
 export default {
-  components: {
-    NotionRenderer,
-  },
-  data() {
-    return { blockMap };
+  components: { NotionRenderer },
+  data: () => ({ blockMap: null }),
+  async created() {
+    this.blockMap = await getPageBlocks("8c1ab01960b049f6a282dda64a94afc7");
   },
 };
 </script>
+
+<style>
+@import "vue-notion/src/styles.css"; /* optional notion-like styles */
+</style>
 ```
 
-A working example using Nuxt can be found inside the `example` directory.
+A [full working example using Nuxt and static generation](https://vue-notion.now.sh/basic-example) can be found inside the `example` directory.
 
 ## Roadmap
 
