@@ -47,9 +47,7 @@ This package doesn't handle the communication with the API. Check out [notion-ap
 
 🎨 **Custom Styles** – Styles are easily adaptable. Optional styles included
 
-_coming soon_ 🔮 **Code Highlighting** – Automatic code highlighting with [prismjs](https://prismjs.com/)
-
-_coming soon_ 🌎 **SSR / Static Generation Support** – Functions to work with Nuxt and other frameworks
+🌎 **SSR / Static Generation Support** – Functions to work with Nuxt and other frameworks
 
 ## Install
 
