@@ -19,8 +19,8 @@
   <a href="https://www.npmjs.org/package/vue-notion">
     <img src="https://img.shields.io/npm/v/vue-notion.svg" alt="Package version" />
   </a>
-  <a href="https://npmcharts.com/compare/vue-notion?minimal=true">
-    <img src="https://img.shields.io/npm/dm/vue-notion.svg" alt="Downloads per month" />
+  <a href="https://www.npmjs.org/package/vue-notion">
+    <img src="https://img.shields.io/bundlephobia/minzip/vue-notion" alt="Compressed size" />
   </a>
   <a href="https://github.com/janniks/vue-notion/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license" />
