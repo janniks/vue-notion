@@ -1,11 +1,11 @@
 {
   "name": "vue-notion",
-  "version": "0.1.7-beta",
+  "version": "0.1.8-beta",
   "description": "",
-  "main": "dist/vue-notion.esm.js",
-  "browser": "dist/vue-notion.esm.js",
-  "module": "dist/vue-notion.esm.js",
-  "unpkg": "dist/vue-notion.min.js",
+  "main": "dist/esm.js",
+  "browser": "dist/esm.js",
+  "module": "dist/esm.js",
+  "unpkg": "dist/min.js",
   "files": [
     "dist/*",
     "src/**/*.css"

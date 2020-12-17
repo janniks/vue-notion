@@ -3,16 +3,10 @@
 </template>
 
 <script>
-import {
-  NotionRenderer,
-  getPageBlocks,
-  getPageTable,
-} from "vue-notion/dist/esm";
+import { NotionRenderer, getPageBlocks, getPageTable } from "vue-notion";
 
 export default {
-  components: {
-    NotionRenderer,
-  },
+  components: { NotionRenderer },
   data() {
     return {
       pageLinkOptions: { component: "NuxtLink", href: "to" },
