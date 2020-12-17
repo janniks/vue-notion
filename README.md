@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/img/vue-notion.png" alt="vue-notion" width="384px" />
+  <img src="https://github.com/janniks/vue-notion/blob/main/docs/img/vue-notion.png" alt="vue-notion" width="384px" />
   <p>An unofficial Notion renderer</p>
 </div>
 
@@ -59,6 +59,10 @@ npm install vue-notion
 
 ## How To
 
+### Docs
+
+The full `NotionRenderer` API specification is available at [`docs/API.md`](https://github.com/janniks/vue-notion/blob/main/docs/API.md).
+
 ### Minimal Example
 
 We can store the API response in a `.json` file and import it.
@@ -85,10 +89,6 @@ export default {
 ```
 
 A working example using Nuxt can be found inside the `example` directory.
-
-### Docs
-
-The full `NotionRenderer` API specification is available at [`docs/API.md`](docs/API.md).
 
 ## Sites using vue-notion
 
