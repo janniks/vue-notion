@@ -1,6 +1,6 @@
 {
   "name": "vue-notion",
-  "version": "0.1.4-beta",
+  "version": "0.1.5-beta",
   "description": "",
   "main": "dist/vue-notion.ssr.js",
   "browser": "dist/vue-notion.esm.js",
