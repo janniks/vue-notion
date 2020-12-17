@@ -63,7 +63,7 @@ export default {
   methods: {
     isType(t) {
       if (Array.isArray(t)) {
-        return t.includes(type) && this.visible;
+        return t.includes(this.type) && this.visible;
       }
 
       return this.type === t && this.visible;
