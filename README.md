@@ -94,7 +94,7 @@ A working example using Nuxt can be found inside the `example` directory.
 
 ## Roadmap
 
-Check out the [Roadmap](https://github.com/janniks/vue-notion/projects/1) and upvote issues that you want to see implemented soon.
+[Add issues](https://github.com/janniks/vue-notion/issues/new), request features and upvote [block types](https://github.com/janniks/vue-notion/issues?q=is%3Aissue+is%3Aopen+label%3Ablock) that you want to see next!
 
 ## Sites using vue-notion
 
