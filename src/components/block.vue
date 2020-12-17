@@ -24,7 +24,7 @@
   >
     <slot />
   </NotionList>
-  <hr v-else-if="isType('divider')" className="notion-hr" />
+  <hr v-else-if="isType('divider')" class="notion-hr" />
   <div v-else-if="todo && visible">todo: {{ type }}<slot /></div>
   <!-- todo: maybe add message on !production if block type unsupported -->
   <!-- <div v-else-if="visible"><slot /></div> -->
