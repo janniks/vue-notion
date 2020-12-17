@@ -1,15 +1,23 @@
 <template>
-  <div v-if="level === 0" class="notion">
+  <div v-if="level === 0 && fullPage" class="notion">
     <!-- todo: add header -->
-    <!-- <NotionPageHeader v-bind="pass" /> -->
+    <!-- <NotionPageHeader v-if="!hideHeader" v-bind="pass" /> -->
     <!-- todo: hide image if no .format is available -->
     <img
+      v-if="format && format.page_cover"
       class="notion-page-cover"
-      :style="format && coverStyle"
+      :style="coverStyle"
       :alt="getTextContent(title)"
-      :src="format && mapImageUrl(format.page_cover, block)"
+      :src="mapImageUrl(format.page_cover, block)"
     />
-    <main class="notion-page">
+    <main
+      :class="[
+        'notion-page',
+        !format.page_cover && 'notion-page-offset',
+        format.page_full_width && 'notion-full-width',
+        format.page_small_text && 'notion-small-text',
+      ]"
+    >
       <NotionPageIcon v-bind="pass" big />
       <div class="notion-title">
         <NotionTextRenderer :text="title" />
@@ -17,6 +25,7 @@
       <slot />
     </main>
   </div>
+  <main v-else-if="level === 0" class="notion"><slot /></main>
   <component
     v-else-if="hasPageLinkOptions"
     class="notion-page-link"

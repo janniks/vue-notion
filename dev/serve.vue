@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <notion-renderer :blockMap="blockMap" todo />
+    <notion-renderer :blockMap="blockMap" fullPage todo />
   </div>
 </template>
 

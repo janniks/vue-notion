@@ -1,7 +1,10 @@
 <template>
   <img
     v-if="icon.includes('http')"
-    :class="big ? 'notion-page-icon-cover' : 'notion-page-icon'"
+    :class="[
+      format.page_cover && 'notion-page-icon-offset',
+      big ? 'notion-page-icon-cover' : 'notion-page-icon',
+    ]"
     :src="mapImageUrl(icon, block)"
     :alt="title ? getTextContent(title) : 'Icon'"
   />
@@ -11,6 +14,7 @@
     :aria-label="icon"
     :class="[
       'notion-emoji',
+      format.page_cover && 'notion-page-icon-offset',
       big ? 'notion-page-icon-cover' : 'notion-page-icon',
     ]"
   >
