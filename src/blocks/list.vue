@@ -43,7 +43,6 @@ export default {
       return getListNumber(this.value?.id, this.blockMap);
     },
     isTopLevel() {
-      console.log(this.type, this.blockMap[this.value?.parent_id]?.value?.type);
       return this.type !== this.blockMap[this.value?.parent_id]?.value?.type;
     },
   },
