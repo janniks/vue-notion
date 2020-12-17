@@ -1,9 +1,9 @@
 <template>
-  <NotionBlock v-bind="passProps" v-if="blockMap && value">
+  <NotionBlock v-bind="pass" v-if="blockMap && value">
     <NotionRenderer
       v-for="contentId in value.content"
       :key="contentId"
-      v-bind="passProps"
+      v-bind="pass"
       :level="level + 1"
       :content-id="contentId"
     />

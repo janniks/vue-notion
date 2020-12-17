@@ -1,6 +1,6 @@
 <template>
   <details class="notion-toggle">
-    <summary><NotionTextRenderer :title="title" /></summary>
+    <summary><NotionTextRenderer :text="title" /></summary>
     <div><slot /></div>
   </details>
 </template>

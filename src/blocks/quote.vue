@@ -1,6 +1,6 @@
 <template>
   <blockquote v-if="properties" class="notion-quote">
-    <NotionTextRenderer :title="title" />
+    <NotionTextRenderer :text="title" />
   </blockquote>
 </template>
 

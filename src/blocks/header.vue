@@ -1,12 +1,12 @@
 <template>
   <h1 class="notion-h1" v-if="type === 'header'">
-    <NotionTextRenderer :title="title" />
+    <NotionTextRenderer :text="title" />
   </h1>
   <h2 class="notion-h2" v-else-if="type === 'sub_header'">
-    <NotionTextRenderer :title="title" />
+    <NotionTextRenderer :text="title" />
   </h2>
   <h3 class="notion-h3" v-else-if="type === 'sub_sub_header'">
-    <NotionTextRenderer :title="title" />
+    <NotionTextRenderer :text="title" />
   </h3>
 </template>
 

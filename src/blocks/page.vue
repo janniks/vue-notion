@@ -1,7 +1,7 @@
 <template>
   <div v-if="level === 0" class="notion">
     <!-- todo: add header -->
-    <!-- <NotionPageHeader v-bind="passProps" /> -->
+    <!-- <NotionPageHeader v-bind="pass" /> -->
     <!-- todo: hide image if no .format is available -->
     <img
       class="notion-page-cover"
@@ -10,9 +10,9 @@
       :src="format && mapImageUrl(format.page_cover, block)"
     />
     <main class="notion-page">
-      <NotionPageIcon v-bind="passProps" big />
+      <NotionPageIcon v-bind="pass" big />
       <div class="notion-title">
-        <NotionTextRenderer :title="title" />
+        <NotionTextRenderer :text="title" />
       </div>
       <slot />
     </main>
@@ -24,26 +24,26 @@
     :is="pageLinkOptions.component"
   >
     <div class="notion-page-icon">
-      <NotionPageIcon v-bind="passProps" />
+      <NotionPageIcon v-bind="pass" />
     </div>
     <div class="notion-page-text">
-      <NotionTextRenderer :title="title" />
+      <NotionTextRenderer :text="title" />
     </div>
   </component>
   <a v-else class="notion-page-link" :href="mapPageUrl(value.id)">
     <div class="notion-page-icon">
-      <NotionPageIcon v-bind="passProps" />
+      <NotionPageIcon v-bind="pass" />
     </div>
     <div class="notion-page-text">
-      <NotionTextRenderer :title="title" />
+      <NotionTextRenderer :text="title" />
     </div>
   </a>
 </template>
 
 <script>
 import Blockable, { blockComputed } from "@/lib/blockable";
-import NotionPageHeader from "@/blocks/page-header";
-import NotionPageIcon from "@/blocks/page-icon";
+import NotionPageHeader from "@/blocks/helpers/page-header";
+import NotionPageIcon from "@/blocks/helpers/page-icon";
 import NotionTextRenderer from "@/blocks/helpers/text-renderer";
 
 export default {

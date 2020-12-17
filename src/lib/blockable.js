@@ -13,7 +13,7 @@ export const blockProps = {
 };
 
 export const blockComputed = {
-  passProps() {
+  pass() {
     return {
       blockMap: this.blockMap,
       contentId: this.contentId,
@@ -39,8 +39,14 @@ export const blockComputed = {
   icon() {
     return this.format?.page_icon || "";
   },
+  width() {
+    return this.format?.block_width || undefined;
+  },
   properties() {
     return this.value?.properties;
+  },
+  caption() {
+    return this.properties?.caption;
   },
   title() {
     return this.properties?.title;
@@ -48,10 +54,22 @@ export const blockComputed = {
   type() {
     return this.value?.type;
   },
+  visible() {
+    return !this.hideList.includes(this.type);
+  },
 };
 
 export default {
   props: blockProps,
   computed: blockComputed,
-  methods: { getTextContent },
+  methods: {
+    getTextContent,
+    isType(t) {
+      if (Array.isArray(t)) {
+        return t.includes(this.type) && this.visible;
+      }
+
+      return this.type === t && this.visible;
+    },
+  },
 };

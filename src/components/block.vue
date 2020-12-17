@@ -1,15 +1,15 @@
 <template>
   <div v-if="isType('page')">
-    <NotionPage v-bind="passProps"><slot /></NotionPage>
+    <NotionPage v-bind="pass"><slot /></NotionPage>
   </div>
   <NotionHeader
     v-else-if="isType(['header', 'sub_header', 'sub_sub_header'])"
-    v-bind="passProps"
+    v-bind="pass"
   />
-  <NotionText v-else-if="isType('text')" v-bind="passProps" />
-  <NotionQuote v-else-if="isType('quote')" v-bind="passProps" />
-  <NotionCallout v-else-if="isType('callout')" v-bind="passProps" />
-  <NotionToggle v-else-if="isType('toggle')" v-bind="passProps">
+  <NotionText v-else-if="isType('text')" v-bind="pass" />
+  <NotionQuote v-else-if="isType('quote')" v-bind="pass" />
+  <NotionCallout v-else-if="isType('callout')" v-bind="pass" />
+  <NotionToggle v-else-if="isType('toggle')" v-bind="pass">
     <slot />
   </NotionToggle>
   <div v-else-if="isType('column_list')" class="notion-row">
@@ -20,10 +20,14 @@
   </NotionColumn>
   <NotionList
     v-else-if="isType(['bulleted_list', 'numbered_list'])"
-    v-bind="passProps"
+    v-bind="pass"
   >
     <slot />
   </NotionList>
+  <NotionFigure
+    v-else-if="isType(['image', 'embed', 'figma', 'video'])"
+    v-bind="pass"
+  />
   <hr v-else-if="isType('divider')" class="notion-hr" />
   <div v-else-if="todo && visible">todo: {{ type }}<slot /></div>
   <!-- todo: maybe add message on !production if block type unsupported -->
@@ -34,6 +38,7 @@
 import Blockable, { blockComputed } from "@/lib/blockable";
 import NotionCallout from "@/blocks/callout";
 import NotionColumn from "@/blocks/column";
+import NotionFigure from "@/blocks/helpers/figure";
 import NotionList from "@/blocks/list";
 import NotionPage from "@/blocks/page";
 import NotionHeader from "@/blocks/header";
@@ -47,27 +52,13 @@ export default {
   components: {
     NotionCallout,
     NotionColumn,
+    NotionFigure,
     NotionList,
     NotionPage,
     NotionHeader,
     NotionText,
     NotionToggle,
     NotionQuote,
-  },
-  computed: {
-    ...blockComputed,
-    visible() {
-      return !this.hideList.includes(this.type);
-    },
-  },
-  methods: {
-    isType(t) {
-      if (Array.isArray(t)) {
-        return t.includes(this.type) && this.visible;
-      }
-
-      return this.type === t && this.visible;
-    },
   },
 };
 </script>
