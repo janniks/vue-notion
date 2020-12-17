@@ -61,7 +61,7 @@ npm install vue-notion
 
 ### Demo
 
-Check out the [demo ✨](https://vue-notion.vercel.app)
+Check out the [demo ✨](https://vue-notion.now.sh/)
 
 ### Docs
 
