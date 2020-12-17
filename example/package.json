@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.6",
-    "vue-notion": "latest"
+    "nuxt": "^2.14.12",
+    "vue-notion": "^0.1.6-beta"
   },
   "devDependencies": {}
 }
