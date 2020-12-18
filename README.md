@@ -86,12 +86,12 @@ export default {
 </script>
 
 <style>
-@import "vue-notion/src/styles.css"; /* optional notion-like styles */
+@import "vue-notion/src/styles.css"; /* optional Notion-like styles */
 </style>
 ```
 
 The example above uses a simple wrapper around the [notion-api-worker](https://github.com/splitbee/notion-api-worker).
-It is also possible to use stored plain `.json` objects received from the Notion API.
+It is also possible to store and use plain `.json` objects received from the Notion API.
 
 > ⚠️ Use with caution.
 > The `getPageBlocks` and `getPageTable` are based on the private Notion API.
