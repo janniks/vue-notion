@@ -16,5 +16,5 @@ export default {
 </script>
 
 <style>
-@import "vue-notion/src/styles.css"; /* optional Notion-like styles */
+@import "vue-notion/dist/styles.css"; /* optional Notion-like styles */
 </style>

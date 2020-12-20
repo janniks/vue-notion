@@ -1,7 +1,7 @@
 <template>
-  <span v-if="decoratorKey === 'h'" :class="'notion-' + decoratorValue"
+  <Fragment v-if="decoratorKey === 'h'" :class="'notion-' + decoratorValue"
     ><NotionDecorator :content="nextContent" />
-  </span>
+  </Fragment>
   <code v-else-if="decoratorKey === 'c'" class="notion-inline-code">
     <NotionDecorator :content="nextContent" />
   </code>
@@ -21,14 +21,17 @@
   >
     <NotionDecorator :content="nextContent" />
   </a>
-  <span v-else-if="!decorators">{{ text }}</span>
+  <Fragment v-else-if="!decorators">{{ text }}</Fragment>
   <NotionDecorator v-else :content="nextContent" />
 </template>
 
 <script>
+import { Fragment } from "vue-fragment";
+
 export default {
   name: "NotionDecorator",
   props: ["content"],
+  components: { Fragment },
   computed: {
     text() {
       return this.content[0];

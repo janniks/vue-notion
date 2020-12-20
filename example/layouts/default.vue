@@ -26,6 +26,7 @@ html {
 
 .button--green {
   display: inline-block;
+  margin: 0.25em;
   border-radius: 4px;
   border: 1px solid #3b8070;
   color: #3b8070;
@@ -40,6 +41,7 @@ html {
 
 .button--grey {
   display: inline-block;
+  margin: 0.25em;
   border-radius: 4px;
   border: 1px solid #35495e;
   color: #35495e;
@@ -56,10 +58,19 @@ html {
 .container {
   margin: 0 auto;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 90%;
+  padding: 4em;
+  display: block;
   text-align: center;
+}
+
+.logo {
+  max-width: 100%;
+  padding: 0.5em;
+}
+
+.nav a {
+  color: #333 !important;
 }
 
 .links {
@@ -78,6 +89,10 @@ h2 {
 ul {
   margin: 1em auto;
   list-style: none;
+}
+
+p {
+  margin: 0.75em 0;
 }
 
 a {
