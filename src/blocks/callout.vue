@@ -1,9 +1,9 @@
 <template>
-  <div :class="['notion-callout', blockColorClass('_co')]">
+  <div :class="['notion-callout', blockColorClass(), blockColorClass('_co')]">
     <div>
       <NotionPageIcon v-bind="pass" />
     </div>
-    <div :class="['notion-callout-text', blockColorClass()]">
+    <div class="notion-callout-text">
       <NotionTextRenderer :text="title" />
     </div>
   </div>
