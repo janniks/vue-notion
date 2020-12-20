@@ -4,6 +4,7 @@ import path from "path";
 import vue from "rollup-plugin-vue";
 import alias from "@rollup/plugin-alias";
 import commonjs from "@rollup/plugin-commonjs";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import babel from "rollup-plugin-babel";
 import postcss from "rollup-plugin-postcss";
@@ -46,6 +47,9 @@ const baseConfig = {
     babel: {
       exclude: "node_modules/**",
       extensions: [".js", ".jsx", ".ts", ".tsx", ".vue"],
+    },
+    nodeResolve: {
+      resolveOnly: [],
     },
   },
 };
@@ -96,6 +100,7 @@ if (!argv.format || argv.format === "es") {
         ],
       }),
       commonjs(),
+      nodeResolve({ ...baseConfig.plugins.nodeResolve }),
     ],
   };
   buildFormats.push(esConfig);
@@ -125,6 +130,7 @@ if (!argv.format || argv.format === "cjs") {
       }),
       babel(baseConfig.plugins.babel),
       commonjs(),
+      nodeResolve({ ...baseConfig.plugins.nodeResolve }),
     ],
   };
   buildFormats.push(umdConfig);
@@ -153,6 +159,7 @@ if (!argv.format || argv.format === "iife") {
           ecma: 5,
         },
       }),
+      nodeResolve({ ...baseConfig.plugins.nodeResolve }),
     ],
   };
   buildFormats.push(unpkgConfig);
