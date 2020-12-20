@@ -6,7 +6,9 @@ import alias from "@rollup/plugin-alias";
 import commonjs from "@rollup/plugin-commonjs";
 import replace from "@rollup/plugin-replace";
 import babel from "rollup-plugin-babel";
+import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
+import postcssLogical from "postcss-logical";
 import minimist from "minimist";
 
 // Get browserslist config and remove ie from es build targets
@@ -72,7 +74,7 @@ if (!argv.format || argv.format === "es") {
     external,
     output: {
       file: "dist/esm.js",
-      format: "esm",
+      format: "es",
       exports: "named",
     },
     plugins: [
@@ -156,5 +158,28 @@ if (!argv.format || argv.format === "iife") {
   buildFormats.push(unpkgConfig);
 }
 
+if (!argv.format || argv.format === "postcss") {
+  const postCssConfig = {
+    input: "build/postcss.js",
+    output: {
+      format: "es",
+      file: "dist/styles.ignore",
+    },
+    plugins: [
+      postcss({
+        extract: true,
+        minimize: true,
+        plugins: [postcssLogical()],
+      }),
+    ],
+  };
+  buildFormats.push(postCssConfig);
+}
+
 // Export config
-export default buildFormats;
+export default (commandLineArgs) => {
+  // Exporting a method enables command line args override
+  // https://rollupjs.org/guide/en/#configuration-files
+  delete commandLineArgs.format;
+  return buildFormats;
+};
