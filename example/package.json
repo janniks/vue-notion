@@ -11,7 +11,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "nuxt": "^2.14.12",
-    "vue-notion": "latest"
+    "vue-notion": "^0.2.9"
   },
   "devDependencies": {}
 }
