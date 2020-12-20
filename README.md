@@ -65,7 +65,7 @@ The full `NotionRenderer` specification and more information on the Notion API a
 
 ### Basic Example
 
-This example is hosted at [vue-notion.now.sh/basic-example](https://vue-notion.now.sh/basic-example).
+This example is hosted at [vue-notion.now.sh/welcome](https://vue-notion.now.sh/welcome).
 
 ```vue
 <template>
