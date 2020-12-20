@@ -17,7 +17,8 @@
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:postcss": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format postcss",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
+    "prepare": "rm -rf dist && npm run build"
   },
   "dependencies": {
     "cross-fetch": "^3.0.6",

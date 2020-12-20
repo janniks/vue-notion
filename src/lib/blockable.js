@@ -71,5 +71,9 @@ export default {
 
       return this.type === t && this.visible;
     },
+    blockColorClass(suffix = "") {
+      const blockColor = this.format?.block_color;
+      return blockColor ? `notion-${blockColor}${suffix}` : undefined;
+    },
   },
 };
