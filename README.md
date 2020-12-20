@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/janniks/vue-notion/blob/main/docs/img/vue-notion.png" alt="vue-notion" width="384px" />
+  <img src="https://github.com/janniks/vue-notion/raw/main/docs/img/vue-notion.png" alt="vue-notion" width="384px" />
   <p>An unofficial Notion renderer</p>
 </div>
 
