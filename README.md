@@ -133,11 +133,11 @@ Most common block types are supported. We happily accept pull requests to add su
 | Video             | ✅ Yes         | Only embedded videos     |
 | Divider           | ✅ Yes         |                          |
 | Link              | ✅ Yes         |                          |
-| Code              | ✅ Partially   | Highlighting coming soon |
+| Code              | ✅ Yes         |                          |
 | Web Bookmark      | ✅ Yes         |                          |
 | Toggle List       | ✅ Yes         |                          |
 | Page Links        | ✅ Yes         |                          |
-| Header            | ✅ Yes         | Enable with `fullPage`   |
+| Cover             | ✅ Yes         | Enable with `fullPage`   |
 | Databases         | ❌ Not planned |                          |
 | Checkbox          | ❌ Not planned |                          |
 | Table Of Contents | ❌ Not planned |                          |
