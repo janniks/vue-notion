@@ -44,9 +44,7 @@
       <div class="links">
         <p>Blog-style Examples (use Notion as a CMS for Nuxt)</p>
         <div class="links">
-          <NuxtLink class="button--green" to="/tags">
-            Posts sorted by database tags
-          </NuxtLink>
+          <NuxtLink class="button--green" to="/posts">All Blog Posts</NuxtLink>
           <NuxtLink class="button--green" to="/example">
             Post via slug <i>(e.g. /example)</i>
           </NuxtLink>
