@@ -18,15 +18,6 @@ export default {
     alt() {
       return this.caption?.[0][0];
     },
-    f() {
-      // format with defaults if empty
-      return {
-        display_source: this.format?.display_source ?? undefined,
-        block_aspect_ratio: this.format?.block_aspect_ratio ?? undefined,
-        block_height: this.format?.block_height ?? 1,
-        block_width: this.format?.block_width ?? 1,
-      };
-    },
     src() {
       return this.mapImageUrl(this.properties?.source[0][0], this.block);
     },

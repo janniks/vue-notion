@@ -36,17 +36,32 @@ export const blockComputed = {
   format() {
     return this.value?.format;
   },
+  f() {
+    // format with defaults if empty
+    return {
+      block_aspect_ratio: this.format?.block_aspect_ratio,
+      block_height: this.format?.block_height ?? 1,
+      block_width: this.format?.block_width ?? 1,
+      block_color: this.format?.block_color,
+      bookmark_icon: this.format?.bookmark_icon,
+      bookmark_cover: this.format?.bookmark_cover,
+      display_source: this.format?.display_source,
+    };
+  },
   icon() {
     return this.format?.page_icon || "";
   },
   width() {
-    return this.format?.block_width || undefined;
+    return this.format?.block_width;
   },
   properties() {
     return this.value?.properties;
   },
   caption() {
     return this.properties?.caption;
+  },
+  description() {
+    return this.properties?.description;
   },
   title() {
     return this.properties?.title;
