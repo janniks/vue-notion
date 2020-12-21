@@ -12,36 +12,36 @@ The `NotionRenderer` component offers a few properties
 - [`mapPageUrl`](#mapPageUrl) – default: `defaultMapPageUrl()`
 - [`pageLinkOptions`](#pageLinkOptions) – default: `undefined`
 
-### `blockMap`
+### `blockMap`: Object
 
 – the blocks part of a Notion API response.
 A list of blocks by their id that may contain contents and properties.
 
-### `contentId`
+### `contentId`: String
 
 – the id of the block that should be rendered.
 If this is `undefined` the _first_ block is rendered.
 _Usually the first block contains the rest of the page._
 
-### `fullPage`
+### `fullPage`: Boolean
 
 – wether or not the page should contain the cover and header.
 
-### `hideList`
+### `hideList`: [String]
 
 – a list of Notion blocks (e.g. `"callout"`) that should not be rendered.
 
-### `mapImageUrl`
+### `mapImageUrl`: Function
 
-– a method that receives `(imageUrl: String, block: Object)` and returns a `url: String` that should be used during rendering.
-The default method resolves images as they are used in Notion.
+– a function that receives `(imageUrl: String, block: Object)` and returns a `url: String` that should be used during rendering.
+The default function resolves images as they are used in Notion.
 
-> This method could be used to upload the Notion hosted images to an own provider and replace the image URLs with new ones.
+> This function could be used to upload the Notion hosted images to an own provider and replace the image URLs with new ones.
 
-### `mapPageUrl`
+### `mapPageUrl`: Function
 
-– a method that receives `(pageId: String)` and returns a `url: String` that should be used during rendering.
-The default method resolves pageIds relative to the current page root – i.e., `<pageId>` will become `/<pageId>`
+– a function that receives `(pageId: String)` and returns a `url: String` that should be used during rendering.
+The default function resolves pageIds relative to the current page root – i.e., `<pageId>` will become `/<pageId>`
 
 e.g. if you're using vue-notion for blog posts at `/posts/<pageId>`
 
@@ -52,7 +52,7 @@ mapPageUrl(pageId = "") {
 }
 ```
 
-### `pageLinkOptions`
+### `pageLinkOptions`: Object
 
 – are used to override links to other Notion pages with custom Vue components.
 `pageLinkOptions` is an `Object` that requires a `component` and a `href` parameter.
@@ -65,6 +65,36 @@ pageLinkOptions: {
   href: "to"
 }
 ```
+
+### `prism`: Boolean
+
+– whether or not syntax-highlighting using Prims.js should be activated.
+
+> Check the `docs#syntax-highlighting` section below for more details.
+
+## Syntax-highlighting
+
+The following steps are required to add syntax-highlighting using Prism.js
+
+- Install `prismjs` to your project – `npm install prismjs`
+- Import the Prism.js css and a theme css somewhere in your application.
+
+```js
+import "prismjs";
+import "prismjs/themes/prism.css";
+```
+
+- Add the `prism` flag to the `NotionRenderer`
+
+```diff
+-<NotionRenderer :blockMap="blockMap" />
++<NotionRenderer :blockMap="blockMap" prism />
+```
+
+> A list of available themes can be found at [prism/themes](https://github.com/PrismJS/prism/tree/master/themes) and more installable themes can be found at [prism-themes](https://github.com/PrismJS/prism-themes).
+
+> ⚠️ To keep file size down, Prism.js only includes `markup`, `css`, `clike`, and `javascript` languages per default.
+> To add supported languages import the language component from Prism.js – e.g. `import 'prismjs/components/prism-rust'` for `rust`.
 
 ## Notion API
 

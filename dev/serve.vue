@@ -1,11 +1,14 @@
 <template>
   <div id="app">
-    <notion-renderer :blockMap="blockMap" fullPage todo />
+    <NotionRenderer :blockMap="blockMap" fullPage prism todo />
   </div>
 </template>
 
 <script>
 import { NotionRenderer, getPageBlocks } from "@/entry";
+
+import "prismjs";
+import "prismjs/themes/prism.css";
 
 export default {
   name: "ServeDev",

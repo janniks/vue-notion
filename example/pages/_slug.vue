@@ -3,11 +3,15 @@
     :blockMap="blockMap"
     :pageLinkOptions="pageLinkOptions"
     fullPage
+    prism
   />
 </template>
 
 <script>
 import { NotionRenderer, getPageBlocks, getPageTable } from "vue-notion";
+
+import "prismjs";
+import "prismjs/themes/prism.css";
 
 export default {
   components: { NotionRenderer },

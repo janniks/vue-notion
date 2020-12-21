@@ -47,6 +47,8 @@ This package doesn't handle the communication with the API. Check out [notion-ap
 
 🎨 **Custom Styles** – Styles are easily adaptable. Optional styles included
 
+🔮 **Syntax-Highlighting** – Beautiful themeable code highlighting using Prism.js
+
 🌎 **SSR / Static Generation Support** – Functions to work with Nuxt and other frameworks
 
 ## Install
@@ -61,7 +63,7 @@ npm install vue-notion
 
 > Check out a demo at [vue-notion.now.sh](https://vue-notion.now.sh/) ✨
 
-The full `NotionRenderer` specification and more information on the Notion API and integration with Nuxt can be found at [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs).
+More information on the `NotionRenderer` specification, syntax-highlighting, the Notion API, and integration with Nuxt can be found at [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs).
 
 ### Basic Example
 
@@ -154,4 +156,4 @@ Please, feel free to [open an issue](https://github.com/janniks/vue-notion/issue
 
 ## License ⚖️
 
-MIT ©️ [Jannik Siebert](https://twitter.com/jnnksbrt)
+MIT © [Jannik Siebert](https://twitter.com/jnnksbrt)
