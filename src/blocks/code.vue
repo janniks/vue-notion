@@ -26,5 +26,14 @@ export default {
       return `language-${this.lang}`;
     },
   },
+  created() {
+    if (
+      !this.prism ||
+      ["markup", "css", "clike", "javascript"].includes(this.lang)
+    ) {
+      return; // don't load included languages
+    }
+    require(`prismjs/components/prism-${this.lang}`);
+  },
 };
 </script>
