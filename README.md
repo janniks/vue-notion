@@ -61,7 +61,7 @@ npm install vue-notion
 
 > Check out a demo at [vue-notion.now.sh](https://vue-notion.now.sh/) ✨
 
-The full `NotionRenderer` specification and more information on the Notion API and integration with Nuxt can be found at [`docs/`](https://github.com/janniks/vue-notion/docs/).
+The full `NotionRenderer` specification and more information on the Notion API and integration with Nuxt can be found at [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs).
 
 ### Basic Example
 
@@ -97,7 +97,7 @@ It is also possible to store and use plain `.json` objects received from the Not
 > The `getPageBlocks` and `getPageTable` are based on the private Notion API.
 > We can not gurantee it will stay stable.
 > The private API is warpped by [notion-api-worker](https://github.com/splitbee/notion-api-worker).
-> If you use these methods a lot, please consider hosting you own instance, as described in [`docs#notion-api`](docs#notion-api).
+> If you use these methods a lot, please consider hosting you own instance, as described in [`docs#notion-api`](https://github.com/janniks/vue-notion/tree/main/docs#notion-api).
 
 A [full working example using Nuxt and static generation](https://vue-notion.now.sh/) can be found inside the `example` directory.
 
