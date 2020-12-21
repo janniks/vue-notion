@@ -1,8 +1,8 @@
 <template>
   <pre
-    v-if="prism"
+    v-if="prism && supported"
     :class="['notion-code', langClass]"
-  ><Prism :language="lang">{{ properties.title[0][0] }}</Prism></pre>
+  ><PrismComponent :language="lang">{{ properties.title[0][0] }}</PrismComponent></pre>
   <pre
     v-else
     :class="['notion-code', langClass]"
@@ -10,13 +10,17 @@
 </template>
 
 <script>
-import Prism from "vue-prism-component";
+import Prism from "prismjs";
+import PrismComponent from "vue-prism-component";
 import Blockable, { blockComputed } from "@/lib/blockable";
 
 export default {
   extends: Blockable,
   name: "NotionCode",
-  components: { Prism },
+  components: { PrismComponent },
+  data() {
+    return { Prism };
+  },
   computed: {
     ...blockComputed,
     lang() {
@@ -25,15 +29,9 @@ export default {
     langClass() {
       return `language-${this.lang}`;
     },
-  },
-  created() {
-    if (
-      !this.prism ||
-      ["markup", "css", "clike", "javascript"].includes(this.lang)
-    ) {
-      return; // don't load included languages
-    }
-    require(`prismjs/components/prism-${this.lang}`);
+    supported() {
+      return this.Prism.languages[this.lang];
+    },
   },
 };
 </script>
