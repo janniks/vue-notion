@@ -77,7 +77,7 @@ html {
   padding: 1em 0 1.5em 0;
 }
 
-.tags {
+.posts {
   margin: 1em;
   text-align: left;
 }

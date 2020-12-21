@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "cross-fetch": "^3.0.6",
-    "vue-fragment": "^1.5.1"
+    "vue-fragment": "^1.5.1",
+    "vue-prism-component": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -39,6 +40,7 @@
     "minimist": "^1.2.5",
     "postcss": "^8.2.1",
     "postcss-logical": "^4.0.2",
+    "prismjs": "^1.22.0",
     "rollup": "^2.7.3",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-postcss": "^4.0.0",
@@ -48,6 +50,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "peerDependencies": {
+    "prismjs": "^1.22.0",
     "vue": "^2.6.11"
   },
   "engines": {

@@ -9,6 +9,7 @@ export const blockProps = {
   mapImageUrl: Function,
   mapPageUrl: Function,
   pageLinkOptions: Object,
+  prism: { type: Boolean, default: false },
   todo: { type: Boolean, default: false },
 };
 
@@ -23,6 +24,7 @@ export const blockComputed = {
       mapImageUrl: this.mapImageUrl,
       mapPageUrl: this.mapPageUrl,
       pageLinkOptions: this.pageLinkOptions,
+      prism: this.prism,
       todo: this.todo,
     };
   },
