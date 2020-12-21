@@ -59,7 +59,7 @@ html {
   margin: 0 auto;
   min-height: 100vh;
   max-width: 90%;
-  padding: 4em;
+  padding: 4em 0.5em;
   display: block;
   text-align: center;
 }
@@ -82,20 +82,20 @@ html {
   text-align: left;
 }
 
-h2 {
+.container h2 {
   margin-top: 1.5em;
 }
 
-ul {
+.container ul {
   margin: 1em auto;
   list-style: none;
 }
 
-p {
+.container p {
   margin: 0.75em 0;
 }
 
-a {
+.container a {
   max-width: 75%;
   white-space: nowrap;
   overflow: hidden;

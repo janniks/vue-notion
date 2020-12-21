@@ -5,11 +5,11 @@
       <div class="posts">
         <h2>All Posts</h2>
         <ul>
-          <li v-for="(page, k) in pageTable" :key="k">
-            <b>{{ page.date }}</b>
-            <NuxtLink v-if="page.slug" :to="page.slug" class="button--grey">
-              <b>{{ page.title }}</b>
-              {{ page.preview }}
+          <li v-for="(post, k) in posts" :key="k">
+            <b>{{ post.date }}</b>
+            <NuxtLink v-if="post.slug" :to="post.slug" class="button--grey">
+              <b>{{ post.title }}</b>
+              {{ post.preview }}
             </NuxtLink>
           </li>
         </ul>
@@ -20,10 +20,10 @@
           <li v-for="(tag, k) in tags" :key="k">
             <b>{{ tag }}</b>
             <ul>
-              <li v-for="(page, k) in pagesByTag.get(tag)" :key="k">
-                <NuxtLink v-if="page.slug" :to="page.slug" class="button--grey">
-                  <b>{{ page.title }}</b>
-                  {{ page.preview }}
+              <li v-for="(post, k) in postsByTag.get(tag)" :key="k">
+                <NuxtLink v-if="post.slug" :to="post.slug" class="button--grey">
+                  <b>{{ post.title }}</b>
+                  {{ post.preview }}
                 </NuxtLink>
               </li>
             </ul>
@@ -41,8 +41,13 @@ export default {
   async asyncData({ params, error }) {
     const pageTable = await getPageTable("10327f9074b7433aad577ccd0020e971");
 
+    // sort published pages
+    const posts = pageTable
+      .filter((page) => page.published)
+      .sort((a, b) => a.date - b.date);
+
     // convert array of pages to a map of tags with page arrays
-    const pagesByTag = pageTable
+    const postsByTag = pageTable
       .filter((page) => page.published)
       .reduce((map, currentPage) => {
         currentPage.tags.forEach((tag) =>
@@ -54,9 +59,9 @@ export default {
       }, new Map());
 
     return {
-      tags: Array.from(pagesByTag.keys()).sort(),
-      pagesByTag,
-      pageTable,
+      posts,
+      postsByTag,
+      tags: [...postsByTag.keys()].sort(),
     };
   },
 };

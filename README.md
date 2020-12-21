@@ -156,4 +156,4 @@ Please, feel free to [open an issue](https://github.com/janniks/vue-notion/issue
 
 ## License ⚖️
 
-MIT ©️ [Jannik Siebert](https://twitter.com/jnnksbrt)
+MIT © [Jannik Siebert](https://twitter.com/jnnksbrt)
