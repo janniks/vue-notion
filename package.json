@@ -19,7 +19,7 @@
     "build:postcss": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format postcss",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
     "release:patch": "npm version patch -m 'Release %s' && npm publish",
-    "postpublish": "cd example && npm install vue-notion@latest && git add --all && git commit -m 'Update example' && git push --tags",
+    "postpublish": "cd example && npm install -f vue-notion@latest && git add --all && git commit -m 'Update example' && git push --tags",
     "prepare": "rm -rf dist && npm run build"
   },
   "dependencies": {
