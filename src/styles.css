@@ -284,16 +284,25 @@ img.notion-page-icon {
 
 .notion-list-disc {
   list-style-type: disc;
-  padding-inline-start: 1.7em;
+  padding-left: 1.7em; /* edit: changed logical propterties default to left */
   margin-top: 0px;
   margin-bottom: 0px;
 }
 .notion-list-numbered {
   list-style-type: decimal;
-  padding-inline-start: 1.6em;
+  padding-left: 1.6em; /* edit: changed logical propterties default to left */
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
+/* edit start: added rtl override */
+[dir="rtl"] .notion-list-disc {
+  padding-right: 1.7em;
+}
+[dir="rtl"] .notion-list-numbered {
+  padding-right: 1.6em;
+}
+/* edit end */
 
 .notion-list-disc li {
   padding-left: 0.1em;

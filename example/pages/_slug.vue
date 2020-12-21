@@ -32,5 +32,5 @@ export default {
 </script>
 
 <style>
-@import "vue-notion/dist/styles.css";
+@import "vue-notion/src/styles.css";
 </style>
