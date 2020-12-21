@@ -350,7 +350,7 @@ img.notion-page-icon {
   tab-size: 2;
   display: block;
   box-sizing: border-box;
-  overflow-x: scroll;
+  overflow-x: auto; /* edit: changed from `scroll` */
   background: rgb(247, 246, 243);
   font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier,
     monospace;
