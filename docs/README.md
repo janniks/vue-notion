@@ -93,6 +93,9 @@ import "prismjs/themes/prism.css";
 
 > A list of available themes can be found at [prism/themes](https://github.com/PrismJS/prism/tree/master/themes) and more installable themes can be found at [prism-themes](https://github.com/PrismJS/prism-themes).
 
+> ⚠️ To keep file size down, Prism.js only includes `markup`, `css`, `clike`, and `javascript` languages per default.
+> To add supported languages import the language component from Prism.js – e.g. `import 'prismjs/components/prism-rust'` for `rust`.
+
 ## Notion API
 
 The official Notion API is currently in [private beta](https://www.notion.so/api-beta).
