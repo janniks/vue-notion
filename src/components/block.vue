@@ -6,10 +6,11 @@
     v-else-if="isType(['header', 'sub_header', 'sub_sub_header'])"
     v-bind="pass"
   />
-  <NotionText v-else-if="isType('text')" v-bind="pass" />
-  <NotionQuote v-else-if="isType('quote')" v-bind="pass" />
+  <NotionBookmark v-else-if="isType('bookmark')" v-bind="pass" />
   <NotionCallout v-else-if="isType('callout')" v-bind="pass" />
   <NotionCode v-else-if="isType('code')" v-bind="pass" />
+  <NotionText v-else-if="isType('text')" v-bind="pass" />
+  <NotionQuote v-else-if="isType('quote')" v-bind="pass" />
   <NotionToggle v-else-if="isType('toggle')" v-bind="pass">
     <slot />
   </NotionToggle>
@@ -37,6 +38,7 @@
 
 <script>
 import Blockable, { blockComputed } from "@/lib/blockable";
+import NotionBookmark from "@/blocks/bookmark";
 import NotionCallout from "@/blocks/callout";
 import NotionCode from "@/blocks/code";
 import NotionColumn from "@/blocks/column";
@@ -52,6 +54,7 @@ export default {
   extends: Blockable,
   name: "NotionBlock",
   components: {
+    NotionBookmark,
     NotionCallout,
     NotionCode,
     NotionColumn,

@@ -132,7 +132,7 @@ Most common block types are supported. We happily accept pull requests to add su
 | Divider           | ✅ Yes         |                          |
 | Link              | ✅ Yes         |                          |
 | Code              | ✅ Partially   | Highlighting coming soon |
-| Web Bookmark      | ✅ Soon        |                          |
+| Web Bookmark      | ✅ Yes         |                          |
 | Toggle List       | ✅ Yes         |                          |
 | Page Links        | ✅ Yes         |                          |
 | Header            | ✅ Yes         | Enable with `fullPage`   |
