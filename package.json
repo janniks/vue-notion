@@ -9,10 +9,12 @@
   "files": [
     "dist/**/*.js",
     "dist/**/*.css",
-    "src/**/*.css"
+    "src/**/*.css",
+    "nuxt/*.js"
   ],
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
+    "example": "nuxt example",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
