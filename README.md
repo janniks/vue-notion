@@ -85,8 +85,14 @@ export default {
 
 ## Examples
 
-These examples use a simple wrapper around the [`notion-api-worker`](https://github.com/splitbee/notion-api-worker).
+These examples use a simple wrapper around the [`notion-api-worker`](https://github.com/splitbee/notion-api-worker) to access the Notion page data.
 It is also possible to store a page received from the Notion API in `.json` and use it without the `async/await` part.
+
+> Use the `getPageBlocks` and `getPageTable` methods with caution!
+> They are based on the private Notion API.
+> We can NOT guarantee that it will stay stable.
+> The private API is warpped by [notion-api-worker](https://github.com/splitbee/notion-api-worker).
+> If you use these methods a lot, please consider hosting you own instance, as described in [`docs#notion-api`](https://github.com/janniks/vue-notion/tree/main/docs#notion-api).
 
 ### Basic Example for Vue
 
@@ -142,15 +148,9 @@ export default {
 </style>
 ```
 
-> ⚠️ Use with caution!
-> The `getPageBlocks` and `getPageTable` are based on the private Notion API.
-> We can NOT guarantee that it will stay stable.
-> The private API is warpped by [notion-api-worker](https://github.com/splitbee/notion-api-worker).
-> If you use these methods a lot, please consider hosting you own instance, as described in [`docs#notion-api`](https://github.com/janniks/vue-notion/tree/main/docs#notion-api).
+## Issues & Roadmap
 
-## Roadmap
-
-[Add issues](https://github.com/janniks/vue-notion/issues/new), request features and upvote [block types](https://github.com/janniks/vue-notion/issues?q=is%3Aissue+is%3Aopen+label%3Ablock) that you want to see next!
+[Add issues](https://github.com/janniks/vue-notion/issues/new) and request features that you want to see implemented next!
 
 ## Sites using vue-notion
 
