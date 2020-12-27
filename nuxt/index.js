@@ -10,22 +10,15 @@ module.exports = function (moduleOptions) {
   }, defaultOptions)
 
   this.nuxt.hook('build:before', () => {
-    console.log('this.options.build => ', this.options.build)
-
-    // Enable transpilation of `src/` directory
+    // Enable transpilation for `vue-notion`
     this.options.build.transpile.push('vue-notion')
-
-    console.log('this.options.build after => ', this.options.build)
 
     this.addPlugin({
       src: path.resolve(__dirname, 'plugin.js'),
-      fileName: 'vue-notion.js'
+      fileName: 'vue-notion.js',
+      options
     })
   })
 }
 
 module.exports.meta = require('../package.json')
-
-// export default NotionModule
-
-//export const meta = require('../package.json')
