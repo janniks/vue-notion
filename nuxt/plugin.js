@@ -1,8 +1,10 @@
-import Notion from 'vue-notion'
+import Vue from 'vue'
+import VueNotion from 'vue-notion'
+import { getPageBlocks, getPageTable } from 'vue-notion'
 
-const NotionPlugin = (context, inject) => {
-  const notion = Notion
+Vue.use(VueNotion)
+
+export default (_, inject) => {
+  const notion = { getPageBlocks, getPageTable }
   inject('notion', notion)
 }
-
-export default NotionPlugin
