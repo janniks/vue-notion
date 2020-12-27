@@ -58,6 +58,7 @@ npm install vue-notion
 ```
 
 ### NuxtJS Module
+
 ```js
 // nuxt.config.js
 
@@ -82,7 +83,7 @@ More information on the `NotionRenderer` specification, syntax-highlighting, the
 
 ### Basic Example for Vue
 
-This example is hosted at [vue-notion.now.sh/welcome](https://vue-notion.now.sh/welcome).
+This example is hosted at [vue-notion.now.sh/vue](https://vue-notion.now.sh/vue).
 
 ```vue
 <template>
@@ -108,11 +109,11 @@ export default {
 ```
 
 The example above uses a simple wrapper around the [notion-api-worker](https://github.com/splitbee/notion-api-worker).
-It is also possible to store and use plain `.json` objects received from the Notion API.
+It is also possible to store a page received from the Notion API in `.json` and use it without the `async/await` part.
 
 ### Basic Example for Nuxt
 
-This example is hosted at [vue-notion.now.sh/welcome](https://vue-notion.now.sh/welcome).
+This example is hosted at [vue-notion.now.sh/nuxt](https://vue-notion.now.sh/nuxt).
 
 ```vue
 <template>
@@ -123,7 +124,7 @@ This example is hosted at [vue-notion.now.sh/welcome](https://vue-notion.now.sh/
 export default {
   data: () => ({ blockMap: null }),
   async asyncData({ $notion }) {
-    // use notion module to get Notion blocks from the API via a Notion pageId
+    // use Notion module to get Notion blocks from the API via a Notion pageId
     const blockMap = await $notion.getPageBlocks("8c1ab01960b049f6a282dda64a94afc7");
 
     return { blockMap }
@@ -134,8 +135,6 @@ export default {
 @import "vue-notion/src/styles.css"; /* optional Notion-like styles */
 </style>
 ```
-</script>
-
 
 > ⚠️ Use with caution.
 > The `getPageBlocks` and `getPageTable` are based on the private Notion API.
@@ -160,29 +159,30 @@ List of pages that are using this library.
 
 Most common block types are supported. We happily accept pull requests to add support for the missing blocks.
 
-| Block Type        | Supported      | Notes                    |
-| ----------------- | -------------- | ------------------------ |
-| Text              | ✅ Yes         |                          |
-| Heading           | ✅ Yes         |                          |
-| Image             | ✅ Yes         |                          |
-| Image Caption     | ✅ Yes         |                          |
-| Bulleted List     | ✅ Yes         |                          |
-| Numbered List     | ✅ Yes         |                          |
-| Quote             | ✅ Yes         |                          |
-| Callout           | ✅ Yes         |                          |
-| Column            | ✅ Yes         |                          |
-| iframe            | ✅ Yes         |                          |
-| Video             | ✅ Yes         | Only embedded videos     |
-| Divider           | ✅ Yes         |                          |
-| Link              | ✅ Yes         |                          |
-| Code              | ✅ Yes         |                          |
-| Web Bookmark      | ✅ Yes         |                          |
-| Toggle List       | ✅ Yes         |                          |
-| Page Links        | ✅ Yes         |                          |
-| Cover             | ✅ Yes         | Enable with `fullPage`   |
-| Databases         | ❌ Not planned |                          |
-| Checkbox          | ❌ Not planned |                          |
-| Table Of Contents | ❌ Not planned |                          |
+| Block Type        | Supported      | Notes                  |
+| ----------------- | -------------- | ---------------------- |
+| Text              | ✅ Yes         |                        |
+| Heading           | ✅ Yes         |                        |
+| Image             | ✅ Yes         |                        |
+| Image Caption     | ✅ Yes         |                        |
+| Bulleted List     | ✅ Yes         |                        |
+| Numbered List     | ✅ Yes         |                        |
+| Quote             | ✅ Yes         |                        |
+| Callout           | ✅ Yes         |                        |
+| Column            | ✅ Yes         |                        |
+| iframe            | ✅ Yes         |                        |
+| Video             | ✅ Yes         | Only embedded videos   |
+| Divider           | ✅ Yes         |                        |
+| Link              | ✅ Yes         |                        |
+| Code              | ✅ Yes         |                        |
+| Web Bookmark      | ✅ Yes         |                        |
+| Toggle List       | ✅ Yes         |                        |
+| Page Links        | ✅ Yes         |                        |
+| Cover             | ✅ Yes         | Enable with `fullPage` |
+| Equations         | ✅ Planned     |                        |
+| Databases         | ❌ Not planned |                        |
+| Checkbox          | ❌ Not planned |                        |
+| Table Of Contents | ❌ Not planned |                        |
 
 Please, feel free to [open an issue](https://github.com/janniks/vue-notion/issues/new) if you notice any missing blocks or anything wrong with existing blocks.
 
@@ -190,11 +190,13 @@ Please, feel free to [open an issue](https://github.com/janniks/vue-notion/issue
 
 - [Jannik Siebert](https://twitter.com/jnnksbrt) – vue-notion Code
 - [Dominik Sobe](https://twitter.com/sobedominik) – vue-notion Inspiration, Debugging
+- [vue-notion Contributors 💕](https://github.com/janniks/vue-notion/graphs/contributors)
 - [Tobias Lins](https://tobi.sh) – react-notion Idea, Code
 - [Timo Lins](https://timo.sh) – react-notion Code, Documentation
 - [samwightt](https://github.com/samwightt) – react-notion Inspiration & API Typings
-- [vue-notion Contributors 💕](https://github.com/janniks/vue-notion/graphs/contributors)
 - [react-notion Contributors 💕](https://github.com/splitbee/react-notion/graphs/contributors)
+
+- Big thanks to [Nuxt](https://nuxtjs.org) for being awesome!
 
 ## License ⚖️
 
