@@ -57,7 +57,7 @@ mapPageUrl(pageId = "") {
 – are used to override links to other Notion pages with custom Vue components.
 `pageLinkOptions` is an `Object` that requires a `component` and a `href` parameter.
 
-e.g. to use `NuxtLink` components instead of HTML `a` elements
+e.g., to use `NuxtLink` components instead of HTML `a` elements
 
 ```js
 pageLinkOptions: {
@@ -114,7 +114,7 @@ const pageTable = await getPageTable("PAGE_ID", "ENDPOINT_URL");
 
 > Feel free to open an issue if something is unclear or additional documentation is needed...
 
-## Nuxt – Server-Side Rendering & Static Site Generation
+## NuxtJS – Server-Side Rendering & Static Site Generation
 
 > For a running project check out the extensive example at [example/](/example).
 
@@ -123,16 +123,17 @@ const pageTable = await getPageTable("PAGE_ID", "ENDPOINT_URL");
 There are a few required steps to allow Nuxt to work with vue-notion
 
 - Install vue-notion as a dependency to your Nuxt project – `npm install vue-notion`
-- Add `"vue-notion"` to the `build.transpile` array in `nuxt.config.js`.
+- Add `"vue-notion/nuxt"` to the `buildModules` array in `nuxt.config.js`.
 
 ```js
-build: {
-  transpile: ["vue-notion"];
-}
+// nuxt.config.js
+export default {
+  // ...
+  buildModules: ["vue-notion/nuxt"],
+};
 ```
 
-- Import the `NotionRenderer` in any component you want to use vue-notion in – `import { NotionRenderer } from "vue-notion"`
-- Voila, you can now use vue-notion as shown in the examples.
+- Voila, you can now use vue-notion (i.e., the `NotionRenderer` component and the Notion API methods via NuxtJS `$notion`) as shown in the examples.
 
 ### Static Pages
 
