@@ -1,6 +1,7 @@
+yarn.lock
 
-# Created by https://www.toptal.com/developers/gitignore/api/macOS,Node,Vuejs,Vue
-# Edit at https://www.toptal.com/developers/gitignore?templates=macOS,Node,Vuejs,Vue
+# Created by https://www.toptal.com/developers/gitignore/api/Node,macOS,Vue,Vuejs,yarn
+# Edit at https://www.toptal.com/developers/gitignore?templates=Node,macOS,Vue,Vuejs,yarn
 
 ### macOS ###
 # General
@@ -9,7 +10,8 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -159,4 +161,20 @@ dist/
 npm-debug.log
 yarn-error.log
 
-# End of https://www.toptal.com/developers/gitignore/api/macOS,Node,Vuejs,Vue
+### yarn ###
+# https://yarnpkg.com/advanced/qa#which-files-should-be-gitignored
+
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# if you are NOT using Zero-installs, then:
+# comment the following lines
+!.yarn/cache
+
+# and uncomment the following lines
+# .pnp.*
+
+# End of https://www.toptal.com/developers/gitignore/api/Node,macOS,Vue,Vuejs,yarn
