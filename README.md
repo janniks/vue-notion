@@ -57,6 +57,21 @@ This package doesn't handle the communication with the API. Check out [notion-ap
 npm install vue-notion
 ```
 
+### NuxtJS Module
+```js
+// nuxt.config.js
+
+export default {
+  // ...
+  buildModules: [
+    'vue-notion/nuxt'
+  ]
+  notion: {
+    // additionals configuration
+  }
+}
+```
+
 ## How To
 
 ### Docs
@@ -65,7 +80,7 @@ npm install vue-notion
 
 More information on the `NotionRenderer` specification, syntax-highlighting, the Notion API, and integration with Nuxt can be found at [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs).
 
-### Basic Example
+### Basic Example for Vue
 
 This example is hosted at [vue-notion.now.sh/welcome](https://vue-notion.now.sh/welcome).
 
@@ -94,6 +109,33 @@ export default {
 
 The example above uses a simple wrapper around the [notion-api-worker](https://github.com/splitbee/notion-api-worker).
 It is also possible to store and use plain `.json` objects received from the Notion API.
+
+### Basic Example for Nuxt
+
+This example is hosted at [vue-notion.now.sh/welcome](https://vue-notion.now.sh/welcome).
+
+```vue
+<template>
+  <NotionRenderer :blockMap="blockMap" fullPage />
+</template>
+
+<script>
+export default {
+  data: () => ({ blockMap: null }),
+  async asyncData({ $notion }) {
+    // use notion module to get Notion blocks from the API via a Notion pageId
+    const blockMap = await $notion.getPageBlocks("8c1ab01960b049f6a282dda64a94afc7");
+
+    return { blockMap }
+  },
+};
+
+<style>
+@import "vue-notion/src/styles.css"; /* optional Notion-like styles */
+</style>
+```
+</script>
+
 
 > ⚠️ Use with caution.
 > The `getPageBlocks` and `getPageTable` are based on the private Notion API.
