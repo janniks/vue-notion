@@ -35,9 +35,7 @@
 
       <h2>Example from README</h2>
       <div class="links">
-        <NuxtLink class="button--green" to="/basic-example">
-          Basic Example
-        </NuxtLink>
+        <NuxtLink class="button--green" to="/nuxt">Basic Example</NuxtLink>
       </div>
 
       <h2>Static Generated Examples</h2>
