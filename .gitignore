@@ -1,7 +1,7 @@
 yarn.lock
 
-# Created by https://www.toptal.com/developers/gitignore/api/Node,macOS,Vue,Vuejs,yarn
-# Edit at https://www.toptal.com/developers/gitignore?templates=Node,macOS,Vue,Vuejs,yarn
+# Created by https://www.toptal.com/developers/gitignore/api/yarn,Vuejs,Vue,Node,macOS
+# Edit at https://www.toptal.com/developers/gitignore?templates=yarn,Vuejs,Vue,Node,macOS
 
 ### macOS ###
 # General
@@ -10,8 +10,7 @@ yarn.lock
 .LSOverride
 
 # Icon must end with two \r
-Icon
-
+Icon
 
 # Thumbnails
 ._*
@@ -177,4 +176,4 @@ yarn-error.log
 # and uncomment the following lines
 # .pnp.*
 
-# End of https://www.toptal.com/developers/gitignore/api/Node,macOS,Vue,Vuejs,yarn
+# End of https://www.toptal.com/developers/gitignore/api/yarn,Vuejs,Vue,Node,macOS
