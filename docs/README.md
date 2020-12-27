@@ -1,6 +1,14 @@
 # Docs
 
-## vue-notion `NotionRenderer`
+- `NotionRenderer`: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#notionrenderer)
+- Syntax-Highlighting in Code Blocks (with Prism.js): [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#syntax-highlighting)
+- Notion API: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#notion-api)
+- Nuxt: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#nuxtjs--server-side-rendering--static-site-generation)
+
+> Check out a full working demo at [vue-notion.now.sh](https://vue-notion.now.sh/) ✨
+> The code for the demo is in [`example/`](https://github.com/janniks/vue-notion/tree/main/example).
+
+## `NotionRenderer`
 
 The `NotionRenderer` component offers a few properties
 
@@ -72,7 +80,7 @@ pageLinkOptions: {
 
 > Check the `docs#syntax-highlighting` section below for more details.
 
-## Syntax-highlighting
+## Syntax-Highlighting
 
 The following steps are required to add syntax-highlighting using Prism.js
 

@@ -73,12 +73,10 @@ export default {
 
 ## Docs
 
-<!-- todo: add # links to doc links -->
-
-- `NotionRenderer`: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs)
-- Syntax Highlighting in Code Blocks (with Prism.js): [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs)
-- Notion API: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs)
-- Nuxt: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs)
+- `NotionRenderer`: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#notionrenderer)
+- Syntax-Highlighting in Code Blocks (with Prism.js): [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#syntax-highlighting)
+- Notion API: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#notion-api)
+- Nuxt: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#nuxtjs--server-side-rendering--static-site-generation)
 
 > Check out a full working demo at [vue-notion.now.sh](https://vue-notion.now.sh/) ✨
 > The code for the demo is in [`example/`](https://github.com/janniks/vue-notion/tree/main/example).
