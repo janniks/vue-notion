@@ -35,11 +35,9 @@
 </template>
 
 <script>
-import { getPageTable } from "vue-notion";
-
 export default {
-  async asyncData({ params, error }) {
-    const pageTable = await getPageTable("10327f9074b7433aad577ccd0020e971");
+  async asyncData({ $notion, params, error }) {
+    const pageTable = await $notion.getPageTable("10327f9074b7433aad577ccd0020e971");
 
     // sort published pages
     const posts = pageTable
