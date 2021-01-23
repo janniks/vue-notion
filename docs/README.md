@@ -130,7 +130,7 @@ const pageTable = await getPageTable("PAGE_ID", "ENDPOINT_URL");
 
 There are a few required steps to allow Nuxt to work with vue-notion
 
-- Install vue-notion as a dependency to your Nuxt project – `npm install vue-notion`
+- Install vue-notion as a dev-dependency to your Nuxt project – `npm install vue-notion --save-dev`
 - Add `"vue-notion/nuxt"` to the `buildModules` array in `nuxt.config.js`.
 
 ```js
