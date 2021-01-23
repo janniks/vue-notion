@@ -56,7 +56,7 @@ This package doesn't handle the communication with the API. Check out [notion-ap
 ### Vue
 
 ```bash
-npm install vue-notion
+npm install vue-notion --save-dev
 ```
 
 ### NuxtJS Module
