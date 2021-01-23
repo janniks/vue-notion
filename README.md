@@ -56,12 +56,16 @@ This package doesn't handle the communication with the API. Check out [notion-ap
 ### Vue
 
 ```bash
-npm install vue-notion --save-dev
+npm install vue-notion
 ```
 
 ### NuxtJS Module
 
-Install as shown above and add `"vue-notion/nuxt"` to the `buildModules` array in `nuxt.config.js`.
+Install as a dev-dependency and add `"vue-notion/nuxt"` to the `buildModules` array in `nuxt.config.js`.
+
+```bash
+npm install vue-notion --save-dev
+```
 
 ```js
 // nuxt.config.js
