@@ -14,6 +14,6 @@
     "prismjs": "^1.22.0"
   },
   "devDependencies": {
-    "vue-notion": "^0.3.1"
+    "vue-notion": "^0.3.2"
   }
 }
