@@ -284,7 +284,7 @@ img.notion-page-icon {
 
 .notion-list-disc {
   list-style-type: disc;
-  padding-left: 1.7em; /* edit: changed logical propterties default to left */
+  padding-left: 1.6em; /* edit: changed logical propterties default to left */
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -313,8 +313,13 @@ img.notion-page-icon {
 }
 
 .notion-list li {
-  padding: 6px 0px;
+  padding: 4px 0px;
   white-space: pre-wrap;
+}
+
+.notion-list > .notion-text {
+  margin-left: -1.6em;
+  padding-left: 0px;
 }
 
 .notion-asset-wrapper {
@@ -505,7 +510,7 @@ img.notion-page-icon {
 }
 .notion-callout-text {
   margin-left: 8px;
-  white-space: pre-line; /* edit: break on carriage returns in callout text */
+  white-space: pre-line;
 }
 
 .notion-toggle {
