@@ -18,6 +18,7 @@
   <a
     v-else-if="decoratorKey === 'a'"
     class="notion-link"
+    target="_blank"
     :href="decoratorValue"
   >
     <NotionDecorator :content="nextContent" />

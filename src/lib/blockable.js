@@ -15,6 +15,7 @@ export const blockProps = {
 
 export const blockComputed = {
   pass() {
+    // todo: make this more dynamic by iterating over blockProps attributes
     return {
       blockMap: this.blockMap,
       contentId: this.contentId,
