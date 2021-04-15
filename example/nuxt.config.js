@@ -16,6 +16,14 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
+  // Middleware for redirects (https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-servermiddleware/)
+  serverMiddleware: [
+    {
+      path: "/",
+      handler: "./middleware",
+    },
+  ],
+
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
