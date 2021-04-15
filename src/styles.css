@@ -510,7 +510,7 @@ img.notion-page-icon {
 }
 .notion-callout-text {
   margin-left: 8px;
-  white-space: pre-line;
+  white-space: pre-line; /* edit: added to show line breaks */
 }
 
 .notion-toggle {
