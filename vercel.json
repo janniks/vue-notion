@@ -1,0 +1,3 @@
+{
+  "redirects": [{ "source": "/basic-example", "destination": "/nuxt" }]
+}
