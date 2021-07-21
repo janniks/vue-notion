@@ -35,12 +35,10 @@
 
 <script>
 import Blockable, { blockProps } from "@/lib/blockable";
-import NotionTextRenderer from "@/blocks/helpers/text-renderer";
 
 export default {
   extends: Blockable,
   name: "NotionDecorator",
-  components: { NotionTextRenderer },
   props: { ...blockProps, content: Array },
   computed: {
     text() {
