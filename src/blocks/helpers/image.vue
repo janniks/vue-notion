@@ -7,12 +7,10 @@
 
 <script>
 import Blockable, { blockComputed } from "@/lib/blockable";
-import NotionTextRenderer from "@/blocks/helpers/text-renderer";
 
 export default {
   extends: Blockable,
   name: "NotionImage",
-  components: { NotionTextRenderer },
   computed: {
     ...blockComputed,
     alt() {

@@ -20,7 +20,7 @@
     >
       <NotionPageIcon v-bind="pass" big />
       <div class="notion-title">
-        <NotionTextRenderer :text="title" />
+        <NotionTextRenderer :text="title" v-bind="pass" />
       </div>
       <slot />
     </main>
@@ -36,7 +36,7 @@
       <NotionPageIcon v-bind="pass" />
     </div>
     <div class="notion-page-text">
-      <NotionTextRenderer :text="title" />
+      <NotionTextRenderer :text="title" v-bind="pass" />
     </div>
   </component>
   <a v-else class="notion-page-link" :href="mapPageUrl(value.id)">
@@ -44,7 +44,7 @@
       <NotionPageIcon v-bind="pass" />
     </div>
     <div class="notion-page-text">
-      <NotionTextRenderer :text="title" />
+      <NotionTextRenderer :text="title" v-bind="pass" />
     </div>
   </a>
 </template>

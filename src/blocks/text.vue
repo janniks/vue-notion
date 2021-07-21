@@ -1,6 +1,6 @@
 <template>
   <p v-if="properties" :class="['notion-text', blockColorClass]">
-    <NotionTextRenderer :text="title" />
+    <NotionTextRenderer :text="title" v-bind="pass" />
   </p>
   <div v-else class="notion-blank">&nbsp;</div>
 </template>

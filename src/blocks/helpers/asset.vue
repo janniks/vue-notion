@@ -6,12 +6,10 @@
 
 <script>
 import Blockable, { blockComputed } from "@/lib/blockable";
-import NotionTextRenderer from "@/blocks/helpers/text-renderer";
 
 export default {
   extends: Blockable,
   name: "NotionAsset",
-  components: { NotionTextRenderer },
   computed: {
     ...blockComputed,
     src() {

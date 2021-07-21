@@ -4,13 +4,13 @@
       <NotionPageIcon v-bind="pass" />
     </div>
     <div class="notion-callout-text">
-      <NotionTextRenderer :text="title" />
+      <NotionTextRenderer :text="title" v-bind="pass" />
     </div>
   </div>
 </template>
 
 <script>
-import Blockable, { blockComputed } from "@/lib/blockable";
+import Blockable from "@/lib/blockable";
 import NotionPageIcon from "@/blocks/helpers/page-icon";
 import NotionTextRenderer from "@/blocks/helpers/text-renderer";
 

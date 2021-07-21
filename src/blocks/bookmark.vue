@@ -8,10 +8,10 @@
     >
       <div>
         <div class="notion-bookmark-title">
-          <NotionTextRenderer :text="title || properties.link" />
+          <NotionTextRenderer :text="title || properties.link" v-bind="pass" />
         </div>
         <div v-if="description" class="notion-bookmark-description">
-          <NotionTextRenderer :text="description" />
+          <NotionTextRenderer :text="description" v-bind="pass" />
         </div>
         <div class="notion-bookmark-link">
           <img
@@ -19,7 +19,9 @@
             :alt="getTextContent(title || properties.link)"
             :src="f.bookmark_icon"
           />
-          <div><NotionTextRenderer :text="properties.link" /></div>
+          <div>
+            <NotionTextRenderer :text="properties.link" v-bind="pass" />
+          </div>
         </div>
       </div>
       <div v-if="f.bookmark_cover" class="notion-bookmark-image">

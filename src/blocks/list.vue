@@ -3,7 +3,7 @@
     v-if="isTopLevel && type === 'bulleted_list'"
     class="notion-list notion-list-disc"
   >
-    <li><NotionTextRenderer :text="title" /></li>
+    <li><NotionTextRenderer :text="title" v-bind="pass" /></li>
     <NotionNestedList v-if="value.content" v-bind="pass">
       <slot />
     </NotionNestedList>
@@ -13,13 +13,13 @@
     class="notion-list notion-list-numbered"
     :start="start"
   >
-    <li><NotionTextRenderer :text="title" /></li>
+    <li><NotionTextRenderer :text="title" v-bind="pass" /></li>
     <NotionNestedList v-if="value.content" v-bind="pass">
       <slot />
     </NotionNestedList>
   </ol>
   <span v-else>
-    <li><NotionTextRenderer :text="title" /></li>
+    <li><NotionTextRenderer :text="title" v-bind="pass" /></li>
     <NotionNestedList v-if="value.content" v-bind="pass">
       <slot />
     </NotionNestedList>
