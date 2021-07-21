@@ -86,7 +86,7 @@ if (!argv.format || argv.format === "es") {
     input: "src/entry.esm.js",
     external,
     output: {
-      file: "dist/vue-notion.esm.js",
+      file: "dist/esm.js", // custom
       format: "esm",
       exports: "named",
     },
@@ -118,7 +118,7 @@ if (!argv.format || argv.format === "cjs") {
     external,
     output: {
       compact: true,
-      file: "dist/vue-notion.ssr.js",
+      file: "dist/ssr.js", // custom
       format: "cjs",
       name: "VueNotion",
       exports: "auto",
@@ -147,7 +147,7 @@ if (!argv.format || argv.format === "iife") {
     external,
     output: {
       compact: true,
-      file: "dist/vue-notion.min.js",
+      file: "dist/min.js", // custom
       format: "iife",
       name: "VueNotion",
       exports: "auto",
