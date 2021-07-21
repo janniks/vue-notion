@@ -22,7 +22,6 @@
   <s v-else-if="decoratorKey === 's'">
     <NotionDecorator :content="nextContent" v-bind="pass" />
   </s>
-  <s v-else-if="decoratorKey === '‣'"> TEST </s>
   <a
     v-else-if="decoratorKey === 'a'"
     class="notion-link"
