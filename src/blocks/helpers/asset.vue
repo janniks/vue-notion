@@ -1,6 +1,6 @@
 <template>
   <div :style="style">
-    <iframe class="notion-image-inset" :src="src" />
+    <iframe class="notion-image-inset" :src="src" :allow="embedAllow" />
   </div>
 </template>
 

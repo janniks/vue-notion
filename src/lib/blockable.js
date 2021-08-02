@@ -3,6 +3,7 @@ import { getTextContent } from "@/lib/utils";
 export const blockProps = {
   blockMap: { type: Object, required: true },
   contentId: { type: String, required: false },
+  embedAllow: { type: String, default: "fullscreen" },
   fullPage: { type: Boolean, default: false },
   hideList: { type: Array, default: () => [] },
   level: { type: Number, default: 0 },
@@ -19,6 +20,7 @@ export const blockComputed = {
     return {
       blockMap: this.blockMap,
       contentId: this.contentId,
+      embedAllow: this.embedAllow,
       fullPage: this.fullPage,
       hideList: this.hideList,
       level: this.level,
