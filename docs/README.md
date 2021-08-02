@@ -14,6 +14,7 @@ The `NotionRenderer` component offers a few properties
 
 - [`blockMap`](#blockMap) – required
 - [`contentId`](#contentId) – default: `undefined`
+- [`embedAllow`](#embedAllow) – default: `fullscreen`
 - [`fullPage`](#fullPage) – default: `false`
 - [`hideList`](#hideList) – default: `[]`
 - [`mapImageUrl`](#mapImageUrl) – default: `defaultMapImageUrl()`
@@ -30,6 +31,11 @@ A list of blocks by their id that may contain contents and properties.
 – the id of the block that should be rendered.
 If this is `undefined` the _first_ block is rendered.
 _Usually the first block contains the rest of the page._
+
+### `embedAllow`: String
+
+– the [`allow` feature policy](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attr-allow) for embedded `<iframe>`s (e.g. YouTube videos).
+The default allows embeds to enter fullscreen.
 
 ### `fullPage`: Boolean
 
