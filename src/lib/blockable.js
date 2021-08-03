@@ -45,8 +45,8 @@ export const blockComputed = {
     // format with defaults if empty
     return {
       block_aspect_ratio: this.format?.block_aspect_ratio,
-      block_height: this.format?.block_height || 1,
-      block_width: this.format?.block_width || 1,
+      block_height: this.format?.block_height ?? 1,
+      block_width: this.format?.block_width ?? 1,
       block_color: this.format?.block_color,
       bookmark_icon: this.format?.bookmark_icon,
       bookmark_cover: this.format?.bookmark_cover,
