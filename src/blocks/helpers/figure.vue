@@ -6,7 +6,7 @@
       v-bind="pass"
     />
     <figcaption v-if="caption" class="notion-image-caption">
-      <NotionTextRenderer :text="caption" />
+      <NotionTextRenderer :text="caption" v-bind="pass" />
     </figcaption>
   </figure>
 </template>
