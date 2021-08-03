@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 GIT_TAG=$(git describe --abbrev=0 --tags)
 
