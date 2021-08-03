@@ -4,10 +4,11 @@ import path from "path";
 import vue from "rollup-plugin-vue";
 import alias from "@rollup/plugin-alias";
 import commonjs from "@rollup/plugin-commonjs";
-import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
-import babel from "@rollup/plugin-babel";
+import babel from "rollup-plugin-babel";
+import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
+import postcssLogical from "postcss-logical";
 import minimist from "minimist";
 
 // Get browserslist config and remove ie from es build targets
@@ -16,11 +17,6 @@ const esbrowserslist = fs
   .toString()
   .split("\n")
   .filter((entry) => entry && entry.substring(0, 2) !== "ie");
-
-// Extract babel preset-env config, to combine with esbrowserslist
-const babelPresetEnvConfig = require("../babel.config").presets.filter(
-  (entry) => entry[0] === "@babel/preset-env"
-)[0][1];
 
 const argv = minimist(process.argv.slice(2));
 
@@ -31,16 +27,15 @@ const baseConfig = {
   plugins: {
     preVue: [
       alias({
-        entries: [
-          {
-            find: "@",
-            replacement: `${path.resolve(projectRoot, "src")}`,
-          },
-        ],
+        resolve: [".js", ".jsx", ".ts", ".tsx", ".vue"],
+        entries: {
+          "@": path.resolve(projectRoot, "src"),
+        },
       }),
     ],
     replace: {
       "process.env.NODE_ENV": JSON.stringify("production"),
+      "process.env.ES_BUILD": JSON.stringify("false"),
     },
     vue: {
       css: true,
@@ -48,16 +43,9 @@ const baseConfig = {
         isProduction: true,
       },
     },
-    postVue: [
-      resolve({
-        extensions: [".js", ".jsx", ".ts", ".tsx", ".vue"],
-      }),
-      commonjs(),
-    ],
     babel: {
       exclude: "node_modules/**",
       extensions: [".js", ".jsx", ".ts", ".tsx", ".vue"],
-      babelHelpers: "bundled",
     },
   },
 };
@@ -83,30 +71,31 @@ const buildFormats = [];
 if (!argv.format || argv.format === "es") {
   const esConfig = {
     ...baseConfig,
-    input: "src/entry.esm.js",
     external,
     output: {
-      file: "dist/esm.js", // custom
-      format: "esm",
+      file: "dist/esm.js",
+      format: "es",
       exports: "named",
     },
     plugins: [
-      replace(baseConfig.plugins.replace),
+      replace({
+        ...baseConfig.plugins.replace,
+        "process.env.ES_BUILD": JSON.stringify("true"),
+      }),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),
-      ...baseConfig.plugins.postVue,
       babel({
         ...baseConfig.plugins.babel,
         presets: [
           [
             "@babel/preset-env",
             {
-              ...babelPresetEnvConfig,
               targets: esbrowserslist,
             },
           ],
         ],
       }),
+      commonjs(),
     ],
   };
   buildFormats.push(esConfig);
@@ -118,10 +107,10 @@ if (!argv.format || argv.format === "cjs") {
     external,
     output: {
       compact: true,
-      file: "dist/ssr.js", // custom
+      file: "dist/ssr.js",
       format: "cjs",
       name: "VueNotion",
-      exports: "auto",
+      exports: "named",
       globals,
     },
     plugins: [
@@ -134,8 +123,8 @@ if (!argv.format || argv.format === "cjs") {
           optimizeSSR: true,
         },
       }),
-      ...baseConfig.plugins.postVue,
       babel(baseConfig.plugins.babel),
+      commonjs(),
     ],
   };
   buildFormats.push(umdConfig);
@@ -147,18 +136,18 @@ if (!argv.format || argv.format === "iife") {
     external,
     output: {
       compact: true,
-      file: "dist/min.js", // custom
+      file: "dist/min.js",
       format: "iife",
       name: "VueNotion",
-      exports: "auto",
+      exports: "named",
       globals,
     },
     plugins: [
       replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),
-      ...baseConfig.plugins.postVue,
       babel(baseConfig.plugins.babel),
+      commonjs(),
       terser({
         output: {
           ecma: 5,
@@ -169,5 +158,28 @@ if (!argv.format || argv.format === "iife") {
   buildFormats.push(unpkgConfig);
 }
 
+if (!argv.format || argv.format === "postcss") {
+  const postCssConfig = {
+    input: "build/postcss.js",
+    output: {
+      format: "es",
+      file: "dist/styles.ignore",
+    },
+    plugins: [
+      postcss({
+        extract: true,
+        minimize: true,
+        plugins: [postcssLogical()],
+      }),
+    ],
+  };
+  buildFormats.push(postCssConfig);
+}
+
 // Export config
-export default buildFormats;
+export default (commandLineArgs) => {
+  // Exporting a method enables command line args override
+  // https://rollupjs.org/guide/en/#configuration-files
+  delete commandLineArgs.format;
+  return buildFormats;
+};

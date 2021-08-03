@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { NotionRenderer, getPageBlocks } from "@/entry.esm";
+import { NotionRenderer, getPageBlocks } from "@/entry";
 
 import "prismjs";
 import "prismjs/themes/prism.css";
