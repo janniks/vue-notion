@@ -4,8 +4,8 @@
     class="notion-link"
     target="_blank"
     :href="decoratorValue"
-    >{{ pageLinkTitle }}</a
-  >
+    >{{ pageLinkTitle }}
+  </a>
   <span v-else-if="decorators.length === 0">{{ text }}</span>
   <span v-else-if="decoratorKey === 'h'" :class="'notion-' + decoratorValue"
     ><NotionDecorator :content="nextContent" v-bind="pass" />
@@ -30,11 +30,17 @@
   >
     <NotionDecorator :content="nextContent" v-bind="pass" />
   </a>
+  <span
+    v-else-if="decoratorKey === 'e'"
+    v-html="inlineEquation"
+  />
   <NotionDecorator v-else :content="nextContent" v-bind="pass" />
 </template>
 
 <script>
 import Blockable, { blockProps } from "@/lib/blockable";
+import katex from 'katex';
+import 'katex/dist/katex.css';
 
 export default {
   extends: Blockable,
@@ -65,6 +71,11 @@ export default {
     },
     isPageLink() {
       return this.text === "‣";
+    },
+    inlineEquation() {
+      return katex.renderToString(this.decoratorValue, {
+        throwOnError: false,
+      });
     },
     pageLinkTitle() {
       return (

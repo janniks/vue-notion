@@ -20,7 +20,8 @@ export default {
   },
   async created() {
     // react-notion tester: 2e22de6b770e4166be301490f6ffd420
-    this.blockMap = await getPageBlocks("2e22de6b770e4166be301490f6ffd420");
+    // Equation terser: add9966dd1ae4d839ccec39150f90c5d
+    this.blockMap = await getPageBlocks("add9966dd1ae4d839ccec39150f90c5d");
   },
 };
 </script>
