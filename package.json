@@ -29,8 +29,8 @@
   "dependencies": {
     "cross-fetch": "^3.0.6",
     "defu": "^5.0.0",
-    "katex": "^0.13.16",
     "vue-fragment": "^1.5.1",
+    "vue-katex": "^0.5.0",
     "vue-prism-component": "^1.2.0"
   },
   "devDependencies": {
