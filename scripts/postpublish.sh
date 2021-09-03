@@ -8,4 +8,6 @@ git add --all
 git commit -m 'Update example'
 git push --tags
 
+echo ""
+
 gh release create $GIT_TAG -t "$GIT_TAG"
