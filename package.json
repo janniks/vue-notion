@@ -23,7 +23,7 @@
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
     "release:minor": "npm version minor -m 'Release %s' && npm publish",
     "release:patch": "npm version patch -m 'Release %s' && npm publish",
-    "postpublish": "./scripts/postpublish.sh",
+    "postpublish": "echo \"\\033[31m !!! Now, manually run: ./scripts/postpublish.sh' !!! \\033[00m\"",
     "prepare": "rm -rf dist *.tgz && npm run build"
   },
   "dependencies": {
