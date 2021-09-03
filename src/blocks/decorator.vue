@@ -1,9 +1,17 @@
 <template>
+  <component
+    v-if="isPageLink && hasPageLinkOptions"
+    class="notion-page-link"
+    v-bind="pageLinkProps(decoratorValue)"
+    :is="pageLinkOptions.component"
+  >
+    {{ pageLinkTitle }}
+  </component>
   <a
-    v-if="isPageLink"
+    v-else-if="isPageLink"
     class="notion-link"
-    target="_blank"
-    :href="decoratorValue"
+    :target="pageLinkTarget"
+    :href="mapPageUrl(decoratorValue)"
     >{{ pageLinkTitle }}</a
   >
   <span v-else-if="decorators.length === 0">{{ text }}</span>
@@ -25,7 +33,7 @@
   <a
     v-else-if="decoratorKey === 'a'"
     class="notion-link"
-    target="_blank"
+    :target="target"
     :href="decoratorValue"
   >
     <NotionDecorator :content="nextContent" v-bind="pass" />
@@ -69,8 +77,14 @@ export default {
     pageLinkTitle() {
       return (
         this.blockMap?.[this.decoratorValue]?.value?.properties
-          ?.title?.[0]?.[0] || "this"
+          ?.title?.[0]?.[0] || "link"
       );
+    },
+    target() {
+      if (this.type === "page") {
+        return this.pageLinkTarget;
+      }
+      return this.textLinkTarget;
     },
   },
 };

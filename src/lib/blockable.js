@@ -10,7 +10,9 @@ export const blockProps = {
   mapImageUrl: Function,
   mapPageUrl: Function,
   pageLinkOptions: Object,
+  pageLinkTarget: { type: String, default: "_self" },
   prism: { type: Boolean, default: false },
+  textLinkTarget: { type: String, default: "_blank" },
   todo: { type: Boolean, default: false },
 };
 
@@ -77,6 +79,9 @@ export const blockComputed = {
   visible() {
     return !this.hideList.includes(this.type);
   },
+  hasPageLinkOptions() {
+    return this.pageLinkOptions?.component && this.pageLinkOptions?.href;
+  },
 };
 
 export default {
@@ -86,14 +91,19 @@ export default {
     getTextContent,
     isType(t) {
       if (Array.isArray(t)) {
-        return t.includes(this.type) && this.visible;
+        return this.visible && t.includes(this.type);
       }
 
-      return this.type === t && this.visible;
+      return this.visible && this.type === t;
     },
     blockColorClass(suffix = "") {
       const blockColor = this.format?.block_color;
       return blockColor ? `notion-${blockColor}${suffix}` : undefined;
+    },
+    pageLinkProps(id) {
+      return {
+        [this.pageLinkOptions.href]: this.mapPageUrl(id),
+      };
     },
   },
 };
