@@ -16,6 +16,6 @@
     "vue-katex": "^0.5.0"
   },
   "devDependencies": {
-    "vue-notion": "^1.2.0"
+    "vue-notion": "^1.2.1"
   }
 }
