@@ -29,7 +29,7 @@
   <component
     v-else-if="hasPageLinkOptions"
     class="notion-page-link"
-    v-bind="pageLinkProps"
+    v-bind="pageLinkProps(value.id)"
     :is="pageLinkOptions.component"
   >
     <div class="notion-page-icon">
@@ -39,7 +39,12 @@
       <NotionTextRenderer :text="title" v-bind="pass" />
     </div>
   </component>
-  <a v-else class="notion-page-link" :href="mapPageUrl(value.id)">
+  <a
+    v-else
+    class="notion-page-link"
+    :target="pageLinkTarget"
+    :href="mapPageUrl(value.id)"
+  >
     <div class="notion-page-icon">
       <NotionPageIcon v-bind="pass" />
     </div>
@@ -65,12 +70,6 @@ export default {
       const coverPosition =
         (1 - (this.format.page_cover_position || 0.5)) * 100;
       return { objectPosition: `center ${coverPosition}%` };
-    },
-    hasPageLinkOptions() {
-      return this.pageLinkOptions?.component && this.pageLinkOptions?.href;
-    },
-    pageLinkProps() {
-      return { [this.pageLinkOptions.href]: this.mapPageUrl(this.value.id) };
     },
   },
 };

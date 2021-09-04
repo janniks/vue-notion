@@ -15,12 +15,15 @@ The `NotionRenderer` component offers a few properties
 
 - [`blockMap`](#blockMap) – required
 - [`contentId`](#contentId) – default: `undefined`
-- [`embedAllow`](#embedAllow) – default: `fullscreen`
+- [`embedAllow`](#embedAllow) – default: `"fullscreen"`
 - [`fullPage`](#fullPage) – default: `false`
 - [`hideList`](#hideList) – default: `[]`
 - [`mapImageUrl`](#mapImageUrl) – default: `defaultMapImageUrl()`
 - [`mapPageUrl`](#mapPageUrl) – default: `defaultMapPageUrl()`
 - [`pageLinkOptions`](#pageLinkOptions) – default: `undefined`
+- [`pageLinkTarget`](#pageLinkTarget) – default: `"_self"`
+- [`prism`](#prism) – default: `false`
+- [`textLinkTarget`](#textLinkTarget) – default: `"_blank"`
 
 ### `blockMap`: Object
 
@@ -81,11 +84,19 @@ pageLinkOptions: {
 }
 ```
 
+### `pageLinkTarget`: String
+
+– the [target attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target) of links referencing other pages (skipped for pages with `pageLinkeOptions`)
+
 ### `prism`: Boolean
 
 – whether or not syntax-highlighting using Prims.js should be activated.
 
 > Check the `docs#syntax-highlighting` section below for more details.
+
+### `textLinkTarget`: String
+
+– the [target attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target) of links
 
 ## Syntax-Highlighting
 
