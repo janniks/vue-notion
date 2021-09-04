@@ -4,8 +4,8 @@
     class="notion-link"
     target="_blank"
     :href="decoratorValue"
-    >{{ pageLinkTitle }}</a
-  >
+    >{{ pageLinkTitle }}
+  </a>
   <span v-else-if="decorators.length === 0">{{ text }}</span>
   <span v-else-if="decoratorKey === 'h'" :class="'notion-' + decoratorValue"
     ><NotionDecorator :content="nextContent" v-bind="pass" />
@@ -30,6 +30,11 @@
   >
     <NotionDecorator :content="nextContent" v-bind="pass" />
   </a>
+  <component
+    v-else-if="decoratorKey === 'e'"
+    :is="'katex-element'"
+    :expression="decoratorValue"
+  />
   <NotionDecorator v-else :content="nextContent" v-bind="pass" />
 </template>
 
