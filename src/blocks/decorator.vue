@@ -38,6 +38,11 @@
   >
     <NotionDecorator :content="nextContent" v-bind="pass" />
   </a>
+  <component
+    v-else-if="decoratorKey === 'e'"
+    :is="'katex-element'"
+    :expression="decoratorValue"
+  />
   <NotionDecorator v-else :content="nextContent" v-bind="pass" />
 </template>
 

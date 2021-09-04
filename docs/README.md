@@ -2,6 +2,7 @@
 
 - `NotionRenderer`: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#notionrenderer)
 - Syntax-Highlighting in Code Blocks (with Prism.js): [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#syntax-highlighting)
+- Equations: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#equations)
 - Notion API: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#notion-api)
 - Nuxt: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#nuxtjs--server-side-rendering--static-site-generation)
 
@@ -120,6 +121,27 @@ import "prismjs/themes/prism.css";
 
 > ⚠️ To keep file size down, Prism.js only includes `markup`, `css`, `clike`, and `javascript` languages per default.
 > To add supported languages import the language component from Prism.js – e.g. `import 'prismjs/components/prism-rust'` for `rust`.
+
+## Equations
+
+The following steps are required to display equations via katex
+
+- Install `vue-katex` to your project – `npm install vue-katex`
+- Import the katex css in your project
+
+```js
+import "katex/dist/katex.min.css";
+```
+
+- Install the Vue plugin globally
+
+```js
+import Vue from "vue";
+import VueKatex from "vue-katex";
+Vue.use(VueKatex);
+```
+
+> For usage with Nuxt, look at the `/example` (`plugins` in `nuxt.config.js`, `plugins/vue-katex.js`)
 
 ## Notion API
 

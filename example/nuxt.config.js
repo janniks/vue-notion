@@ -21,4 +21,7 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: ["vue-notion/nuxt"],
+
+  // Plugins (e.g. vue-katex for equations)
+  plugins: ["~/plugins/vue-katex.js"],
 };
