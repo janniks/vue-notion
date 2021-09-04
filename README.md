@@ -186,7 +186,7 @@ Most common block types are supported. We happily accept pull requests to add su
 | Toggle List       | ✅ Yes         |                        |
 | Page Links        | ✅ Yes         |                        |
 | Cover             | ✅ Yes         | Enable with `fullPage` |
-| Equations         | ✅ Planned     |                        |
+| Equations         | ✅ Yes         |                        |
 | Databases         | ❌ Not planned |                        |
 | Checkbox          | ❌ Not planned |                        |
 | Table Of Contents | ❌ Not planned |                        |
