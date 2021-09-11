@@ -150,16 +150,14 @@ export default {
 </style>
 ```
 
-## Issues & Roadmap
-
-[Add issues](https://github.com/janniks/vue-notion/issues/new) and request features that you want to see implemented next!
-
-## Sites using vue-notion
+## Sites using vue-notion 🌎
 
 List of pages that are using this library.
 
+- [HelpKit](https://www.helpkit.so) — Build Knowledge Bases in Notion
 - [StorePreviewer](https://www.storepreviewer.com) — Preview and optimize your app store presence
 - [Dominik Sobe's Personal Site](https://dominiksobe.com/)
+- [Bersihin Tech](https://tech.bersihin.co/)
 - _...if you're using `vue-notion`, we'd be happy to feature you here_
 
 ## Supported Blocks
