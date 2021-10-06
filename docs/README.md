@@ -155,8 +155,8 @@ Since, the endpoint is rate limited, please consider hosting your own instance (
 A custom endpoint URL can be passed to the methods as a second argument:
 
 ```js
-const blockMap = await getPageBlocks("PAGE_ID", "ENDPOINT_URL");
-const pageTable = await getPageTable("PAGE_ID", "ENDPOINT_URL");
+const blockMap = await getPageBlocks("PAGE_ID", "optional ENDPOINT_URL");
+const pageTable = await getPageTable("PAGE_ID", "optional ENDPOINT_URL");
 ```
 
 > Feel free to open an issue if something is unclear or additional documentation is needed...
