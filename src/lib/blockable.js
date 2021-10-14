@@ -12,6 +12,7 @@ export const blockProps = {
   pageLinkOptions: Object,
   pageLinkTarget: { type: String, default: "_self" },
   prism: { type: Boolean, default: false },
+  katex: { type: Boolean, default: false },
   textLinkTarget: { type: String, default: "_blank" },
   todo: { type: Boolean, default: false },
 };
@@ -30,6 +31,7 @@ export const blockComputed = {
       mapPageUrl: this.mapPageUrl,
       pageLinkOptions: this.pageLinkOptions,
       prism: this.prism,
+      katex: this.katex,
       todo: this.todo,
     };
   },
