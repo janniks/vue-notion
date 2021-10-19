@@ -1,26 +1,23 @@
 <template>
   <div v-if="katex">
-    <KatexElement :expression="equation" />
+    <component :is="'katex-element'" :expression="equation" />
   </div>
-  <pre v-else-if="prism && supported" :class="['notion-code', langClass]">
-    <PrismComponent :language="lang">{{ equation }}</PrismComponent>
-  </pre>
-  <pre v-else :class="['notion-code', langClass]">
-    <code :class="langClass">{{ equation }}</code>
-  </pre>
+  <NotionCode
+    v-else
+    v-bind="pass"
+    overrideLang="latex"
+    overrideLangClass="language-latex"
+  />
 </template>
 
 <script>
-import KatexElement from "vue-katex";
 import Blockable, { blockComputed } from "@/lib/blockable";
+import NotionCode from "@/blocks/code";
 
 export default {
   extends: Blockable,
-  name: "NotionCode",
-  components: { KatexElement },
-  data() {
-    return { Prism, lang: "latex", langClass: "language-latex" };
-  },
+  name: "NotionEquation",
+  components: { NotionCode },
   computed: {
     ...blockComputed,
     equation() {
