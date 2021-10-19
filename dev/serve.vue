@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NotionRenderer :blockMap="blockMap" fullPage prism todo />
+    <NotionRenderer :blockMap="blockMap" fullPage prism katex todo />
   </div>
 </template>
 
