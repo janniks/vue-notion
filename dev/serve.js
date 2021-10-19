@@ -3,9 +3,9 @@ import Dev from "./serve.vue";
 
 import VueKatex from "vue-katex";
 
-Vue.config.productionTip = false;
-
 Vue.use(VueKatex);
+
+Vue.config.productionTip = false;
 
 new Vue({
   render: (h) => h(Dev),

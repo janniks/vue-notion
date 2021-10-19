@@ -60,7 +60,7 @@
     :expression="decoratorValue"
   />
   <code v-else-if="decoratorKey === 'e'" class="notion-inline-code">
-    <NotionDecorator :content="nextContent" v-bind="pass" />
+    {{ decoratorValue }}
   </code>
   <NotionDecorator v-else :content="nextContent" v-bind="pass" />
 </template>
