@@ -12,22 +12,25 @@
 <script>
 import Prism from "prismjs";
 import PrismComponent from "vue-prism-component";
-import Blockable, { blockComputed } from "@/lib/blockable";
+import Blockable, { blockComputed, blockProps } from "@/lib/blockable";
 
 export default {
   extends: Blockable,
   name: "NotionCode",
   components: { PrismComponent },
+  props: { ...blockProps, overrideLang: String, overrideLangClass: String },
   data() {
     return { Prism };
   },
   computed: {
     ...blockComputed,
     lang() {
-      return this.properties?.language?.[0]?.[0]?.toLowerCase();
+      return (
+        this.overrideLang || this.properties?.language?.[0]?.[0]?.toLowerCase()
+      );
     },
     langClass() {
-      return `language-${this.lang}`;
+      return this.overrideLangClass || `language-${this.lang}`;
     },
     supported() {
       return this.Prism.languages[this.lang];

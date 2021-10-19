@@ -9,6 +9,7 @@
   <NotionBookmark v-else-if="isType('bookmark')" v-bind="pass" />
   <NotionCallout v-else-if="isType('callout')" v-bind="pass" />
   <NotionCode v-else-if="isType('code')" v-bind="pass" />
+  <NotionEquation v-else-if="isType('equation')" v-bind="pass" />
   <NotionText v-else-if="isType('text')" v-bind="pass" />
   <NotionQuote v-else-if="isType('quote')" v-bind="pass" />
   <NotionToggle v-else-if="isType('toggle')" v-bind="pass">
@@ -49,6 +50,7 @@ import NotionHeader from "@/blocks/header";
 import NotionText from "@/blocks/text";
 import NotionToggle from "@/blocks/toggle";
 import NotionQuote from "@/blocks/quote";
+import NotionEquation from "@/blocks/equation";
 
 export default {
   extends: Blockable,
@@ -65,6 +67,7 @@ export default {
     NotionText,
     NotionToggle,
     NotionQuote,
+    NotionEquation,
   },
 };
 </script>
