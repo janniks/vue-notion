@@ -158,6 +158,7 @@ List of pages that are using this library.
 - [StorePreviewer](https://www.storepreviewer.com) — Preview and optimize your app store presence
 - [Dominik Sobe's Personal Site](https://dominiksobe.com/)
 - [Bersihin Tech](https://tech.bersihin.co/)
+- [Wisata Diary](https://wisatabook.com/diary)
 - _...if you're using `vue-notion`, we'd be happy to feature you here_
 
 ## Supported Blocks
