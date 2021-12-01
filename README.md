@@ -159,6 +159,7 @@ List of pages that are using this library.
 - [Dominik Sobe's Personal Site](https://dominiksobe.com/)
 - [Bersihin Tech](https://tech.bersihin.co/)
 - [Wisata Diary](https://wisatabook.com/diary)
+- [AymaneMx's Blog](https://aymanemx.com/posts/)
 - _...if you're using `vue-notion`, we'd be happy to feature you here_
 
 ## Supported Blocks
