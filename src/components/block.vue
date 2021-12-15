@@ -4,7 +4,10 @@
       <slot />
     </NotionPage>
   </div>
-  <NotionHeader v-else-if="isType(['header', 'sub_header', 'sub_sub_header'])" v-bind="pass" />
+  <NotionHeader
+    v-else-if="isType(['header', 'sub_header', 'sub_sub_header'])"
+    v-bind="pass"
+  />
   <NotionBookmark v-else-if="isType('bookmark')" v-bind="pass" />
   <NotionCallout v-else-if="isType('callout')" v-bind="pass" />
   <NotionCode v-else-if="isType('code')" v-bind="pass" />
@@ -21,10 +24,16 @@
   <NotionColumn v-else-if="isType('column')" :format="format">
     <slot />
   </NotionColumn>
-  <NotionList v-else-if="isType(['bulleted_list', 'numbered_list'])" v-bind="pass">
+  <NotionList
+    v-else-if="isType(['bulleted_list', 'numbered_list'])"
+    v-bind="pass"
+  >
     <slot />
   </NotionList>
-  <NotionFigure v-else-if="isType(['image', 'embed', 'figma', 'video'])" v-bind="pass" />
+  <NotionFigure
+    v-else-if="isType(['image', 'embed', 'figma', 'video'])"
+    v-bind="pass"
+  />
   <hr v-else-if="isType('divider')" class="notion-hr" />
   <div v-else-if="todo && visible">
     todo: {{ type }}
