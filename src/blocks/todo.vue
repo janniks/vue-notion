@@ -1,6 +1,11 @@
 <template>
   <div>
-    <input type="checkbox" :value="title" :checked="!!properties.checked" disabled="disabled" />
+    <input
+      type="checkbox"
+      :value="title"
+      :checked="!!properties.checked"
+      disabled="disabled"
+    />
     <label>
       <NotionTextRenderer :text="title" v-bind="pass" />
     </label>
@@ -15,7 +20,7 @@ export default {
   extends: Blockable,
   name: "NotionTodo",
   components: {
-    NotionTextRenderer
+    NotionTextRenderer,
   },
-}
+};
 </script>
