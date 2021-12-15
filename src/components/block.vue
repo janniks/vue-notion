@@ -1,6 +1,8 @@
 <template>
   <div v-if="isType('page')">
-    <NotionPage v-bind="pass"><slot /></NotionPage>
+    <NotionPage v-bind="pass">
+      <slot />
+    </NotionPage>
   </div>
   <NotionHeader
     v-else-if="isType(['header', 'sub_header', 'sub_sub_header'])"
@@ -12,6 +14,7 @@
   <NotionEquation v-else-if="isType('equation')" v-bind="pass" />
   <NotionText v-else-if="isType('text')" v-bind="pass" />
   <NotionQuote v-else-if="isType('quote')" v-bind="pass" />
+  <NotionTodo v-else-if="isType('to_do')" v-bind="pass" />
   <NotionToggle v-else-if="isType('toggle')" v-bind="pass">
     <slot />
   </NotionToggle>
@@ -32,7 +35,10 @@
     v-bind="pass"
   />
   <hr v-else-if="isType('divider')" class="notion-hr" />
-  <div v-else-if="todo && visible">todo: {{ type }}<slot /></div>
+  <div v-else-if="todo && visible">
+    todo: {{ type }}
+    <slot />
+  </div>
   <!-- todo: maybe add message on !production if block type unsupported -->
   <!-- <div v-else-if="visible"><slot /></div> -->
 </template>
@@ -51,6 +57,7 @@ import NotionText from "@/blocks/text";
 import NotionToggle from "@/blocks/toggle";
 import NotionQuote from "@/blocks/quote";
 import NotionEquation from "@/blocks/equation";
+import NotionTodo from "@/blocks/todo";
 
 export default {
   extends: Blockable,
@@ -68,6 +75,7 @@ export default {
     NotionToggle,
     NotionQuote,
     NotionEquation,
+    NotionTodo,
   },
 };
 </script>

@@ -187,8 +187,8 @@ Most common block types are supported. We happily accept pull requests to add su
 | Page Links        | ✅ Yes         |                        |
 | Cover             | ✅ Yes         | Enable with `fullPage` |
 | Equations         | ✅ Yes         |                        |
+| Checkbox          | ✅ Yes         |                        |
 | Databases         | ❌ Not planned |                        |
-| Checkbox          | ❌ Not planned |                        |
 | Table Of Contents | ❌ Not planned |                        |
 
 Please, feel free to [open an issue](https://github.com/janniks/vue-notion/issues/new) if you notice any important blocks missing or anything wrong with existing blocks.
