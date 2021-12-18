@@ -4,6 +4,7 @@
     :pageLinkOptions="pageLinkOptions"
     fullPage
     prism
+    katex
   />
 </template>
 
@@ -18,7 +19,9 @@ export default {
     };
   },
   async asyncData({ $notion, params, error }) {
-    const pageTable = await $notion.getPageTable("10327f9074b7433aad577ccd0020e971");
+    const pageTable = await $notion.getPageTable(
+      "10327f9074b7433aad577ccd0020e971"
+    );
     const page = pageTable.find(
       (item) => item.published && item.slug === params.slug
     );

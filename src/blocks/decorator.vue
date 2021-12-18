@@ -55,10 +55,13 @@
     <NotionDecorator :content="nextContent" v-bind="pass" />
   </s>
   <component
-    v-else-if="decoratorKey === 'e'"
+    v-else-if="decoratorKey === 'e' && katex"
     :is="'katex-element'"
     :expression="decoratorValue"
   />
+  <code v-else-if="decoratorKey === 'e'" class="notion-inline-code">
+    {{ decoratorValue }}
+  </code>
   <NotionDecorator v-else :content="nextContent" v-bind="pass" />
 </template>
 

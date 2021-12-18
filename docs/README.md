@@ -23,6 +23,7 @@ The `NotionRenderer` component offers a few properties
 - [`pageLinkOptions`](#pageLinkOptions) – default: `undefined`
 - [`pageLinkTarget`](#pageLinkTarget) – default: `"_self"`
 - [`prism`](#prism) – default: `false`
+- [`katex`](#katex) – default: `false`
 - [`textLinkTarget`](#textLinkTarget) – default: `"_blank"`
 
 ### `blockMap`: Object
@@ -94,6 +95,12 @@ pageLinkOptions: {
 
 > Check the `docs#syntax-highlighting` section below for more details.
 
+### `katex`: Boolean
+
+– whether or not latex rendering using vue-katex should be activated.
+
+> Check the `docs#equations` section below for more details.
+
 ### `textLinkTarget`: String
 
 – the [target attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target) of links
@@ -141,6 +148,13 @@ import VueKatex from "vue-katex";
 Vue.use(VueKatex);
 ```
 
+- Add the `katex` flag to the `NotionRenderer`
+
+```diff
+-<NotionRenderer :blockMap="blockMap" />
++<NotionRenderer :blockMap="blockMap" katex />
+```
+
 > For usage with Nuxt, look at the `/example` (`plugins` in `nuxt.config.js`, `plugins/vue-katex.js`)
 
 ## Notion API
@@ -155,8 +169,8 @@ Since, the endpoint is rate limited, please consider hosting your own instance (
 A custom endpoint URL can be passed to the methods as a second argument:
 
 ```js
-const blockMap = await getPageBlocks("PAGE_ID", "ENDPOINT_URL");
-const pageTable = await getPageTable("PAGE_ID", "ENDPOINT_URL");
+const blockMap = await getPageBlocks("PAGE_ID", "optional ENDPOINT_URL");
+const pageTable = await getPageTable("PAGE_ID", "optional ENDPOINT_URL");
 ```
 
 > Feel free to open an issue if something is unclear or additional documentation is needed...

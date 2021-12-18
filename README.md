@@ -35,7 +35,7 @@
 A Vue renderer for Notion pages.
 Use Notion as CMS for your blog, documentation or personal site.
 
-vue-notion was ported to Vue from [react-notion](https://github.com/splitbee/react-notion) (developed by [Splitbee 🐝](https://splitbee.io/) – a fast, reliable, free, and modern analytics for any team)
+Also check out [react-notion](https://github.com/splitbee/react-notion) (developed by [Splitbee 🐝](https://splitbee.io/) – a fast, reliable, free, and modern analytics for any team)
 
 This package doesn't handle the communication with the API. Check out [notion-api-worker](https://github.com/splitbee/notion-api-worker) from [Splitbee](https://splitbee.io/) for an easy solution.
 
@@ -150,16 +150,16 @@ export default {
 </style>
 ```
 
-## Issues & Roadmap
-
-[Add issues](https://github.com/janniks/vue-notion/issues/new) and request features that you want to see implemented next!
-
-## Sites using vue-notion
+## Sites using vue-notion 🌎
 
 List of pages that are using this library.
 
+- [HelpKit](https://www.helpkit.so) — Build Knowledge Bases in Notion
 - [StorePreviewer](https://www.storepreviewer.com) — Preview and optimize your app store presence
 - [Dominik Sobe's Personal Site](https://dominiksobe.com/)
+- [Bersihin Tech](https://tech.bersihin.co/)
+- [Wisata Diary](https://wisatabook.com/diary)
+- [AymaneMx's Blog](https://aymanemx.com/posts/)
 - _...if you're using `vue-notion`, we'd be happy to feature you here_
 
 ## Supported Blocks
@@ -187,8 +187,8 @@ Most common block types are supported. We happily accept pull requests to add su
 | Page Links        | ✅ Yes         |                        |
 | Cover             | ✅ Yes         | Enable with `fullPage` |
 | Equations         | ✅ Yes         |                        |
+| Checkbox          | ✅ Yes         |                        |
 | Databases         | ❌ Not planned |                        |
-| Checkbox          | ❌ Not planned |                        |
 | Table Of Contents | ❌ Not planned |                        |
 
 Please, feel free to [open an issue](https://github.com/janniks/vue-notion/issues/new) if you notice any important blocks missing or anything wrong with existing blocks.
