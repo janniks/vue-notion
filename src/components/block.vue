@@ -27,9 +27,10 @@
     <slot />
   </NotionList>
   <NotionFigure
-    v-else-if="isType(['image', 'embed', 'figma', 'video'])"
+    v-else-if="isType(['image', 'embed', 'figma', 'video', 'audio'])"
     v-bind="pass"
   />
+  <NotionTable v-else-if="isType('table')" v-bind="pass" />
   <hr v-else-if="isType('divider')" class="notion-hr" />
   <div v-else-if="todo && visible">todo: {{ type }}<slot /></div>
   <!-- todo: maybe add message on !production if block type unsupported -->
@@ -37,22 +38,23 @@
 </template>
 
 <script>
-import Blockable from "@/lib/blockable";
-import NotionBookmark from "@/blocks/bookmark";
-import NotionCallout from "@/blocks/callout";
-import NotionCode from "@/blocks/code";
-import NotionColumn from "@/blocks/column";
-import NotionFigure from "@/blocks/helpers/figure";
-import NotionList from "@/blocks/list";
-import NotionPage from "@/blocks/page";
-import NotionHeader from "@/blocks/header";
-import NotionText from "@/blocks/text";
-import NotionToggle from "@/blocks/toggle";
-import NotionQuote from "@/blocks/quote";
+import Blockable from '@/lib/blockable'
+import NotionBookmark from '@/blocks/bookmark'
+import NotionCallout from '@/blocks/callout'
+import NotionCode from '@/blocks/code'
+import NotionColumn from '@/blocks/column'
+import NotionFigure from '@/blocks/helpers/figure'
+import NotionList from '@/blocks/list'
+import NotionPage from '@/blocks/page'
+import NotionHeader from '@/blocks/header'
+import NotionText from '@/blocks/text'
+import NotionToggle from '@/blocks/toggle'
+import NotionQuote from '@/blocks/quote'
+import NotionTable from '@/blocks/table'
 
 export default {
   extends: Blockable,
-  name: "NotionBlock",
+  name: 'NotionBlock',
   components: {
     NotionBookmark,
     NotionCallout,
@@ -65,6 +67,7 @@ export default {
     NotionText,
     NotionToggle,
     NotionQuote,
+    NotionTable,
   },
-};
+}
 </script>
