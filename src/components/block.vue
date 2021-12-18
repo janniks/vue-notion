@@ -59,11 +59,11 @@ import NotionToggle from "@/blocks/toggle";
 import NotionQuote from "@/blocks/quote";
 import NotionEquation from "@/blocks/equation";
 import NotionTodo from "@/blocks/todo";
-import NotionTable from '@/blocks/table'
+import NotionTable from "@/blocks/table";
 
 export default {
   extends: Blockable,
-  name: 'NotionBlock',
+  name: "NotionBlock",
   components: {
     NotionBookmark,
     NotionCallout,
@@ -80,5 +80,5 @@ export default {
     NotionEquation,
     NotionTodo,
   },
-}
+};
 </script>
