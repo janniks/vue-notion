@@ -31,9 +31,10 @@
     <slot />
   </NotionList>
   <NotionFigure
-    v-else-if="isType(['image', 'embed', 'figma', 'video'])"
+    v-else-if="isType(['image', 'embed', 'figma', 'video', 'audio'])"
     v-bind="pass"
   />
+  <NotionTable v-else-if="isType('table')" v-bind="pass" />
   <hr v-else-if="isType('divider')" class="notion-hr" />
   <div v-else-if="todo && visible">
     todo: {{ type }}
@@ -58,6 +59,7 @@ import NotionToggle from "@/blocks/toggle";
 import NotionQuote from "@/blocks/quote";
 import NotionEquation from "@/blocks/equation";
 import NotionTodo from "@/blocks/todo";
+import NotionTable from "@/blocks/table";
 
 export default {
   extends: Blockable,
@@ -74,6 +76,7 @@ export default {
     NotionText,
     NotionToggle,
     NotionQuote,
+    NotionTable,
     NotionEquation,
     NotionTodo,
   },

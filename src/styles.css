@@ -686,3 +686,31 @@ img.notion-nav-icon {
   margin: 0 2px;
   color: rgba(55, 53, 47, 0.4);
 }
+
+.notion-simple-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.notion-simple-table-data {
+  color: inherit;
+  fill: inherit;
+  border: 1px solid rgb(233, 233, 231);
+  position: relative;
+  vertical-align: top;
+  min-width: 178px;
+  max-width: 178px;
+  min-height: 32px;
+}
+
+.notion-simple-table-cell-text {
+  max-width: 100%;
+  width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+  caret-color: transparent;
+  padding: 7px 9px;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 20px;
+}
