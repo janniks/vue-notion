@@ -188,6 +188,7 @@ Most common block types are supported. We happily accept pull requests to add su
 | Cover             | ✅ Yes         | Enable with `fullPage` |
 | Equations         | ✅ Yes         |                        |
 | Checkbox          | ✅ Yes         |                        |
+| Simple Tables     | ✅ Yes         |                        |
 | Databases         | ❌ Not planned |                        |
 | Table Of Contents | ❌ Not planned |                        |
 
