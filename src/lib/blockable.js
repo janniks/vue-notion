@@ -3,6 +3,7 @@ import { getTextContent } from "@/lib/utils";
 export const blockProps = {
   blockMap: { type: Object, required: true },
   contentId: { type: String, required: false },
+  contentIndex: { type: Number, default: 0 },
   embedAllow: { type: String, default: "fullscreen" },
   fullPage: { type: Boolean, default: false },
   hideList: { type: Array, default: () => [] },
@@ -23,6 +24,7 @@ export const blockComputed = {
     return {
       blockMap: this.blockMap,
       contentId: this.contentId,
+      contentIndex: this.contentIndex,
       embedAllow: this.embedAllow,
       fullPage: this.fullPage,
       hideList: this.hideList,
@@ -83,6 +85,9 @@ export const blockComputed = {
   },
   hasPageLinkOptions() {
     return this.pageLinkOptions?.component && this.pageLinkOptions?.href;
+  },
+  parent() {
+    return this.blockMap[this.value?.parent_id];
   },
 };
 

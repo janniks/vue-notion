@@ -714,3 +714,8 @@ img.notion-nav-icon {
   font-size: 14px;
   line-height: 20px;
 }
+
+.notion-simple-table-header {
+  background: rgb(247, 246, 243);
+  font-weight: 500;
+}
