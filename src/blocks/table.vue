@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="notion-simple-table-wrapper">
     <table class="notion-simple-table">
       <tbody>
         <slot />
