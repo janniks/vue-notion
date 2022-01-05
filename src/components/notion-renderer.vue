@@ -1,11 +1,12 @@
 <template>
   <NotionBlock v-bind="pass" v-if="blockMap && value">
     <NotionRenderer
-      v-for="contentId in value.content"
-      :key="contentId"
+      v-for="(contentId, contentIndex) in value.content"
       v-bind="pass"
+      :key="contentId"
       :level="level + 1"
       :content-id="contentId"
+      :content-index="contentIndex"
     />
   </NotionBlock>
 </template>
@@ -25,6 +26,7 @@ export default {
   props: {
     blockMap: [Object],
     contentId: String,
+    contentIndex: { type: Number, default: 0 },
     fullPage: { type: Boolean, default: false },
     hideList: { type: Array, default: () => [] },
     level: { type: Number, default: 0 },

@@ -34,7 +34,8 @@
     v-else-if="isType(['image', 'embed', 'figma', 'video', 'audio'])"
     v-bind="pass"
   />
-  <NotionTable v-else-if="isType('table')" v-bind="pass" />
+  <NotionTable v-else-if="isType('table')" v-bind="pass"><slot /></NotionTable>
+  <NotionTableRow v-else-if="isType('table_row')" v-bind="pass" />
   <hr v-else-if="isType('divider')" class="notion-hr" />
   <div v-else-if="todo && visible">
     todo: {{ type }}
@@ -50,16 +51,17 @@ import NotionBookmark from "@/blocks/bookmark";
 import NotionCallout from "@/blocks/callout";
 import NotionCode from "@/blocks/code";
 import NotionColumn from "@/blocks/column";
+import NotionEquation from "@/blocks/equation";
 import NotionFigure from "@/blocks/helpers/figure";
+import NotionHeader from "@/blocks/header";
 import NotionList from "@/blocks/list";
 import NotionPage from "@/blocks/page";
-import NotionHeader from "@/blocks/header";
-import NotionText from "@/blocks/text";
-import NotionToggle from "@/blocks/toggle";
 import NotionQuote from "@/blocks/quote";
-import NotionEquation from "@/blocks/equation";
-import NotionTodo from "@/blocks/todo";
 import NotionTable from "@/blocks/table";
+import NotionTableRow from "@/blocks/table-row";
+import NotionText from "@/blocks/text";
+import NotionTodo from "@/blocks/todo";
+import NotionToggle from "@/blocks/toggle";
 
 export default {
   extends: Blockable,
@@ -69,16 +71,17 @@ export default {
     NotionCallout,
     NotionCode,
     NotionColumn,
+    NotionEquation,
     NotionFigure,
+    NotionHeader,
     NotionList,
     NotionPage,
-    NotionHeader,
-    NotionText,
-    NotionToggle,
     NotionQuote,
     NotionTable,
-    NotionEquation,
+    NotionTableRow,
+    NotionText,
     NotionTodo,
+    NotionToggle,
   },
 };
 </script>
