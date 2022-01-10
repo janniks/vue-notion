@@ -1,24 +1,22 @@
 <template>
-  <div>
-    <div class="inline-flex notion-todo">
-      <template>
-        <svg v-if="isChecked" class="checked" viewBox="0 0 14 14">
-          <polygon
-            points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
-          ></polygon>
-        </svg>
+  <div class="flex notion-todo">
+    <template>
+      <svg v-if="isChecked" class="checked" viewBox="0 0 14 14">
+        <polygon
+          points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+        ></polygon>
+      </svg>
 
-        <svg v-else viewBox="0 0 16 16">
-          <path
-            d="M1.5,1.5 L1.5,14.5 L14.5,14.5 L14.5,1.5 L1.5,1.5 Z M0,0 L16,0 L16,16 L0,16 L0,0 Z"
-          ></path>
-        </svg>
-      </template>
+      <svg v-else viewBox="0 0 16 16">
+        <path
+          d="M1.5,1.5 L1.5,14.5 L14.5,14.5 L14.5,1.5 L1.5,1.5 Z M0,0 L16,0 L16,16 L0,16 L0,0 Z"
+        ></path>
+      </svg>
+    </template>
 
-      <label :class="isChecked && 'strikethrough'">
-        <NotionTextRenderer :text="title" v-bind="pass" />
-      </label>
-    </div>
+    <label :class="isChecked && 'strikethrough'">
+      <NotionTextRenderer :text="title" v-bind="pass" />
+    </label>
   </div>
 </template>
 
@@ -42,12 +40,13 @@ export default {
 
 <style scoped>
 /* Flexbox */
-.inline-flex {
-  display: inline-flex;
-  align-items: center;
+.flex {
+  display: flex;
+  align-items: baseline;
 }
 
-.inline-flex svg {
+.flex svg {
+  flex-shrink: 0;
   margin-right: 0.5rem;
 }
 
