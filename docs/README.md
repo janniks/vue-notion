@@ -89,6 +89,17 @@ pageLinkOptions: {
 
 – the [target attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target) of links referencing other pages (skipped for pages with `pageLinkeOptions`)
 
+### `imageOptions`: Object
+
+– this Object can be use to specify a custom Vue component you want to use to render pictures. Any other key in this object will spread as element attributes
+
+```js
+imageOptions: {
+  component: "LazyLoadImage",
+  attribute: "vue-notion-attr"
+}
+```
+
 ### `prism`: Boolean
 
 – whether or not syntax-highlighting using Prims.js should be activated.

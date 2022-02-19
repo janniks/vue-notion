@@ -33,6 +33,7 @@ export default {
     mapImageUrl: { type: Function, default: defaultMapImageUrl },
     mapPageUrl: { type: Function, default: defaultMapPageUrl },
     pageLinkOptions: Object,
+    imageOptions: Object,
     prism: { type: Boolean, default: false },
     todo: { type: Boolean, default: false },
   },
