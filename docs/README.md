@@ -18,6 +18,7 @@ The `NotionRenderer` component offers a few properties
 - [`embedAllow`](#embedAllow) – default: `"fullscreen"`
 - [`fullPage`](#fullPage) – default: `false`
 - [`hideList`](#hideList) – default: `[]`
+- [`imageOptions`](#imageOptions) – default: `undefined`
 - [`mapImageUrl`](#mapImageUrl) – default: `defaultMapImageUrl()`
 - [`mapPageUrl`](#mapPageUrl) – default: `defaultMapPageUrl()`
 - [`pageLinkOptions`](#pageLinkOptions) – default: `undefined`
@@ -50,6 +51,23 @@ The default allows embeds to enter fullscreen.
 
 – a list of Notion blocks (e.g. `"callout"`) that should not be rendered.
 
+### `imageOptions`: Object
+
+– are used to override default image rendering.
+`imageOptions` is an `Object` that requires a `component` parameter.
+The `src` attribute is optional and defaults to `src`.
+Any additional key value pairs are spread onto the component as element attributes.
+
+e.g. to use `nuxt-img` components instead of HTML `img` elements
+
+```js
+imageOptions: {
+  component: "nuxt-img",
+  "some-attribute": "vue-notion-attr",
+  // src: 'src', // (default) can be overridden to customize the key of the `src` attribute
+}
+```
+
 ### `mapImageUrl`: Function
 
 – a function that receives `(imageUrl: String, block: Object)` and returns a `url: String` that should be used during rendering.
@@ -74,7 +92,8 @@ mapPageUrl(pageId = "") {
 ### `pageLinkOptions`: Object
 
 – are used to override links to other Notion pages with custom Vue components.
-`pageLinkOptions` is an `Object` that requires a `component` and a `href` parameter.
+`pageLinkOptions` is an `Object` that requires a `component` parameter.
+The `href` attribute is optional and defaults to `href`.
 
 e.g., to use `NuxtLink` components instead of HTML `a` elements
 
@@ -88,17 +107,6 @@ pageLinkOptions: {
 ### `pageLinkTarget`: String
 
 – the [target attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target) of links referencing other pages (skipped for pages with `pageLinkeOptions`)
-
-### `imageOptions`: Object
-
-– this Object can be use to specify a custom Vue component you want to use to render pictures. Any other key in this object will spread as element attributes
-
-```js
-imageOptions: {
-  component: "LazyLoadImage",
-  attribute: "vue-notion-attr"
-}
-```
 
 ### `prism`: Boolean
 
@@ -201,7 +209,7 @@ There are a few required steps to allow Nuxt to work with vue-notion
 // nuxt.config.js
 export default {
   // ...
-  buildModules: ["vue-notion/nuxt"],
+  buildModules: ["vue-notion/nuxt"]
 };
 ```
 

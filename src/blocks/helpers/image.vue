@@ -1,31 +1,45 @@
 <template>
   <div v-if="f.block_aspect_ratio" :style="style">
-    <component v-if="hasImageComponent" :is="imageOptions.component" class="notion-image-inset" :alt="alt || 'Notion image'" :src="src" v-bind="attrs"/>
-    <img v-else class="notion-image-inset" :alt="alt || 'Notion image'" :src="src" v-bind="attrs" />
+    <component
+      v-if="hasImageComponent"
+      :is="imageOptions.component"
+      class="notion-image-inset"
+      :alt="alt || 'Notion image'"
+      v-bind="imageProps"
+    />
+    <img
+      v-else
+      class="notion-image-inset"
+      :alt="alt || 'Notion image'"
+      v-bind="imageProps"
+    />
   </div>
-  <component v-else-if="hasImageComponent" :is="imageOptions.component" :alt="alt || 'Notion image'" :src="src" v-bind="attrs" />
-  <img v-else :alt="caption" :src="src" v-bind="attrs" />
+  <component
+    v-else-if="hasImageComponent"
+    :is="imageOptions.component"
+    :alt="alt || 'Notion image'"
+    v-bind="imageProps"
+  />
+  <img v-else :alt="alt" v-bind="imageProps" />
 </template>
 
 <script>
-import Blockable from "@/lib/blockable";
+import Blockable, { blockComputed } from "@/lib/blockable";
 
 export default {
   extends: Blockable,
   name: "NotionImage",
   computed: {
-    alt() {
-      return this.caption?.[0][0];
-    },
-    src() {
-      return this.mapImageUrl(this.properties?.source[0][0], this.block);
-    },
-    attrs() {
-      const {component, ...attrs} = this.imageOptions || {}
-      return attrs;  
-    },
+    ...blockComputed,
     hasImageComponent() {
       return !!this.imageOptions?.component;
+    },
+    imageProps() {
+      const { component, ...attrs } = this.imageOptions || {};
+      return {
+        ...attrs,
+        [this.imageOptions?.src || "src"]: this.src,
+      };
     },
     style() {
       const aspectRatio =
