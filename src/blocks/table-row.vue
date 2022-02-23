@@ -38,7 +38,8 @@ export default {
   },
   methods: {
     cell(columnId) {
-      return this.properties[columnId];
+      // return empty notion decorated text if row is empty
+      return this?.properties?.[columnId] ?? [[" ", false]];
     },
     isHeader(columnIndex) {
       return (
