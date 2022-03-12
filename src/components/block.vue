@@ -39,6 +39,9 @@
     v-else-if="isType('transclusion_reference')"
     v-bind="pass"
   />
+  <div v-else-if="isType('transclusion_container')" class="notion-sync-block">
+    <slot />
+  </div>
   <hr v-else-if="isType('divider')" class="notion-hr" />
   <div v-else-if="todo && visible">
     todo: {{ type }}
