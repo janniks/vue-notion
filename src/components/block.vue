@@ -35,9 +35,14 @@
     v-bind="pass"
   />
   <NotionTable v-else-if="isType('table')" v-bind="pass" />
+  <NotionSyncPointer
+    v-else-if="isType('transclusion_reference')"
+    v-bind="pass"
+  />
   <hr v-else-if="isType('divider')" class="notion-hr" />
   <div v-else-if="todo && visible">
     todo: {{ type }}
+
     <slot />
   </div>
   <!-- todo: maybe add message on !production if block type unsupported -->
@@ -59,11 +64,12 @@ import NotionToggle from "@/blocks/toggle";
 import NotionQuote from "@/blocks/quote";
 import NotionEquation from "@/blocks/equation";
 import NotionTodo from "@/blocks/todo";
-import NotionTable from '@/blocks/table'
+import NotionTable from "@/blocks/table";
+import NotionSyncPointer from "@/blocks/sync-pointer";
 
 export default {
   extends: Blockable,
-  name: 'NotionBlock',
+  name: "NotionBlock",
   components: {
     NotionBookmark,
     NotionCallout,
@@ -78,7 +84,8 @@ export default {
     NotionQuote,
     NotionTable,
     NotionEquation,
+    NotionSyncPointer,
     NotionTodo,
   },
-}
+};
 </script>
