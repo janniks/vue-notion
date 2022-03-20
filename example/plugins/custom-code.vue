@@ -1,9 +1,9 @@
 <template>
   <pre
+    :class="['notion-code', langClass]"
     :style="{
       border: '3px solid tomato',
     }"
-    :class="['notion-code', langClass]"
   >
     <PrismComponent v-if="prism && supported" :language="lang">{{ properties.title[0][0] }}</PrismComponent>
     <code v-else :class="langClass">{{ properties.title[0][0] }}</code>
