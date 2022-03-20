@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
-    "example": "npm run example:install && cd example && npm run build && npm start",
+    "example": "npm run example:generate && cd example && npm start",
     "example:install": "npm pack && cd example && npm install && npm install ../*.tgz",
     "example:generate": "npm run example:install && cd example && npm run build && npm run generate",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
