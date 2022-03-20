@@ -29,6 +29,8 @@ if ("false" === process.env.ES_BUILD) {
     GlobalVue.use(plugin);
   }
 }
+// Default export is library as a whole, registered via Vue.use()
+export default plugin;
 
 // To allow individual component use, export components
 // each can be registered via Vue.component()
@@ -38,8 +40,5 @@ export * from "@/components/index";
 export * from "@/lib/api";
 export * from "@/lib/blockable";
 export * from "@/lib/utils";
-
-// Default export is library as a whole, registered via Vue.use()
-export default plugin;
 
 // todo: remove .esm from default packaging for cleaner imports

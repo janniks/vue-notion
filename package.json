@@ -15,8 +15,9 @@
   ],
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
-    "example": "nuxt example",
-    "example:pack": "npm pack && cd example && npm install && npm install ../*.tgz && npm run build && npm run generate",
+    "example": "npm run example:pack && cd example && npm run build && npm start",
+    "example:pack": "npm run build && npm pack && cd example && npm install && npm install ../*.tgz",
+    "example:generate": "npm run example:pack && cd example && npm run build && npm run generate",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
