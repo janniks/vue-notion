@@ -14,6 +14,7 @@
 The `NotionRenderer` component offers a few properties
 
 - [`blockMap`](#blockMap) – required
+- [`blockOverrides`](#blockOverrides) – default: `{}`
 - [`contentId`](#contentId) – default: `undefined`
 - [`embedAllow`](#embedAllow) – default: `"fullscreen"`
 - [`fullPage`](#fullPage) – default: `false`
@@ -31,6 +32,19 @@ The `NotionRenderer` component offers a few properties
 
 – the blocks part of a Notion API response.
 A list of blocks by their id that may contain contents and properties.
+
+### `blockOverrides`: Object
+
+– the Notion blocks that should be overriden by custom registered Vue components.
+A key-value pair Object of Notion block names to Vue component names.
+
+e.g. to use a custom `code` component—after registering the `CustomCode` Vue component—add the following override, as seen in the `/example`
+
+```js
+blockOverrides: {
+  code: "CustomCode",
+}
+```
 
 ### `contentId`: String
 
