@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import Blockable, { blockComputed } from "@/lib/blockable";
+import { Blockable, blockComputed } from "@/lib/blockable";
 import NotionNestedList from "@/blocks/helpers/nested-list";
 import NotionTextRenderer from "@/blocks/helpers/text-renderer";
 

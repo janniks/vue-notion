@@ -12,7 +12,7 @@
 <script>
 import Prism from "prismjs";
 import PrismComponent from "vue-prism-component";
-import Blockable, { blockComputed, blockProps } from "@/lib/blockable";
+import { Blockable, blockComputed, blockProps } from "@/lib/blockable";
 
 export default {
   extends: Blockable,

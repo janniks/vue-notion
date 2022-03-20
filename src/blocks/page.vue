@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import Blockable, { blockComputed } from "@/lib/blockable";
+import { Blockable, blockComputed } from "@/lib/blockable";
 import NotionPageHeader from "@/blocks/helpers/page-header";
 import NotionPageIcon from "@/blocks/helpers/page-icon";
 import NotionTextRenderer from "@/blocks/helpers/text-renderer";

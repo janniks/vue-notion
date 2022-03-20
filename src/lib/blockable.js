@@ -2,6 +2,7 @@ import { getTextContent } from "@/lib/utils";
 
 export const blockProps = {
   blockMap: { type: Object, required: true },
+  blockOverrides: { type: Object, default: () => ({}) },
   contentId: { type: String, required: false },
   contentIndex: { type: Number, default: 0 },
   embedAllow: { type: String, default: "fullscreen" },
@@ -24,6 +25,7 @@ export const blockComputed = {
     // todo: make this more dynamic by iterating over blockProps attributes
     return {
       blockMap: this.blockMap,
+      blockOverrides: this.blockOverrides,
       contentId: this.contentId,
       contentIndex: this.contentIndex,
       embedAllow: this.embedAllow,
@@ -99,7 +101,7 @@ export const blockComputed = {
   }
 };
 
-export default {
+export const Blockable = {
   props: blockProps,
   computed: blockComputed,
   methods: {

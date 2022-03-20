@@ -1,5 +1,10 @@
 <template>
-  <div v-if="isType('page')">
+  <component
+    v-if="blockOverrides.hasOwnProperty(type)"
+    :is="blockOverrides[type]"
+    v-bind="pass"
+  />
+  <div v-else-if="isType('page')">
     <NotionPage v-bind="pass">
       <slot />
     </NotionPage>
@@ -46,7 +51,8 @@
 </template>
 
 <script>
-import Blockable from "@/lib/blockable";
+import { Blockable } from "@/lib/blockable";
+
 import NotionBookmark from "@/blocks/bookmark";
 import NotionCallout from "@/blocks/callout";
 import NotionCode from "@/blocks/code";
