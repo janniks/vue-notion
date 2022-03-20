@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Blockable from "@/lib/blockable";
+import { Blockable } from "@/lib/blockable";
 import NotionTextRenderer from "@/blocks/helpers/text-renderer";
 
 export default {

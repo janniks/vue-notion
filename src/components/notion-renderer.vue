@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Blockable from "@/lib/blockable";
+import { Blockable } from "@/lib/blockable";
 import NotionBlock from "@/components/block";
 
 import { defaultMapImageUrl, defaultMapPageUrl } from "@/lib/utils";

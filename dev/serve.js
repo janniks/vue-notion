@@ -8,5 +8,5 @@ Vue.use(VueKatex);
 Vue.config.productionTip = false;
 
 new Vue({
-  render: (h) => h(Dev),
+  render: h => h(Dev)
 }).$mount("#app");

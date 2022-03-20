@@ -1,6 +1,7 @@
 <template>
   <NotionRenderer
     :blockMap="blockMap"
+    :blockOverrides="blockOverrides"
     :pageLinkOptions="pageLinkOptions"
     fullPage
     prism
@@ -15,6 +16,7 @@ import "prismjs/themes/prism.css";
 export default {
   data() {
     return {
+      blockOverrides: { code: "CustomCode" },
       pageLinkOptions: { component: "NuxtLink", href: "to" },
     };
   },

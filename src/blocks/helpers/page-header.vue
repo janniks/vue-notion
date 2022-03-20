@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Blockable from "@/lib/blockable";
+import { Blockable } from "@/lib/blockable";
 import Decorator from "@/blocks/decorator";
 
 export default {

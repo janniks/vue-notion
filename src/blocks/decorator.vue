@@ -66,7 +66,7 @@
 </template>
 
 <script>
-import Blockable, { blockProps } from "@/lib/blockable";
+import { Blockable, blockProps } from "@/lib/blockable";
 
 export default {
   extends: Blockable,
