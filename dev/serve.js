@@ -2,6 +2,7 @@ import Vue from "vue";
 import Dev from "./serve.vue";
 
 import VueKatex from "vue-katex";
+import { NotionRenderer } from "../src/components";
 
 Vue.use(VueKatex);
 
