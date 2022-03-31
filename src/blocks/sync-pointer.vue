@@ -1,5 +1,9 @@
 <template>
-  <NotionRenderer :blockMap="blockMap" :contentId="referencePointerId" />
+  <NotionRenderer
+    v-bind="pass"
+    :blockMap="blockMap"
+    :contentId="referencePointerId"
+  />
 </template>
 
 <script>
@@ -8,9 +12,6 @@ import Blockable, { blockComputed } from "@/lib/blockable";
 export default {
   extends: Blockable,
   name: "NotionSyncPointer",
-  components: {
-    NotionRenderer: () => import("../components/notion-renderer.vue"),
-  },
   computed: {
     ...blockComputed,
     referencePointerId() {
@@ -19,5 +20,3 @@ export default {
   },
 };
 </script>
-
-
