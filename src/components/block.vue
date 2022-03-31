@@ -70,12 +70,11 @@ import NotionHeader from "@/blocks/header";
 import NotionList from "@/blocks/list";
 import NotionPage from "@/blocks/page";
 import NotionQuote from "@/blocks/quote";
+import NotionSyncPointer from "@/blocks/sync-pointer";
 import NotionTable from "@/blocks/table";
 import NotionTableRow from "@/blocks/table-row";
 import NotionText from "@/blocks/text";
 import NotionTodo from "@/blocks/todo";
-import NotionTable from "@/blocks/table";
-import NotionSyncPointer from "@/blocks/sync-pointer";
 import NotionToggle from "@/blocks/toggle";
 
 export default {
