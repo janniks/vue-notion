@@ -2,19 +2,22 @@ import { getTextContent } from "@/lib/utils";
 
 export const blockProps = {
   blockMap: { type: Object, required: true },
+  blockOverrides: { type: Object, default: () => ({}) },
   contentId: { type: String, required: false },
+  contentIndex: { type: Number, default: 0 },
   embedAllow: { type: String, default: "fullscreen" },
   fullPage: { type: Boolean, default: false },
   hideList: { type: Array, default: () => [] },
+  imageOptions: Object,
+  katex: { type: Boolean, default: false },
   level: { type: Number, default: 0 },
   mapImageUrl: Function,
   mapPageUrl: Function,
   pageLinkOptions: Object,
   pageLinkTarget: { type: String, default: "_self" },
   prism: { type: Boolean, default: false },
-  katex: { type: Boolean, default: false },
   textLinkTarget: { type: String, default: "_blank" },
-  todo: { type: Boolean, default: false },
+  todo: { type: Boolean, default: false }
 };
 
 export const blockComputed = {
@@ -22,18 +25,24 @@ export const blockComputed = {
     // todo: make this more dynamic by iterating over blockProps attributes
     return {
       blockMap: this.blockMap,
+      blockOverrides: this.blockOverrides,
       contentId: this.contentId,
+      contentIndex: this.contentIndex,
       embedAllow: this.embedAllow,
       fullPage: this.fullPage,
       hideList: this.hideList,
+      imageOptions: this.imageOptions,
+      katex: this.katex,
       level: this.level,
       mapImageUrl: this.mapImageUrl,
       mapPageUrl: this.mapPageUrl,
       pageLinkOptions: this.pageLinkOptions,
       prism: this.prism,
-      katex: this.katex,
-      todo: this.todo,
+      todo: this.todo
     };
+  },
+  alt() {
+    return this.caption?.[0][0];
   },
   block() {
     const id = this.contentId || Object.keys(this.blockMap)[0];
@@ -54,7 +63,7 @@ export const blockComputed = {
       block_color: this.format?.block_color,
       bookmark_icon: this.format?.bookmark_icon,
       bookmark_cover: this.format?.bookmark_cover,
-      display_source: this.format?.display_source,
+      display_source: this.format?.display_source
     };
   },
   icon() {
@@ -72,6 +81,9 @@ export const blockComputed = {
   description() {
     return this.properties?.description;
   },
+  src() {
+    return this.mapImageUrl(this.properties?.source[0][0], this.block);
+  },
   title() {
     return this.properties?.title;
   },
@@ -84,9 +96,12 @@ export const blockComputed = {
   hasPageLinkOptions() {
     return this.pageLinkOptions?.component && this.pageLinkOptions?.href;
   },
+  parent() {
+    return this.blockMap[this.value?.parent_id];
+  }
 };
 
-export default {
+export const Blockable = {
   props: blockProps,
   computed: blockComputed,
   methods: {
@@ -104,8 +119,8 @@ export default {
     },
     pageLinkProps(id) {
       return {
-        [this.pageLinkOptions.href]: this.mapPageUrl(id),
+        [this.pageLinkOptions?.href || "href"]: this.mapPageUrl(id)
       };
-    },
-  },
+    }
+  }
 };

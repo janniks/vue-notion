@@ -23,5 +23,8 @@ export default {
   buildModules: ["vue-notion/nuxt"],
 
   // Plugins (e.g. vue-katex for equations)
-  plugins: ["~/plugins/vue-katex.js"],
+  plugins: [
+    "~/plugins/vue-katex.js",
+    "~/plugins/vue-custom-notion-component.js",
+  ],
 };

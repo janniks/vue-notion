@@ -14,10 +14,12 @@
 The `NotionRenderer` component offers a few properties
 
 - [`blockMap`](#blockMap) – required
+- [`blockOverrides`](#blockOverrides) – default: `{}`
 - [`contentId`](#contentId) – default: `undefined`
 - [`embedAllow`](#embedAllow) – default: `"fullscreen"`
 - [`fullPage`](#fullPage) – default: `false`
 - [`hideList`](#hideList) – default: `[]`
+- [`imageOptions`](#imageOptions) – default: `undefined`
 - [`mapImageUrl`](#mapImageUrl) – default: `defaultMapImageUrl()`
 - [`mapPageUrl`](#mapPageUrl) – default: `defaultMapPageUrl()`
 - [`pageLinkOptions`](#pageLinkOptions) – default: `undefined`
@@ -30,6 +32,19 @@ The `NotionRenderer` component offers a few properties
 
 – the blocks part of a Notion API response.
 A list of blocks by their id that may contain contents and properties.
+
+### `blockOverrides`: Object
+
+– the Notion blocks that should be overriden by custom registered Vue components.
+A key-value pair Object of Notion block names to Vue component names.
+
+e.g. to use a custom `code` component—after registering the `CustomCode` Vue component—add the following override, as seen in the `/example`
+
+```js
+blockOverrides: {
+  code: "CustomCode",
+}
+```
 
 ### `contentId`: String
 
@@ -49,6 +64,23 @@ The default allows embeds to enter fullscreen.
 ### `hideList`: [String]
 
 – a list of Notion blocks (e.g. `"callout"`) that should not be rendered.
+
+### `imageOptions`: Object
+
+– are used to override default image rendering.
+`imageOptions` is an `Object` that requires a `component` parameter.
+The `src` attribute is optional and defaults to `src`.
+Any additional key value pairs are spread onto the component as element attributes.
+
+e.g. to use `nuxt-img` components instead of HTML `img` elements
+
+```js
+imageOptions: {
+  component: "nuxt-img",
+  "some-attribute": "vue-notion-attr",
+  // src: 'src', // (default) can be overridden to customize the key of the `src` attribute
+}
+```
 
 ### `mapImageUrl`: Function
 
@@ -74,7 +106,8 @@ mapPageUrl(pageId = "") {
 ### `pageLinkOptions`: Object
 
 – are used to override links to other Notion pages with custom Vue components.
-`pageLinkOptions` is an `Object` that requires a `component` and a `href` parameter.
+`pageLinkOptions` is an `Object` that requires a `component` parameter.
+The `href` attribute is optional and defaults to `href`.
 
 e.g., to use `NuxtLink` components instead of HTML `a` elements
 
@@ -190,7 +223,7 @@ There are a few required steps to allow Nuxt to work with vue-notion
 // nuxt.config.js
 export default {
   // ...
-  buildModules: ["vue-notion/nuxt"],
+  buildModules: ["vue-notion/nuxt"]
 };
 ```
 

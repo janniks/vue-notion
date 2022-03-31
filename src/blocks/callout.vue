@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Blockable from "@/lib/blockable";
+import { Blockable } from "@/lib/blockable";
 import NotionPageIcon from "@/blocks/helpers/page-icon";
 import NotionTextRenderer from "@/blocks/helpers/text-renderer";
 

@@ -1,5 +1,10 @@
 <template>
-  <div v-if="isType('page')">
+  <component
+    v-if="blockOverrides.hasOwnProperty(type)"
+    :is="blockOverrides[type]"
+    v-bind="pass"
+  />
+  <div v-else-if="isType('page')">
     <NotionPage v-bind="pass">
       <slot />
     </NotionPage>
@@ -34,7 +39,7 @@
     v-else-if="isType(['image', 'embed', 'figma', 'video', 'audio'])"
     v-bind="pass"
   />
-  <NotionTable v-else-if="isType('table')" v-bind="pass" />
+  <NotionTable v-else-if="isType('table')" v-bind="pass"><slot /></NotionTable>
   <NotionSyncPointer
     v-else-if="isType('transclusion_reference')"
     v-bind="pass"
@@ -42,10 +47,10 @@
   <div v-else-if="isType('transclusion_container')" class="notion-sync-block">
     <slot />
   </div>
+  <NotionTableRow v-else-if="isType('table_row')" v-bind="pass" />
   <hr v-else-if="isType('divider')" class="notion-hr" />
   <div v-else-if="todo && visible">
     todo: {{ type }}
-
     <slot />
   </div>
   <!-- todo: maybe add message on !production if block type unsupported -->
@@ -53,22 +58,25 @@
 </template>
 
 <script>
-import Blockable from "@/lib/blockable";
+import { Blockable } from "@/lib/blockable";
+
 import NotionBookmark from "@/blocks/bookmark";
 import NotionCallout from "@/blocks/callout";
 import NotionCode from "@/blocks/code";
 import NotionColumn from "@/blocks/column";
+import NotionEquation from "@/blocks/equation";
 import NotionFigure from "@/blocks/helpers/figure";
+import NotionHeader from "@/blocks/header";
 import NotionList from "@/blocks/list";
 import NotionPage from "@/blocks/page";
-import NotionHeader from "@/blocks/header";
-import NotionText from "@/blocks/text";
-import NotionToggle from "@/blocks/toggle";
 import NotionQuote from "@/blocks/quote";
-import NotionEquation from "@/blocks/equation";
+import NotionTable from "@/blocks/table";
+import NotionTableRow from "@/blocks/table-row";
+import NotionText from "@/blocks/text";
 import NotionTodo from "@/blocks/todo";
 import NotionTable from "@/blocks/table";
 import NotionSyncPointer from "@/blocks/sync-pointer";
+import NotionToggle from "@/blocks/toggle";
 
 export default {
   extends: Blockable,
@@ -78,17 +86,19 @@ export default {
     NotionCallout,
     NotionCode,
     NotionColumn,
+    NotionEquation,
+    NotionEquation,
     NotionFigure,
+    NotionHeader,
     NotionList,
     NotionPage,
-    NotionHeader,
-    NotionText,
-    NotionToggle,
     NotionQuote,
-    NotionTable,
-    NotionEquation,
     NotionSyncPointer,
+    NotionTable,
+    NotionTableRow,
+    NotionText,
     NotionTodo,
+    NotionToggle,
   },
 };
 </script>

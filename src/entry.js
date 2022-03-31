@@ -12,7 +12,7 @@ const install = function installVueNotion(Vue) {
 
 // Create module definition for Vue.use()
 const plugin = {
-  install,
+  install
 };
 
 // To auto-install on non-es builds, when vue is found
@@ -38,5 +38,7 @@ export * from "@/components/index";
 
 // export additional js methods
 export * from "@/lib/api";
+export * from "@/lib/blockable";
+export * from "@/lib/utils";
 
 // todo: remove .esm from default packaging for cleaner imports
