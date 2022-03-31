@@ -41,10 +41,13 @@
   />
   <NotionTable v-else-if="isType('table')" v-bind="pass"><slot /></NotionTable>
   <NotionSyncPointer
-    v-else-if="isType('transclusion_reference')"
+    v-else-if="isRendererRegistered && isType('transclusion_reference')"
     v-bind="pass"
   />
-  <div v-else-if="isType('transclusion_container')" class="notion-sync-block">
+  <div
+    v-else-if="isRendererRegistered && isType('transclusion_container')"
+    class="notion-sync-block"
+  >
     <slot />
   </div>
   <NotionTableRow v-else-if="isType('table_row')" v-bind="pass" />
@@ -58,7 +61,9 @@
 </template>
 
 <script>
-import { Blockable } from "@/lib/blockable";
+import Vue from "vue";
+
+import { Blockable, blockComputed } from "@/lib/blockable";
 
 import NotionBookmark from "@/blocks/bookmark";
 import NotionCallout from "@/blocks/callout";
@@ -98,6 +103,12 @@ export default {
     NotionText,
     NotionTodo,
     NotionToggle,
+  },
+  computed: {
+    ...blockComputed,
+    isRendererRegistered() {
+      return "NotionRenderer" in Vue?.options?.components;
+    },
   },
 };
 </script>
