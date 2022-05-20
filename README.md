@@ -160,6 +160,7 @@ List of pages that are using this library.
 - [Bersihin Tech](https://tech.bersihin.co/)
 - [Wisata Diary](https://wisatabook.com/diary)
 - [AymaneMx's Blog](https://aymanemx.com/posts/)
+- [Notaku](https://notaku.website?ref=vue-notion) — Build docs and blog websites from Notion pages
 - _...if you're using `vue-notion`, we'd be happy to feature you here_
 
 ## Supported Blocks
