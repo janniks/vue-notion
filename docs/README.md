@@ -166,7 +166,7 @@ import "prismjs/themes/prism.css";
 
 The following steps are required to display equations via katex
 
-- Install `vue-katex` to your project – `npm install vue-katex`
+- Install `@hsorby/vue3-katex` to your project – `npm install @hsorby/vue3-katex`
 - Import the katex css in your project
 
 ```js
@@ -177,8 +177,8 @@ import "katex/dist/katex.min.css";
 
 ```js
 import Vue from "vue";
-import VueKatex from "vue-katex";
-Vue.use(VueKatex);
+import Vue3Katex from "@hsorby/vue3-katex";
+Vue.use(Vue3Katex);
 ```
 
 - Add the `katex` flag to the `NotionRenderer`

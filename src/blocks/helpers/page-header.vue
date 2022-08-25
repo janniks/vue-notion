@@ -8,7 +8,7 @@
 
 <script>
 import { Blockable } from "@/lib/blockable";
-import Decorator from "@/blocks/decorator";
+import Decorator from "@/blocks/decorator.vue";
 
 export default {
   extends: Blockable,

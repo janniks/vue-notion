@@ -1,19 +1,13 @@
 <template>
   <NotionBlock v-bind="pass" v-if="blockMap && value">
-    <NotionRenderer
-      v-for="(contentId, contentIndex) in value.content"
-      v-bind="pass"
-      :key="contentId"
-      :level="level + 1"
-      :content-id="contentId"
-      :content-index="contentIndex"
-    />
+    <NotionRenderer v-for="(contentId, contentIndex) in value.content" v-bind="pass" :key="contentId" :level="level + 1"
+      :content-id="contentId" :content-index="contentIndex" />
   </NotionBlock>
 </template>
 
 <script>
 import { Blockable } from "@/lib/blockable";
-import NotionBlock from "@/components/block";
+import NotionBlock from "@/components/block.vue";
 
 import { defaultMapImageUrl, defaultMapPageUrl } from "@/lib/utils";
 

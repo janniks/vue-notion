@@ -3,10 +3,15 @@
   "version": "1.4.3",
   "description": "A Vue renderer for Notion pages",
   "repository": "github:janniks/vue-notion",
-  "main": "dist/esm.js",
-  "browser": "dist/esm.js",
-  "module": "dist/esm.js",
-  "unpkg": "dist/min.js",
+  "type": "module",
+  "main": "./dist/vue-notion.umd.cjs",
+  "module": "./dist/vue-notion.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-notion.js",
+      "require": "./dist/vue-notion.umd.cjs"
+    }
+  },
   "files": [
     "dist/**/*.js",
     "dist/**/*.css",
@@ -18,49 +23,38 @@
     "example": "npm run example:generate && cd example && npm start",
     "example:install": "npm pack && cd example && npm install && npm install ../*.tgz",
     "example:generate": "npm run example:install && cd example && npm run build && npm run generate",
-    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "build": "vite build",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
     "clean": "rm -rf node_modules dist example/node_modules example/dist example/.nuxt",
     "release:minor": "npm version minor -m 'Release %s' && npm publish",
     "release:patch": "npm version patch -m 'Release %s' && npm publish",
-    "postpublish": "echo \"\\033[31m !!! Now, manually run: ./scripts/postpublish.sh !!! \\033[00m\"",
-    "prepare": "rm -rf dist *.tgz && npm run build"
+    "postpublish": "echo \"\\033[31m !!! Now, manually run: ./scripts/postpublish.sh !!! \\033[00m\""
   },
   "dependencies": {
-    "cross-fetch": "^3.0.6",
-    "defu": "^5.0.0",
-    "vue-fragment": "^1.5.1",
-    "vue-prism-component": "^1.2.0"
+    "@hsorby/vue3-katex": "^0.6.0-rc.3",
+    "@vue/compat": "^3.2.37",
+    "cross-fetch": "^3.1.5",
+    "defu": "^6.1.0",
+    "vue-prism-component": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
-    "@rollup/plugin-alias": "^2.2.0",
-    "@rollup/plugin-commonjs": "^20.0.0",
-    "@rollup/plugin-replace": "^3.0.0",
-    "@types/prismjs": "^1.16.6",
-    "@vue/cli-plugin-babel": "^4.3.1",
-    "@vue/cli-service": "^4.3.1",
+    "@types/prismjs": "^1.26.0",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "@vue/cli": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "@vue/compiler-sfc": "^3.2.37",
     "cross-env": "^7.0.2",
     "cross-fetch": "^3.0.6",
     "minimist": "^1.2.5",
-    "postcss": "^8.2.1",
-    "postcss-logical": "^4.0.2",
-    "prismjs": "^1.22.0",
-    "rollup": "^2.7.3",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-postcss": "^4.0.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-vue": "^5.1.9",
-    "vue": "^2.6.14",
-    "vue-katex": "^0.5.0",
-    "vue-template-compiler": "^2.6.14"
+    "prismjs": "^1.29.0",
+    "vite": "^3.0.9",
+    "vue": "^3.2.37"
   },
   "peerDependencies": {
-    "prismjs": "^1.22.0",
-    "vue": "^2.6.14"
+    "prismjs": "^1.19.0",
+    "vue": "^3.2.37"
   },
   "engines": {
     "node": ">=10"

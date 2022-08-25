@@ -1,5 +1,5 @@
 import Vue from "vue";
-import VueKatex from "vue-katex";
+import Vue3Katex from "@hsorby/vue3-katex";
 import "katex/dist/katex.min.css";
 
-Vue.use(VueKatex);
+Vue.use(Vue3Katex);

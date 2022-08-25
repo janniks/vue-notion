@@ -1,14 +1,14 @@
-import Vue from "vue";
-import Dev from "./serve.vue";
+import { createApp } from "vue";
+import App from "./serve.vue";
 
-import VueKatex from "vue-katex";
+import Vue3Katex from "@hsorby/vue3-katex";
 import { NotionRenderer } from "@/entry";
 
-Vue.use(VueKatex);
-Vue.component("NotionRenderer", NotionRenderer);
+const app = createApp(App);
 
-Vue.config.productionTip = false;
+console.log(app);
 
-new Vue({
-  render: h => h(Dev)
-}).$mount("#app");
+app.use(Vue3Katex);
+app.component("NotionRenderer", NotionRenderer);
+
+app.mount("#app");

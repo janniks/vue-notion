@@ -1,18 +1,11 @@
 <template>
-  <component
-    v-if="blockOverrides.hasOwnProperty(type)"
-    :is="blockOverrides[type]"
-    v-bind="pass"
-  />
+  <component v-if="blockOverrides.hasOwnProperty(type)" :is="blockOverrides[type]" v-bind="pass" />
   <div v-else-if="isType('page')">
     <NotionPage v-bind="pass">
       <slot />
     </NotionPage>
   </div>
-  <NotionHeader
-    v-else-if="isType(['header', 'sub_header', 'sub_sub_header'])"
-    v-bind="pass"
-  />
+  <NotionHeader v-else-if="isType(['header', 'sub_header', 'sub_sub_header'])" v-bind="pass" />
   <NotionBookmark v-else-if="isType('bookmark')" v-bind="pass" />
   <NotionCallout v-else-if="isType('callout')" v-bind="pass" />
   <NotionCode v-else-if="isType('code')" v-bind="pass" />
@@ -29,25 +22,15 @@
   <NotionColumn v-else-if="isType('column')" :format="format">
     <slot />
   </NotionColumn>
-  <NotionList
-    v-else-if="isType(['bulleted_list', 'numbered_list'])"
-    v-bind="pass"
-  >
+  <NotionList v-else-if="isType(['bulleted_list', 'numbered_list'])" v-bind="pass">
     <slot />
   </NotionList>
-  <NotionFigure
-    v-else-if="isType(['image', 'embed', 'figma', 'video', 'audio'])"
-    v-bind="pass"
-  />
-  <NotionTable v-else-if="isType('table')" v-bind="pass"><slot /></NotionTable>
-  <NotionSyncPointer
-    v-else-if="isRendererRegistered && isType('transclusion_reference')"
-    v-bind="pass"
-  />
-  <div
-    v-else-if="isRendererRegistered && isType('transclusion_container')"
-    class="notion-sync-block"
-  >
+  <NotionFigure v-else-if="isType(['image', 'embed', 'figma', 'video', 'audio'])" v-bind="pass" />
+  <NotionTable v-else-if="isType('table')" v-bind="pass">
+    <slot />
+  </NotionTable>
+  <NotionSyncPointer v-else-if="isRendererRegistered && isType('transclusion_reference')" v-bind="pass" />
+  <div v-else-if="isRendererRegistered && isType('transclusion_container')" class="notion-sync-block">
     <slot />
   </div>
   <NotionTableRow v-else-if="isType('table_row')" v-bind="pass" />
@@ -65,22 +48,22 @@ import Vue from "vue";
 
 import { Blockable, blockComputed } from "@/lib/blockable";
 
-import NotionBookmark from "@/blocks/bookmark";
-import NotionCallout from "@/blocks/callout";
-import NotionCode from "@/blocks/code";
-import NotionColumn from "@/blocks/column";
-import NotionEquation from "@/blocks/equation";
-import NotionFigure from "@/blocks/helpers/figure";
-import NotionHeader from "@/blocks/header";
-import NotionList from "@/blocks/list";
-import NotionPage from "@/blocks/page";
-import NotionQuote from "@/blocks/quote";
-import NotionSyncPointer from "@/blocks/sync-pointer";
-import NotionTable from "@/blocks/table";
-import NotionTableRow from "@/blocks/table-row";
-import NotionText from "@/blocks/text";
-import NotionTodo from "@/blocks/todo";
-import NotionToggle from "@/blocks/toggle";
+import NotionBookmark from "@/blocks/bookmark.vue";
+import NotionCallout from "@/blocks/callout.vue";
+import NotionCode from "@/blocks/code.vue";
+import NotionColumn from "@/blocks/column.vue";
+import NotionEquation from "@/blocks/equation.vue";
+import NotionFigure from "@/blocks/helpers/figure.vue";
+import NotionHeader from "@/blocks/header.vue";
+import NotionList from "@/blocks/list.vue";
+import NotionPage from "@/blocks/page.vue";
+import NotionQuote from "@/blocks/quote.vue";
+import NotionSyncPointer from "@/blocks/sync-pointer.vue";
+import NotionTable from "@/blocks/table.vue";
+import NotionTableRow from "@/blocks/table-row.vue";
+import NotionText from "@/blocks/text.vue";
+import NotionTodo from "@/blocks/todo.vue";
+import NotionToggle from "@/blocks/toggle.vue";
 
 export default {
   extends: Blockable,

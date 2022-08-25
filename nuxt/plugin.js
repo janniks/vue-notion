@@ -1,6 +1,5 @@
 import Vue from "vue";
-import VueNotion from "vue-notion";
-import { getPageBlocks, getPageTable } from "vue-notion";
+import VueNotion, { getPageBlocks, getPageTable } from "vue-notion";
 
 Vue.use(VueNotion);
 
