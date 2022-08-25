@@ -1,6 +1,6 @@
 {
   "name": "vue-notion",
-  "version": "1.4.3",
+  "version": "3.0.0-alpha.0",
   "description": "A Vue renderer for Notion pages",
   "repository": "github:janniks/vue-notion",
   "type": "module",
@@ -13,10 +13,9 @@
     }
   },
   "files": [
-    "dist/**/*.js",
-    "dist/**/*.css",
+    "dist/",
     "src/**/*.css",
-    "nuxt/*.js"
+    "nuxt/"
   ],
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
@@ -24,9 +23,6 @@
     "example:install": "npm pack && cd example && npm install && npm install ../*.tgz",
     "example:generate": "npm run example:install && cd example && npm run build && npm run generate",
     "build": "vite build",
-    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
-    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
     "clean": "rm -rf node_modules dist example/node_modules example/dist example/.nuxt",
     "release:minor": "npm version minor -m 'Release %s' && npm publish",
     "release:patch": "npm version patch -m 'Release %s' && npm publish",
