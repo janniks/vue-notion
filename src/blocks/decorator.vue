@@ -1,46 +1,26 @@
 <template>
-  <component
-    v-if="isPageLink && hasPageLinkOptions"
-    class="notion-link"
-    v-bind="pageLinkProps(decoratorValue)"
-    :is="pageLinkOptions.component"
-  >
+  <component v-if="isPageLink && hasPageLinkOptions" class="notion-link" v-bind="pageLinkProps(decoratorValue)"
+    :is="pageLinkOptions.component">
     {{ pageLinkTitle }}
   </component>
-  <a
-    v-else-if="isPageLink"
-    class="notion-link"
-    :target="pageLinkTarget"
-    :href="mapPageUrl(decoratorValue)"
-    >{{ pageLinkTitle }}</a
-  >
-  <component
-    v-else-if="decoratorKey === 'a' && hasPageLinkOptions && isInlinePageLink"
-    class="notion-link"
-    v-bind="pageLinkProps(decoratorValue.slice(1))"
-    :is="pageLinkOptions.component"
-  >
+  <a v-else-if="isPageLink" class="notion-link" :target="pageLinkTarget" :href="mapPageUrl(decoratorValue)">{{
+      pageLinkTitle
+  }}</a>
+  <component v-else-if="decoratorKey === 'a' && hasPageLinkOptions && isInlinePageLink" class="notion-link"
+    v-bind="pageLinkProps(decoratorValue.slice(1))" :is="pageLinkOptions.component">
     <NotionDecorator :content="nextContent" v-bind="pass" />
   </component>
-  <a
-    v-else-if="decoratorKey === 'a' && isInlinePageLink"
-    class="notion-link"
-    :target="target"
-    :href="mapPageUrl(decoratorValue.slice(1))"
-  >
+  <a v-else-if="decoratorKey === 'a' && isInlinePageLink" class="notion-link" :target="target"
+    :href="mapPageUrl(decoratorValue.slice(1))">
     <NotionDecorator :content="nextContent" v-bind="pass" />
   </a>
-  <a
-    v-else-if="decoratorKey === 'a'"
-    class="notion-link"
-    :target="target"
-    :href="decoratorValue"
-  >
+  <a v-else-if="decoratorKey === 'a'" class="notion-link" :target="target" :href="decoratorValue">
     <NotionDecorator :content="nextContent" v-bind="pass" />
   </a>
+  <!-- <span v-else-if="!decorators || !decorators.length">{{ text }}</span> -->
   <span v-else-if="decorators.length === 0">{{ text }}</span>
-  <span v-else-if="decoratorKey === 'h'" :class="'notion-' + decoratorValue"
-    ><NotionDecorator :content="nextContent" v-bind="pass" />
+  <span v-else-if="decoratorKey === 'h'" :class="'notion-' + decoratorValue">
+    <NotionDecorator :content="nextContent" v-bind="pass" />
   </span>
   <code v-else-if="decoratorKey === 'c'" class="notion-inline-code">
     <NotionDecorator :content="nextContent" v-bind="pass" />
@@ -54,11 +34,7 @@
   <s v-else-if="decoratorKey === 's'">
     <NotionDecorator :content="nextContent" v-bind="pass" />
   </s>
-  <component
-    v-else-if="decoratorKey === 'e' && katex"
-    :is="'katex-element'"
-    :expression="decoratorValue"
-  />
+  <component v-else-if="decoratorKey === 'e' && katex" :is="'katex-element'" :expression="decoratorValue" />
   <code v-else-if="decoratorKey === 'e'" class="notion-inline-code">
     {{ decoratorValue }}
   </code>

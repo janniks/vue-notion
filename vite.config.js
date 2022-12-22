@@ -6,20 +6,9 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),
-      vue: "@vue/compat",
     },
   },
-  plugins: [
-    vue({
-      template: {
-        compilerOptions: {
-          compatConfig: {
-            MODE: 2,
-          },
-        },
-      },
-    }),
-  ],
+  plugins: [vue()],
   build: {
     lib: {
       entry: resolve(__dirname, "src/entry.js"),
@@ -31,13 +20,13 @@ export default defineConfig({
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       external: ["vue"],
-      output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
-        globals: {
-          vue: "Vue",
-        },
-      },
+      // output: {
+      //   // Provide global variables to use in the UMD build
+      //   // for externalized deps
+      //   globals: {
+      //     vue: "Vue",
+      //   },
+      // },
     },
   },
 });

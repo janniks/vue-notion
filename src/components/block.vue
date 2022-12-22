@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import Vue from "vue";
+import { getCurrentInstance } from 'vue';
 
 import { Blockable, blockComputed } from "@/lib/blockable";
 
@@ -90,7 +90,7 @@ export default {
   computed: {
     ...blockComputed,
     isRendererRegistered() {
-      return "NotionRenderer" in Vue?.options?.components;
+      return "NotionRenderer" in getCurrentInstance().appContext.components
     },
   },
 };
