@@ -13,6 +13,6 @@
     "stylus-loader": "^7.1.0"
   },
   "dependencies": {
-    "vue-notion": "file:../vue-notion-3.0.0-alpha.1.tgz"
+    "vue-notion": "^3.0.0-alpha.2"
   }
 }
