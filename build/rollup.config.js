@@ -10,18 +10,6 @@ import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
 import minimist from "minimist";
 
-// Get browserslist config and remove ie from es build targets
-const esbrowserslist = fs
-  .readFileSync("./.browserslistrc")
-  .toString()
-  .split("\n")
-  .filter((entry) => entry && entry.substring(0, 2) !== "ie");
-
-// Extract babel preset-env config, to combine with esbrowserslist
-const babelPresetEnvConfig = require("../babel.config").presets.filter(
-  (entry) => entry[0] === "@babel/preset-env"
-)[0][1];
-
 const argv = minimist(process.argv.slice(2));
 
 const projectRoot = path.resolve(__dirname, "..");
@@ -98,15 +86,7 @@ if (!argv.format || argv.format === "es") {
       ...baseConfig.plugins.postVue,
       babel({
         ...baseConfig.plugins.babel,
-        presets: [
-          [
-            "@babel/preset-env",
-            {
-              ...babelPresetEnvConfig,
-              targets: esbrowserslist,
-            },
-          ],
-        ],
+        presets: ["@babel/preset-env"],
       }),
     ],
   };
