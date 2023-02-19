@@ -1,6 +1,6 @@
 {
   "name": "vue-notion",
-  "version": "3.0.0-alpha.1",
+  "version": "3.0.0-alpha.2",
   "description": "A Vue renderer for Notion pages",
   "repository": "github:janniks/vue-notion",
   "type": "module",
@@ -23,11 +23,11 @@
     "postpublish": "echo \"\\033[31m !!! Now, manually run: ./scripts/postpublish.sh !!! \\033[00m\""
   },
   "dependencies": {
-    "@janniks/vue3-katex": "^0.6.0-rc.5.1",
     "cross-fetch": "^3.1.5",
     "defu": "^6.1.0"
   },
   "devDependencies": {
+    "@janniks/vue3-katex": "^0.6.0-rc.5.1",
     "@types/prismjs": "^1.26.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/cli": "^5.0.8",
@@ -40,6 +40,7 @@
     "vue": "^3.2.45"
   },
   "peerDependencies": {
+    "@janniks/vue3-katex": "^0.6.0-rc.5.1",
     "vue": "^3.2.45"
   },
   "engines": {
