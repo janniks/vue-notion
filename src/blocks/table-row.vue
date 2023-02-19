@@ -1,6 +1,10 @@
 <template>
   <tr class="notion-simple-table-row">
-    <td v-for="(columnId, columnIndex) in columns" :key="columnIndex" class="notion-simple-table-data">
+    <td
+      v-for="(columnId, columnIndex) in columns"
+      :key="columnIndex"
+      class="notion-simple-table-data"
+    >
       <div :class="{ 'notion-simple-table-header': isHeader(columnIndex) }">
         <div class="notion-simple-table-cell-text">
           <NotionTextRenderer :text="cell(columnId)" v-bind="pass" />
@@ -34,8 +38,8 @@ export default {
   },
   methods: {
     cell(columnId) {
-      if (this?.properties?.[columnId] == null) return [[" ", false]] // return empty notion decorated text if row is empty
-      return this?.properties?.[columnId]
+      // return empty notion decorated text if row is empty
+      return this?.properties?.[columnId] ?? [[" ", false]];
     },
     isHeader(columnIndex) {
       return (
