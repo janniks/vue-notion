@@ -1,6 +1,6 @@
 {
   "name": "vue-notion",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "A Vue renderer for Notion pages",
   "repository": "github:janniks/vue-notion",
   "main": "dist/esm.js",
