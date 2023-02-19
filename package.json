@@ -23,7 +23,7 @@
     "postpublish": "echo \"\\033[31m !!! Now, manually run: ./scripts/postpublish.sh !!! \\033[00m\""
   },
   "dependencies": {
-    "@hsorby/vue3-katex": "^0.6.0-rc.4",
+    "@janniks/vue3-katex": "^0.6.0-rc.5.1",
     "cross-fetch": "^3.1.5",
     "defu": "^6.1.0"
   },
