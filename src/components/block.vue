@@ -14,7 +14,9 @@
     v-bind="pass"
   />
   <NotionBookmark v-else-if="isType('bookmark')" v-bind="pass" />
-  <NotionCallout v-else-if="isType('callout')" v-bind="pass" />
+  <NotionCallout v-else-if="isType('callout')" v-bind="pass">
+    <slot />
+  </NotionCallout>
   <NotionCode v-else-if="isType('code')" v-bind="pass" />
   <NotionEquation v-else-if="isType('equation')" v-bind="pass" />
   <NotionText v-else-if="isType('text')" v-bind="pass" />
@@ -102,13 +104,13 @@ export default {
     NotionTableRow,
     NotionText,
     NotionTodo,
-    NotionToggle,
+    NotionToggle
   },
   computed: {
     ...blockComputed,
     isRendererRegistered() {
       return "NotionRenderer" in Vue?.options?.components;
-    },
-  },
+    }
+  }
 };
 </script>
