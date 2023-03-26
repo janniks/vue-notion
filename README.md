@@ -25,21 +25,12 @@
   <a href="https://github.com/janniks/vue-notion/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license" />
   </a>
-  <a href="https://twitter.com/intent/follow?screen_name=jnnksbrt">
-    <img src="https://img.shields.io/twitter/url?label=Follow&style=social&url=https%3A%2F%2Ftwitter.com%2Fjnnksbrt" alt="Follow on Twitter" />
+  <a href="https://twitter.com/intent/follow?screen_name=janniksco">
+    <img src="https://img.shields.io/twitter/url?label=Follow&style=social&url=https%3A%2F%2Ftwitter.com%2Fjanniksco" alt="Follow on Twitter" />
   </a>
 </p>
 
 ---
-
-A Vue renderer for Notion pages.
-Use Notion as CMS for your blog, documentation or personal site.
-
-Also check out [react-notion](https://github.com/splitbee/react-notion) (developed by [Splitbee 🐝](https://splitbee.io/) – a fast, reliable, free, and modern analytics for any team)
-
-This package doesn't handle the communication with the API. Check out [notion-api-worker](https://github.com/splitbee/notion-api-worker) from [Splitbee](https://splitbee.io/) for an easy solution.
-
-<sub>Created by <a href="https://twitter.com/jnnksbrt">Jannik Siebert</a></sub>
 
 ## Features
 
@@ -53,29 +44,24 @@ This package doesn't handle the communication with the API. Check out [notion-ap
 
 ## Install
 
+> **Warning**
+> This is the documentation for the upcoming Vue 3 compatible release of vue-notion.
+> For the Vue 2 version, check out the [vue2 branch](https://github.com/janniks/vue-notion/tree/vue2).
+
 ### Vue
 
 ```bash
-npm install vue-notion
+npm install vue-notion@3.0.0-beta.1
 ```
 
 ### NuxtJS Module
 
-Install as a dev-dependency and add `"vue-notion/nuxt"` to the `buildModules` array in `nuxt.config.js`.
-
-```bash
-npm install vue-notion --save-dev
-```
-
-```js
-// nuxt.config.js
-export default {
-  // ...
-  buildModules: ["vue-notion/nuxt"],
-};
-```
+Check out the `/example` folder for a full working example using Nuxt 3.
 
 ## Docs
+
+> **Note**
+> Potentially outdated -- 3.0.0 docs are a work-in-progress
 
 - `NotionRenderer`: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#notionrenderer)
 - Syntax-Highlighting in Code Blocks (with Prism.js): [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#syntax-highlighting)
@@ -105,7 +91,7 @@ This example is a part of [`example/`](https://github.com/janniks/vue-notion/tre
   <NotionRenderer :blockMap="blockMap" fullPage />
 </template>
 
-<script>
+<script lang="ts">
 import { NotionRenderer, getPageBlocks } from "vue-notion";
 
 export default {
@@ -119,30 +105,28 @@ export default {
 </script>
 
 <style>
-@import "vue-notion/src/styles.css"; /* optional Notion-like styles */
+/* optional Notion-like styles */
+@import "vue-notion/src/styles.css";
 </style>
 ```
 
 ### Basic Example for NuxtJS
 
 This example is a part of [`example/`](https://github.com/janniks/vue-notion/tree/main/example) and is hosted at [vue-notion.now.sh/nuxt](https://vue-notion.now.sh/nuxt).
+The page assumes a Nuxt plugin in `~/plugins/vue-notion.js` that registers via the `useNuxtApp` hook.
 
 ```vue
 <template>
   <NotionRenderer :blockMap="blockMap" fullPage />
 </template>
 
-<script>
-export default {
-  data: () => ({ blockMap: null }),
-  async asyncData({ $notion }) {
-    // use Notion module to get Notion blocks from the API via a Notion pageId
-    const blockMap = await $notion.getPageBlocks(
-      "8c1ab01960b049f6a282dda64a94afc7"
-    );
-    return { blockMap };
-  },
-};
+<script lang="ts" setup>
+const { $notion } = useNuxtApp();
+
+// use Notion module to get Notion blocks from the API via a Notion pageId
+const { data: blockMap } = useAsyncData("page_nuxt", () =>
+  $notion.getPageBlocks("8c1ab01960b049f6a282dda64a94afc7")
+);
 </script>
 
 <style>
