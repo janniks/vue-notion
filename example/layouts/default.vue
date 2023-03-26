@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <Nuxt />
-  </div>
+  <slot />
 </template>
 
 <style>

@@ -2,8 +2,11 @@
   <NotionRenderer :blockMap="blockMap" fullPage />
 </template>
 
-<script>
+<script lang="ts">
 import { NotionRenderer, getPageBlocks } from "vue-notion";
+
+// instead the following works in a ES module environment
+// import { NotionRenderer, getPageBlocks } from "vue-notion";
 
 export default {
   components: { NotionRenderer },

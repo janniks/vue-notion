@@ -1,41 +1,26 @@
 <template>
   <div class="container">
     <div class="content">
-      <img
-        src="https://github.com/janniks/vue-notion/raw/main/docs/img/vue-notion.png"
-        alt="vue-notion"
-        width="272px"
-        class="logo"
-      />
+      <img src="https://github.com/janniks/vue-notion/raw/main/docs/img/vue-notion.png" alt="vue-notion" width="272px"
+        class="logo" />
       <p>An unofficial Notion renderer</p>
 
       <h3 class="nav">
-        <a target="_blank" href="https://github.com/janniks/vue-notion#features"
-          >Features</a
-        >
+        <a target="_blank" href="https://github.com/janniks/vue-notion#features">Features</a>
         <span> · </span>
-        <a target="_blank" href="https://github.com/janniks/vue-notion#install"
-          >Install</a
-        >
+        <a target="_blank" href="https://github.com/janniks/vue-notion#install">Install</a>
         <span> · </span>
-        <a
-          target="_blank"
-          href="https://github.com/janniks/vue-notion#basic-example"
-          >Example</a
-        >
+        <a target="_blank" href="https://github.com/janniks/vue-notion#basic-example">Example</a>
         <span> · </span>
-        <a target="_blank" href="https://github.com/janniks/vue-notion#docs"
-          >Docs</a
-        >
+        <a target="_blank" href="https://github.com/janniks/vue-notion#docs">Docs</a>
         <span> · </span>
-        <a target="_blank" href="https://github.com/janniks/vue-notion#credits"
-          >Credits</a
-        >
+        <a target="_blank" href="https://github.com/janniks/vue-notion#credits">Credits</a>
       </h3>
 
-      <h2>Example from README</h2>
+      <h2>Basic Examples</h2>
       <div class="links">
-        <NuxtLink class="button--green" to="/nuxt">Basic Example</NuxtLink>
+        <NuxtLink class="button--green" to="/vue">Example with Plain Vue</NuxtLink>
+        <NuxtLink class="button--green" to="/nuxt">Example with Nuxt</NuxtLink>
       </div>
 
       <h2>Static Generated Examples</h2>

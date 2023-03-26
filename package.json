@@ -1,6 +1,6 @@
 {
   "name": "vue-notion",
-  "version": "3.0.0-alpha.2",
+  "version": "3.0.0-beta.1",
   "description": "A Vue renderer for Notion pages",
   "repository": "github:janniks/vue-notion",
   "type": "module",
@@ -12,38 +12,33 @@
     "nuxt/"
   ],
   "scripts": {
-    "serve": "vue-cli-service serve dev/serve.js",
-    "example": "npm run example:generate && cd example && npm start",
-    "example:install": "npm pack && cd example && npm install && npm install ../*.tgz",
-    "example:generate": "npm run example:install && cd example && npm run build && npm run generate",
     "build": "vite build",
     "clean": "rm -rf node_modules dist example/node_modules example/dist example/.nuxt",
-    "release:minor": "npm version minor -m 'Release %s' && npm publish",
+    "example:generate": "npm run example:install && cd example && npm run build && npm run generate",
+    "example:install": "npm pack && cd example && npm install && npm install ../*.tgz",
+    "example": "npm run example:generate && cd example && npm start",
+    "postpublish": "echo \"\\033[31m !!! Now, manually run: ./scripts/postpublish.sh !!! \\033[00m\"",
+    "prepack": "npm run build",
     "release:patch": "npm version patch -m 'Release %s' && npm publish",
-    "postpublish": "echo \"\\033[31m !!! Now, manually run: ./scripts/postpublish.sh !!! \\033[00m\""
+    "release:minor": "npm version minor -m 'Release %s' && npm publish",
+    "serve": "vue-cli-service serve dev/serve.js"
   },
   "dependencies": {
-    "cross-fetch": "^3.1.5",
-    "defu": "^6.1.0"
+    "defu": "^6.1.2"
   },
   "devDependencies": {
     "@janniks/vue3-katex": "^0.6.0-rc.5.1",
     "@types/prismjs": "^1.26.0",
-    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue": "^4.1.0",
     "@vue/cli": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
-    "@vue/compiler-sfc": "^3.2.45",
-    "cross-env": "^7.0.2",
-    "cross-fetch": "^3.0.6",
-    "minimist": "^1.2.7",
-    "vite": "^4.0.3",
-    "vue": "^3.2.45"
+    "@vue/compiler-sfc": "^3.2.47",
+    "minimist": "^1.2.8",
+    "vite": "^4.2.1",
+    "vue": "^3.2.47"
   },
   "peerDependencies": {
     "@janniks/vue3-katex": "^0.6.0-rc.5.1",
     "vue": "^3.2.45"
-  },
-  "engines": {
-    "node": ">=10"
   }
 }
