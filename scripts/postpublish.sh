@@ -2,7 +2,7 @@
 
 GIT_TAG=$(git describe --abbrev=0 --tags)
 
-$(cd example && npm install -f vue-notion@latest)
+$(cd example && npm install -f vue-notion@beta)
 
 git add --all
 git commit -m 'Update example'
