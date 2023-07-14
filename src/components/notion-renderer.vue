@@ -1,7 +1,7 @@
 <template>
   <NotionBlock v-bind="pass" v-if="blockMap && value">
     <NotionRenderer v-for="(contentId, contentIndex) in value.content" v-bind="pass" :key="contentId" :level="level + 1"
-      :content-id="contentId" :id="contentId" :content-index="contentIndex" />
+      :content-id="contentId" :id="uuidToId(contentId)" :content-index="contentIndex" />
   </NotionBlock>
 </template>
 
@@ -16,6 +16,11 @@ export default {
   name: "NotionRenderer",
   components: {
     NotionBlock,
+  },
+  methods: {
+    uuidToId(uuid){
+      return uuid.replaceAll('-','');
+    },
   },
   props: {
     blockMap: [Object],
