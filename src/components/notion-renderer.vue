@@ -1,7 +1,15 @@
 <template>
   <NotionBlock v-bind="pass" v-if="blockMap && value">
-    <NotionRenderer v-for="(contentId, contentIndex) in value.content" v-bind="pass" :key="contentId" :level="level + 1"
-      :content-id="contentId" :id="uuidToId(contentId)" :content-index="contentIndex" />
+    <pre>{{ JSON.stringify(toc, null, 4) }}</pre>
+    <NotionRenderer
+      v-for="(contentId, contentIndex) in value.content"
+      v-bind="pass"
+      :key="contentId"
+      :level="level + 1"
+      :content-id="contentId"
+      :id="uuidToId(contentId)"
+      :content-index="contentIndex"
+    />
   </NotionBlock>
 </template>
 
@@ -18,8 +26,29 @@ export default {
     NotionBlock,
   },
   methods: {
-    uuidToId(uuid){
-      return uuid.replaceAll('-','');
+    uuidToId(uuid) {
+      return uuid.replaceAll("-", "");
+    },
+  },
+  computed: {
+    headings() {
+      const output = {};
+      Object.keys(this.blockMap).forEach((key) => {
+        if (this.blockMap[key].value.type.includes("header")) {
+          output[key] = this.blockMap[key];
+        }
+      });
+      return output;
+    },
+    toc() {
+      return Object.keys(this.headings).map((key) => {
+        const block = this.blockMap[key].value;
+        return {
+          title: block.properties.title.flat(100).join(" "),
+          level: 1,
+          id: block.id,
+        };
+      });
     },
   },
   props: {
