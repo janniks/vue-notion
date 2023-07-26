@@ -1,6 +1,8 @@
 <template>
   <NotionBlock v-bind="pass" v-if="blockMap && value">
-    <pre>{{ JSON.stringify(toc, null, 2) }}</pre>
+    <pre>{{ JSON.stringify(hierarchy(toc), null, 2) }}</pre>
+
+    <!-- <pre>{{ JSON.stringify(toc, null, 2) }}</pre> -->
     <ul>
       <li v-for="item in toc" :key="item.id">
         <a :href="`#${uuidToId(item.id)}`">{{ item.title }}</a>
@@ -34,6 +36,20 @@ export default {
     uuidToId(uuid) {
       return uuid.replaceAll("-", "");
     },
+    hierarchy(toc) {
+      const stack = toc.slice(0).reverse();
+
+      stack.forEach((kid) => {
+        const parentIndex = stack.findIndex(
+          (parent) => parent.level < kid.level
+        );
+        if (parentIndex) {
+          stack[parentIndex].sub = [...stack[parentIndex].sub, stack.shift()];
+        }
+      });
+
+      return stack.reverse();
+    },
   },
   computed: {
     headings() {
@@ -54,6 +70,7 @@ export default {
             .split("_")
             .reduce((acc, value) => (value === "sub" ? acc + 1 : acc), 1),
           id: block.id,
+          sub: [],
         };
       });
     },
