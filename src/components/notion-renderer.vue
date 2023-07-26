@@ -50,7 +50,9 @@ export default {
         const block = this.blockMap[key].value;
         return {
           title: block.properties.title.flat(100).join(" "),
-          level: 1,
+          level: block.type
+            .split("_")
+            .reduce((acc, value) => (value === "sub" ? acc + 1 : acc), 1),
           id: block.id,
         };
       });
