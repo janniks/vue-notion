@@ -62,3 +62,5 @@ export const defaultMapPageUrl = (pageId = "") => {
 
   return `/${pageId}`;
 };
+
+export const uuidToId = (uuid) => uuid.replaceAll("-", "");

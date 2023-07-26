@@ -1,13 +1,6 @@
 <template>
   <NotionBlock v-bind="pass" v-if="blockMap && value">
-    <pre>{{ JSON.stringify(hierarchy(toc), null, 2) }}</pre>
-
-    <!-- <pre>{{ JSON.stringify(toc, null, 2) }}</pre> -->
-    <ul>
-      <li v-for="item in toc" :key="item.id">
-        <a :href="`#${uuidToId(item.id)}`">{{ item.title }}</a>
-      </li>
-    </ul>
+    <TableOfContents :blockMap="blockMap" />
     <NotionRenderer
       v-for="(contentId, contentIndex) in value.content"
       v-bind="pass"
@@ -23,7 +16,8 @@
 <script>
 import { Blockable } from "@/lib/blockable";
 import NotionBlock from "@/components/block.vue";
-
+import TableOfContents from "@/blocks/table-of-contents.vue";
+import { uuidToId } from "@/lib/utils";
 import { defaultMapImageUrl, defaultMapPageUrl } from "@/lib/utils";
 
 export default {
@@ -31,48 +25,11 @@ export default {
   name: "NotionRenderer",
   components: {
     NotionBlock,
+    TableOfContents,
   },
   methods: {
     uuidToId(uuid) {
-      return uuid.replaceAll("-", "");
-    },
-    hierarchy(toc) {
-      const stack = toc.slice(0).reverse();
-
-      stack.forEach((kid) => {
-        const parentIndex = stack.findIndex(
-          (parent) => parent.level < kid.level
-        );
-        if (parentIndex) {
-          stack[parentIndex].sub = [...stack[parentIndex].sub, stack.shift()];
-        }
-      });
-
-      return stack.reverse();
-    },
-  },
-  computed: {
-    headings() {
-      const output = {};
-      Object.keys(this.blockMap).forEach((key) => {
-        if (this.blockMap[key].value.type.includes("header")) {
-          output[key] = this.blockMap[key];
-        }
-      });
-      return output;
-    },
-    toc() {
-      return Object.keys(this.headings).map((key) => {
-        const block = this.blockMap[key].value;
-        return {
-          title: block.properties.title.flat(100).join(" "),
-          level: block.type
-            .split("_")
-            .reduce((acc, value) => (value === "sub" ? acc + 1 : acc), 1),
-          id: block.id,
-          sub: [],
-        };
-      });
+      return uuidToId(uuid);
     },
   },
   props: {
