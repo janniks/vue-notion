@@ -1,6 +1,11 @@
 <template>
   <NotionBlock v-bind="pass" v-if="blockMap && value">
-    <pre>{{ JSON.stringify(toc, null, 4) }}</pre>
+    <pre>{{ JSON.stringify(toc, null, 2) }}</pre>
+    <ul>
+      <li v-for="item in toc" :key="item.id">
+        <a :href="`#${uuidToId(item.id)}`">{{ item.title }}</a>
+      </li>
+    </ul>
     <NotionRenderer
       v-for="(contentId, contentIndex) in value.content"
       v-bind="pass"
