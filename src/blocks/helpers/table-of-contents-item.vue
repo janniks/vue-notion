@@ -1,6 +1,6 @@
 <template>
   <li>
-    <a :href="`#${uuidToId(item.id)}`">{{ item.title }}</a>
+    <a class="notion-link" :href="`#${uuidToId(item.id)}`">{{ item.title }}</a>
     <ul>
       <TableOfContentsItem
         v-for="subItem in item.sub"

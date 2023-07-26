@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="notion-table-of-contents">
     <TableOfContentsItem
       v-for="item in hierarchy"
       :key="item.id"
