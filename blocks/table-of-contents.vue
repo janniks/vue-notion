@@ -5,9 +5,6 @@
       :key="item.id"
       :item="item" />
   </ul>
-  <pre>
-    {{ JSON.stringify(hierarchy, null, 2) }}
-  </pre>
 </template>
 
 <script>
