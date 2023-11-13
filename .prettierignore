@@ -1,0 +1,11 @@
+pnpm-lock.yaml
+dist/
+coverage/
+docker-compose.yml
+.husky/
+*.ejs.t
+.npmrc
+*.png
+*.svg
+*.jpg
+.*

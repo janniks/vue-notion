@@ -4,10 +4,6 @@
 - Syntax-Highlighting in Code Blocks (with Prism.js): [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#syntax-highlighting)
 - Equations: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#equations)
 - Notion API: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#notion-api)
-- Nuxt: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#nuxtjs--server-side-rendering--static-site-generation)
-
-> Check out a full working demo at [vue-notion.now.sh](https://vue-notion.now.sh/) ✨
-> The code for the demo is in [`example/`](https://github.com/janniks/vue-notion/tree/main/example).
 
 ## `NotionRenderer`
 
@@ -146,8 +142,8 @@ The following steps are required to add syntax-highlighting using Prism.js
 - Import the Prism.js css and a theme css somewhere in your application.
 
 ```js
-import "prismjs";
-import "prismjs/themes/prism.css";
+import 'prismjs';
+import 'prismjs/themes/prism.css';
 ```
 
 - Add the `prism` flag to the `NotionRenderer`
@@ -170,14 +166,14 @@ The following steps are required to display equations via katex
 - Import the katex css in your project
 
 ```js
-import "katex/dist/katex.min.css";
+import 'katex/dist/katex.min.css';
 ```
 
 - Install the Vue plugin globally
 
 ```js
-import Vue from "vue";
-import Vue3Katex from "@hsorby/vue3-katex";
+import Vue from 'vue';
+import Vue3Katex from '@hsorby/vue3-katex';
 Vue.use(Vue3Katex);
 ```
 
@@ -202,44 +198,8 @@ Since, the endpoint is rate limited, please consider hosting your own instance (
 A custom endpoint URL can be passed to the methods as a second argument:
 
 ```js
-const blockMap = await getPageBlocks("PAGE_ID", "optional ENDPOINT_URL");
-const pageTable = await getPageTable("PAGE_ID", "optional ENDPOINT_URL");
+const blockMap = await getPageBlocks('PAGE_ID', 'optional ENDPOINT_URL');
+const pageTable = await getPageTable('PAGE_ID', 'optional ENDPOINT_URL');
 ```
 
 > Feel free to open an issue if something is unclear or additional documentation is needed...
-
-## NuxtJS – Server-Side Rendering & Static Site Generation
-
-> For a running project check out the extensive example at [example/](/example).
-
-### Usage
-
-There are a few required steps to allow Nuxt to work with vue-notion
-
-- Install vue-notion as a dev-dependency to your Nuxt project – `npm install vue-notion --save-dev`
-- Add `"vue-notion/nuxt"` to the `buildModules` array in `nuxt.config.js`.
-
-```js
-// nuxt.config.js
-export default {
-  // ...
-  buildModules: ["vue-notion/nuxt"]
-};
-```
-
-- Voila, you can now use vue-notion (i.e., the `NotionRenderer` component and the Notion API methods via NuxtJS `$notion`) as shown in the examples.
-
-### Static Pages
-
-> Using the `nuxt.config.js` [`target`](https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-target/) `"static"`
-
-Per default Nuxt [crawls](https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-generate/#crawler) your pages.
-That means any link in any page in `pages/*.vue` is crawled and statically generated (if available).
-You can also configure [specific routes](https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-generate/#routes) to be crawled (and generated) via the `generate.routes` array in `nuxt.config.js`.
-
-### Blogs
-
-It is possible to use the `getPageTable` method to acces Notion Databases.
-These can be used to maintain a list of pages with attributes.
-
-The [example/](/example) shows a few ways you can access/filter/link these pages for a blog-style webpage.
