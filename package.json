@@ -4,25 +4,7 @@
   "description": "A Vue renderer for Notion pages",
   "repository": "github:janniks/vue-notion",
   "type": "module",
-  "main": "./dist/vue-notion.umd.cjs",
-  "module": "./dist/vue-notion.js",
-  "files": [
-    "dist/",
-    "src/**/*.css",
-    "nuxt/"
-  ],
-  "scripts": {
-    "build": "vite build",
-    "clean": "rm -rf node_modules dist example/node_modules example/dist example/.nuxt",
-    "example:generate": "npm run example:install && cd example && npm run build && npm run generate",
-    "example:install": "npm pack && cd example && npm install && npm install ../*.tgz",
-    "example": "npm run example:generate && cd example && npm start",
-    "postpublish": "echo \"\\033[31m !!! Now, manually run: ./scripts/postpublish.sh !!! \\033[00m\"",
-    "prepack": "npm run build",
-    "release:patch": "npm version patch -m 'Release %s' && npm publish",
-    "release:minor": "npm version minor -m 'Release %s' && npm publish",
-    "serve": "vue-cli-service serve dev/serve.js"
-  },
+  "main": "./src/index.js",
   "dependencies": {
     "defu": "^6.1.2"
   },
