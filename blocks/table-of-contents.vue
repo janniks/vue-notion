@@ -5,6 +5,9 @@
       :key="item.id"
       :item="item" />
   </ul>
+  <pre>
+    {{ JSON.stringify(hierarchy, null, 2) }}
+  </pre>
 </template>
 
 <script>
@@ -40,20 +43,49 @@
         });
       });
 
-      const hierarchy = computed(() => {
-        const stack = toc.value.slice(0).reverse();
+      function buildTree(items) {
+        let stack = [];
+        let nestedItems = [];
 
-        stack.forEach((kid) => {
-          const parentIndex = stack.findIndex(
-            (parent) => parent.level < kid.level,
-          );
-          if (parentIndex) {
-            stack[parentIndex].sub = [...stack[parentIndex].sub, stack.shift()];
+        items.forEach((item) => {
+          let currentLevel = item.level;
+
+          // If stack is empty or current item's level is greater than the last item in stack
+          if (!stack.length || currentLevel > stack[stack.length - 1].level) {
+            stack.push(item);
+          } else {
+            // Pop items from the stack until we find the correct parent level
+            while (
+              stack.length &&
+              currentLevel <= stack[stack.length - 1].level
+            ) {
+              let subItem = stack.pop();
+              if (stack.length) {
+                stack[stack.length - 1].sub.push(subItem);
+              } else {
+                nestedItems.push(subItem);
+              }
+            }
+            stack.push(item);
           }
         });
 
-        return stack.reverse();
-      });
+        // Add any remaining items in the stack to the nested items
+        while (stack.length) {
+          let subItem = stack.pop();
+          if (stack.length) {
+            stack[stack.length - 1].sub.push(subItem);
+          } else {
+            nestedItems.push(subItem);
+          }
+        }
+
+        return nestedItems;
+      }
+
+      const hierarchy = computed(() => buildTree(toc.value));
+
+      return { hierarchy };
     },
   };
 </script>
