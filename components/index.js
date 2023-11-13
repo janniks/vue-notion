@@ -16,7 +16,8 @@ export { default as NotionTableRow } from '../blocks/table-row.vue';
 export { default as NotionText } from '../blocks/text.vue';
 export { default as NotionTodo } from '../blocks/todo.vue';
 export { default as NotionToggle } from '../blocks/toggle.vue';
-
+export { default as Notion } from '../blocks/toggle.vue';
+import { default as NotionTableOfContents } from '../blocks/table-of-contents.vue';
 export { default as NotionAsset } from '../blocks/helpers/asset.vue';
 export { default as NotionColumnSpacer } from '../blocks/helpers/column-spacer.vue';
 export { default as NotionFigure } from '../blocks/helpers/figure.vue';

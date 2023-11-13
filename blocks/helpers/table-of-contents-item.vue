@@ -11,6 +11,6 @@
 </template>
 
 <script setup>
-  import { uuidToId } from '@/lib/utils';
+  import { uuidToId } from '../../lib/utils';
   defineProps(['item']);
 </script>

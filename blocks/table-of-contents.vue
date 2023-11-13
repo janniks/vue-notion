@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import { Blockable } from '@/lib/blockable';
+  import { Blockable } from '../lib/blockable';
 
   export default {
     name: 'NotionTableOfContents',
@@ -18,7 +18,7 @@
 
 <script setup>
   import { computed } from 'vue';
-  import TableOfContentsItem from '@/blocks/helpers/table-of-contents-item.vue';
+  import TableOfContentsItem from './helpers/table-of-contents-item.vue';
 
   const headings = computed(() => {
     const output = {};
