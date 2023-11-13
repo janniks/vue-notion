@@ -1,5 +1,5 @@
 <template>
-  <ul class="notion-table-of-contents">
+  <ul class="notion-table-of-contents" style="margin-left: -16px">
     <NotionTableOfContentsItem
       v-for="item in hierarchy"
       :key="item.id"

@@ -28,7 +28,7 @@
 </script>
 
 <style>
-  .table-of-contents-item {
+  .table-of-contents-item.table-of-contents-item {
     margin-left: 1em;
     margin: 8px 8px 8px 16px;
   }
