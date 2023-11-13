@@ -4,7 +4,7 @@
   "description": "A Vue renderer for Notion pages",
   "repository": "github:janniks/vue-notion",
   "type": "module",
-  "main": "./src/index.js",
+  "main": "index.js",
   "dependencies": {
     "defu": "^6.1.2"
   },
