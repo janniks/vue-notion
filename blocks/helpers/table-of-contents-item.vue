@@ -10,11 +10,6 @@
   </li>
 </template>
 
-<!-- <script>
-  import { uuidToId } from '../../lib/utils';
-  defineProps(['item']);
-</script> -->
-
 <script>
   import { Blockable, blockComputed } from '../../lib/blockable';
   import { uuidToId } from '../../lib/utils';
