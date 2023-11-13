@@ -1,7 +1,7 @@
 <template>
   <component
-    v-if="blockOverrides.hasOwnProperty(type)"
     :is="blockOverrides[type]"
+    v-if="blockOverrides.hasOwnProperty(type)"
     v-bind="pass" />
   <div v-else-if="isType('page')">
     <NotionPage v-bind="pass">
@@ -84,7 +84,6 @@
   import NotionTableOfContents from '@/blocks/table-of-contents.vue';
 
   export default {
-    extends: Blockable,
     name: 'NotionBlock',
     components: {
       NotionBookmark,
@@ -106,6 +105,7 @@
       NotionToggle,
       NotionTableOfContents,
     },
+    extends: Blockable,
     computed: {
       ...blockComputed,
       isRendererRegistered() {

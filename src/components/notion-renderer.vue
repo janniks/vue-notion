@@ -1,12 +1,12 @@
 <template>
-  <NotionBlock v-bind="pass" v-if="blockMap && value">
+  <NotionBlock v-if="blockMap && value" v-bind="pass">
     <NotionRenderer
       v-for="(contentId, contentIndex) in value.content"
       v-bind="pass"
+      :id="uuidToId(contentId)"
       :key="contentId"
       :level="level + 1"
       :content-id="contentId"
-      :id="uuidToId(contentId)"
       :content-index="contentIndex" />
   </NotionBlock>
 </template>
@@ -19,17 +19,12 @@
   import { defaultMapImageUrl, defaultMapPageUrl } from '@/lib/utils';
 
   export default {
-    extends: Blockable,
     name: 'NotionRenderer',
     components: {
       NotionBlock,
       TableOfContents,
     },
-    methods: {
-      uuidToId(uuid) {
-        return uuidToId(uuid);
-      },
-    },
+    extends: Blockable,
     props: {
       blockMap: [Object],
       contentId: String,
@@ -43,6 +38,11 @@
       imageOptions: Object,
       prism: { type: Boolean, default: false },
       todo: { type: Boolean, default: false },
+    },
+    methods: {
+      uuidToId(uuid) {
+        return uuidToId(uuid);
+      },
     },
   };
 </script>

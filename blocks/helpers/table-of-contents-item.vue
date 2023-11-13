@@ -5,13 +5,12 @@
       <TableOfContentsItem
         v-for="subItem in item.sub"
         :key="subItem.id"
-        :item="subItem"
-      />
+        :item="subItem" />
     </ul>
   </li>
 </template>
 
 <script setup>
-import { uuidToId } from "@/lib/utils";
-defineProps(["item"]);
+  import { uuidToId } from '@/lib/utils';
+  defineProps(['item']);
 </script>
