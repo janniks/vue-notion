@@ -8,11 +8,18 @@
   </ul>
 </template>
 
+<script>
+import { Blockable } from "@/lib/blockable";
+
+export default {
+  extends: Blockable,
+  name: "NotionTableOfContents",
+};
+</script>
+
 <script setup>
 import { computed } from "vue";
-import TableOfContentsItem from "@/blocks/helpers/table-of-contents-item";
-
-const props = defineProps(["blockMap"]);
+import TableOfContentsItem from "@/blocks/helpers/table-of-contents-item.vue";
 
 const headings = computed(() => {
   const output = {};
