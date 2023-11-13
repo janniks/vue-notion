@@ -1,6 +1,6 @@
 <template>
   <ul class="notion-table-of-contents">
-    <TableOfContentsItem
+    <NotionTableOfContentsItem
       v-for="item in hierarchy"
       :key="item.id"
       :item="item" />
@@ -13,11 +13,14 @@
 <script>
   import { Blockable } from '../lib/blockable';
   import { computed } from 'vue';
-  import TableOfContentsItem from './helpers/table-of-contents-item.vue';
+  import NotionTableOfContentsItem from './helpers/table-of-contents-item.vue';
 
   export default {
     name: 'NotionTableOfContents',
     extends: Blockable,
+    components: {
+      NotionTableOfContentsItem,
+    },
     setup(props) {
       const headings = computed(() => {
         const output = {};
