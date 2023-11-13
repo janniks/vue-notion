@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import { Blockable } from "../lib/blockable";
-import NotionTextRenderer from "../blocks/helpers/text-renderer.vue";
+  import { Blockable } from '../lib/blockable';
+  import NotionTextRenderer from '../blocks/helpers/text-renderer.vue';
 
-export default {
-  extends: Blockable,
-  name: "NotionToggle",
-  components: { NotionTextRenderer },
-};
+  export default {
+    name: 'NotionToggle',
+    components: { NotionTextRenderer },
+    extends: Blockable,
+  };
 </script>

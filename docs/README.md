@@ -142,8 +142,8 @@ The following steps are required to add syntax-highlighting using Prism.js
 - Import the Prism.js css and a theme css somewhere in your application.
 
 ```js
-import "prismjs";
-import "prismjs/themes/prism.css";
+import 'prismjs';
+import 'prismjs/themes/prism.css';
 ```
 
 - Add the `prism` flag to the `NotionRenderer`
@@ -166,14 +166,14 @@ The following steps are required to display equations via katex
 - Import the katex css in your project
 
 ```js
-import "katex/dist/katex.min.css";
+import 'katex/dist/katex.min.css';
 ```
 
 - Install the Vue plugin globally
 
 ```js
-import Vue from "vue";
-import Vue3Katex from "@hsorby/vue3-katex";
+import Vue from 'vue';
+import Vue3Katex from '@hsorby/vue3-katex';
 Vue.use(Vue3Katex);
 ```
 
@@ -198,8 +198,8 @@ Since, the endpoint is rate limited, please consider hosting your own instance (
 A custom endpoint URL can be passed to the methods as a second argument:
 
 ```js
-const blockMap = await getPageBlocks("PAGE_ID", "optional ENDPOINT_URL");
-const pageTable = await getPageTable("PAGE_ID", "optional ENDPOINT_URL");
+const blockMap = await getPageBlocks('PAGE_ID', 'optional ENDPOINT_URL');
+const pageTable = await getPageTable('PAGE_ID', 'optional ENDPOINT_URL');
 ```
 
 > Feel free to open an issue if something is unclear or additional documentation is needed...

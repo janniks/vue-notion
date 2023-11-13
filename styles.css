@@ -3,8 +3,8 @@
   line-height: 1.5;
   color: rgb(55, 53, 47);
   caret-color: rgb(55, 53, 47);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+    'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 .notion > *,
@@ -136,8 +136,8 @@
   margin-top: 1em;
 }
 .notion-emoji {
-  font-family: "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  font-family: 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji',
+    'Segoe UI Symbol';
 }
 .notion-page-cover {
   display: block;
@@ -272,7 +272,7 @@ img.notion-page-icon {
   background: rgba(135, 131, 120, 0.15);
   border-radius: 3px;
   font-size: 85%;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
     monospace;
 }
 
@@ -296,10 +296,10 @@ img.notion-page-icon {
 }
 
 /* edit start: added rtl override */
-[dir="rtl"] .notion-list-disc {
+[dir='rtl'] .notion-list-disc {
   padding-right: 1.7em;
 }
-[dir="rtl"] .notion-list-numbered {
+[dir='rtl'] .notion-list-numbered {
   padding-right: 1.6em;
 }
 /* edit end */
@@ -357,7 +357,7 @@ img.notion-page-icon {
   box-sizing: border-box;
   overflow-x: auto; /* edit: changed from `scroll` */
   background: rgb(247, 246, 243);
-  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier,
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier,
     monospace;
 }
 
@@ -582,7 +582,8 @@ img.notion-page-icon {
   display: block;
   color: inherit;
   text-decoration: none;
-  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+  box-shadow:
+    rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
     rgba(15, 15, 15, 0.1) 0px 2px 4px;
   border-radius: 3px;
   background: white;

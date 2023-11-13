@@ -4,8 +4,7 @@
       type="checkbox"
       :value="title"
       :checked="properties.checked"
-      disabled="disabled"
-    />
+      disabled="disabled" />
     <label>
       <NotionTextRenderer :text="title" v-bind="pass" />
     </label>
@@ -13,17 +12,17 @@
 </template>
 
 <script>
-// TODO: add notion styling
-// TODO: add strikethrough
+  // TODO: add notion styling
+  // TODO: add strikethrough
 
-import { Blockable } from "../lib/blockable";
-import NotionTextRenderer from "../blocks/helpers/text-renderer.vue";
+  import { Blockable } from '../lib/blockable';
+  import NotionTextRenderer from '../blocks/helpers/text-renderer.vue';
 
-export default {
-  extends: Blockable,
-  name: "NotionTodo",
-  components: {
-    NotionTextRenderer,
-  },
-};
+  export default {
+    name: 'NotionTodo',
+    components: {
+      NotionTextRenderer,
+    },
+    extends: Blockable,
+  };
 </script>

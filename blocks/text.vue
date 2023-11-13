@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import { Blockable } from "../lib/blockable";
-import NotionTextRenderer from "../blocks/helpers/text-renderer.vue";
+  import { Blockable } from '../lib/blockable';
+  import NotionTextRenderer from '../blocks/helpers/text-renderer.vue';
 
-export default {
-  extends: Blockable,
-  name: "NotionText",
-  components: { NotionTextRenderer },
-};
+  export default {
+    name: 'NotionText',
+    components: { NotionTextRenderer },
+    extends: Blockable,
+  };
 </script>

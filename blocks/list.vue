@@ -1,8 +1,7 @@
 <template>
   <ul
     v-if="isTopLevel && type === 'bulleted_list'"
-    class="notion-list notion-list-disc"
-  >
+    class="notion-list notion-list-disc">
     <li>
       <NotionTextRenderer :text="title" v-bind="pass" />
     </li>
@@ -13,8 +12,7 @@
   <ol
     v-else-if="isTopLevel && type === 'numbered_list'"
     class="notion-list notion-list-numbered"
-    :start="start"
-  >
+    :start="start">
     <li>
       <NotionTextRenderer :text="title" v-bind="pass" />
     </li>
@@ -33,24 +31,24 @@
 </template>
 
 <script>
-import { Blockable, blockComputed } from "../lib/blockable";
-import NotionNestedList from "../blocks/helpers/nested-list.vue";
-import NotionTextRenderer from "../blocks/helpers/text-renderer.vue";
+  import { Blockable, blockComputed } from '../lib/blockable';
+  import NotionNestedList from '../blocks/helpers/nested-list.vue';
+  import NotionTextRenderer from '../blocks/helpers/text-renderer.vue';
 
-import { getListNumber } from "../lib/utils";
+  import { getListNumber } from '../lib/utils';
 
-export default {
-  extends: Blockable,
-  name: "NotionList",
-  components: { NotionNestedList, NotionTextRenderer },
-  computed: {
-    ...blockComputed,
-    start() {
-      return getListNumber(this.value?.id, this.blockMap);
+  export default {
+    name: 'NotionList',
+    components: { NotionNestedList, NotionTextRenderer },
+    extends: Blockable,
+    computed: {
+      ...blockComputed,
+      start() {
+        return getListNumber(this.value?.id, this.blockMap);
+      },
+      isTopLevel() {
+        return this.type !== this.blockMap[this.value?.parent_id]?.value?.type;
+      },
     },
-    isTopLevel() {
-      return this.type !== this.blockMap[this.value?.parent_id]?.value?.type;
-    },
-  },
-};
+  };
 </script>

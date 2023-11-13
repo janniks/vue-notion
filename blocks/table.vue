@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import { Blockable } from "../lib/blockable";
+  import { Blockable } from '../lib/blockable';
 
-export default {
-  extends: Blockable,
-  name: "NotionTable",
-};
+  export default {
+    name: 'NotionTable',
+    extends: Blockable,
+  };
 </script>

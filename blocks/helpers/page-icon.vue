@@ -6,8 +6,7 @@
       big ? 'notion-page-icon-cover' : 'notion-page-icon',
     ]"
     :src="mapImageUrl(icon, block)"
-    :alt="title ? getTextContent(title) : 'Icon'"
-  />
+    :alt="title ? getTextContent(title) : 'Icon'" />
   <span
     v-else-if="icon"
     role="img"
@@ -16,17 +15,16 @@
       'notion-emoji',
       format.page_cover && 'notion-page-icon-offset',
       big ? 'notion-page-icon-cover' : 'notion-page-icon',
-    ]"
-  >
+    ]">
     {{ icon }}
   </span>
 </template>
 
 <script>
-import { Blockable, blockProps } from "../../lib/blockable";
-export default {
-  extends: Blockable,
-  name: "NotionPageIcon",
-  props: { ...blockProps, big: Boolean },
-};
+  import { Blockable, blockProps } from '../../lib/blockable';
+  export default {
+    name: 'NotionPageIcon',
+    extends: Blockable,
+    props: { ...blockProps, big: Boolean },
+  };
 </script>

@@ -4,22 +4,21 @@
       v-for="(t, i) in text"
       :key="i"
       :content="t"
-      v-bind="pass"
-    />
+      v-bind="pass" />
   </span>
 </template>
 
 <script>
-import { Blockable, blockProps } from "../../lib/blockable";
+  import { Blockable, blockProps } from '../../lib/blockable';
 
-import NotionDecorator from "../decorator.vue";
+  import NotionDecorator from '../decorator.vue';
 
-export default {
-  extends: Blockable,
-  name: "NotionTextRenderer",
-  props: { ...blockProps, text: Array },
-  components: {
-    NotionDecorator,
-  },
-};
+  export default {
+    name: 'NotionTextRenderer',
+    components: {
+      NotionDecorator,
+    },
+    extends: Blockable,
+    props: { ...blockProps, text: Array },
+  };
 </script>

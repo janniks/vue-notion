@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import { Blockable } from "../lib/blockable";
-import NotionTextRenderer from "../blocks/helpers/text-renderer.vue";
+  import { Blockable } from '../lib/blockable';
+  import NotionTextRenderer from '../blocks/helpers/text-renderer.vue';
 
-export default {
-  extends: Blockable,
-  name: "NotionQuote",
-  components: { NotionTextRenderer },
-};
+  export default {
+    name: 'NotionQuote',
+    components: { NotionTextRenderer },
+    extends: Blockable,
+  };
 </script>

@@ -8,18 +8,18 @@
 </template>
 
 <script>
-import { Blockable, blockComputed } from "../../lib/blockable";
+  import { Blockable, blockComputed } from '../../lib/blockable';
 
-import { getListNumber } from "../../lib/utils";
+  import { getListNumber } from '../../lib/utils';
 
-export default {
-  extends: Blockable,
-  name: "NotionNestedList",
-  computed: {
-    ...blockComputed,
-    start() {
-      return getListNumber(this.value?.id, this.blockMap);
+  export default {
+    name: 'NotionNestedList',
+    extends: Blockable,
+    computed: {
+      ...blockComputed,
+      start() {
+        return getListNumber(this.value?.id, this.blockMap);
+      },
     },
-  },
-};
+  };
 </script>

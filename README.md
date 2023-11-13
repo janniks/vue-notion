@@ -92,21 +92,21 @@ This example is a part of [`example/`](https://github.com/janniks/vue-notion/tre
 </template>
 
 <script lang="ts">
-import { NotionRenderer, getPageBlocks } from "vue-notion";
+  import { NotionRenderer, getPageBlocks } from 'vue-notion';
 
-export default {
-  components: { NotionRenderer },
-  data: () => ({ blockMap: null }),
-  async created() {
-    // get Notion blocks from the API via a Notion pageId
-    this.blockMap = await getPageBlocks("8c1ab01960b049f6a282dda64a94afc7");
-  },
-};
+  export default {
+    components: { NotionRenderer },
+    data: () => ({ blockMap: null }),
+    async created() {
+      // get Notion blocks from the API via a Notion pageId
+      this.blockMap = await getPageBlocks('8c1ab01960b049f6a282dda64a94afc7');
+    },
+  };
 </script>
 
 <style>
-/* optional Notion-like styles */
-@import "vue-notion/src/styles.css";
+  /* optional Notion-like styles */
+  @import 'vue-notion/src/styles.css';
 </style>
 ```
 
@@ -121,16 +121,16 @@ The page assumes a Nuxt plugin in `~/plugins/vue-notion.js` that registers via t
 </template>
 
 <script lang="ts" setup>
-const { $notion } = useNuxtApp();
+  const { $notion } = useNuxtApp();
 
-// use Notion module to get Notion blocks from the API via a Notion pageId
-const { data: blockMap } = useAsyncData("page_nuxt", () =>
-  $notion.getPageBlocks("8c1ab01960b049f6a282dda64a94afc7")
-);
+  // use Notion module to get Notion blocks from the API via a Notion pageId
+  const { data: blockMap } = useAsyncData('page_nuxt', () =>
+    $notion.getPageBlocks('8c1ab01960b049f6a282dda64a94afc7'),
+  );
 </script>
 
 <style>
-@import "vue-notion/src/styles.css"; /* optional Notion-like styles */
+  @import 'vue-notion/src/styles.css'; /* optional Notion-like styles */
 </style>
 ```
 

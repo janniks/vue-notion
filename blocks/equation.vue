@@ -5,24 +5,23 @@
   <NotionCode
     v-else
     v-bind="pass"
-    overrideLang="latex"
-    overrideLangClass="language-latex"
-  />
+    override-lang="latex"
+    override-lang-class="language-latex" />
 </template>
 
 <script>
-import { Blockable, blockComputed } from "../lib/blockable";
-import NotionCode from "../blocks/code.vue";
+  import { Blockable, blockComputed } from '../lib/blockable';
+  import NotionCode from '../blocks/code.vue';
 
-export default {
-  extends: Blockable,
-  name: "NotionEquation",
-  components: { NotionCode },
-  computed: {
-    ...blockComputed,
-    equation() {
-      return this.properties?.title?.[0]?.[0];
+  export default {
+    name: 'NotionEquation',
+    components: { NotionCode },
+    extends: Blockable,
+    computed: {
+      ...blockComputed,
+      equation() {
+        return this.properties?.title?.[0]?.[0];
+      },
     },
-  },
-};
+  };
 </script>

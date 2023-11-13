@@ -3,8 +3,7 @@
     <NotionImage v-if="isType('image')" v-bind="pass" />
     <NotionAsset
       v-else-if="isType(['embed', 'video', 'figma'])"
-      v-bind="pass"
-    />
+      v-bind="pass" />
     <figcaption v-if="caption" class="notion-image-caption">
       <NotionTextRenderer :text="caption" v-bind="pass" />
     </figcaption>
@@ -12,18 +11,18 @@
 </template>
 
 <script>
-import { Blockable } from "../../lib/blockable";
-import NotionAsset from "./asset.vue";
-import NotionImage from "./image.vue";
-import NotionTextRenderer from "./text-renderer.vue";
+  import { Blockable } from '../../lib/blockable';
+  import NotionAsset from './asset.vue';
+  import NotionImage from './image.vue';
+  import NotionTextRenderer from './text-renderer.vue';
 
-export default {
-  extends: Blockable,
-  name: "NotionFigure",
-  components: {
-    NotionAsset,
-    NotionImage,
-    NotionTextRenderer,
-  },
-};
+  export default {
+    name: 'NotionFigure',
+    components: {
+      NotionAsset,
+      NotionImage,
+      NotionTextRenderer,
+    },
+    extends: Blockable,
+  };
 </script>

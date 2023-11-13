@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import { Blockable } from "../../lib/blockable";
-import Decorator from "../decorator.vue";
+  import { Blockable } from '../../lib/blockable';
+  import Decorator from '../decorator.vue';
 
-export default {
-  extends: Blockable,
-  name: "NotionPageHeader",
-  components: { Decorator },
-};
+  export default {
+    name: 'NotionPageHeader',
+    components: { Decorator },
+    extends: Blockable,
+  };
 </script>
