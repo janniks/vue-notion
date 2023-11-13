@@ -1,6 +1,11 @@
 <template>
   <div>
-    <input type="checkbox" :value="title" :checked="properties.checked" disabled="disabled" />
+    <input
+      type="checkbox"
+      :value="title"
+      :checked="properties.checked"
+      disabled="disabled"
+    />
     <label>
       <NotionTextRenderer :text="title" v-bind="pass" />
     </label>
@@ -11,8 +16,8 @@
 // TODO: add notion styling
 // TODO: add strikethrough
 
-import { Blockable } from "@/lib/blockable";
-import NotionTextRenderer from "@/blocks/helpers/text-renderer.vue";
+import { Blockable } from "../lib/blockable";
+import NotionTextRenderer from "../blocks/helpers/text-renderer.vue";
 
 export default {
   extends: Blockable,

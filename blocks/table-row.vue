@@ -1,6 +1,10 @@
 <template>
   <tr class="notion-simple-table-row">
-    <td v-for="(columnId, columnIndex) in columns" :key="columnIndex" class="notion-simple-table-data">
+    <td
+      v-for="(columnId, columnIndex) in columns"
+      :key="columnIndex"
+      class="notion-simple-table-data"
+    >
       <div :class="{ 'notion-simple-table-header': isHeader(columnIndex) }">
         <div class="notion-simple-table-cell-text">
           <NotionTextRenderer :text="cell(columnId)" v-bind="pass" />
@@ -11,8 +15,8 @@
 </template>
 
 <script>
-import { Blockable, blockComputed } from "@/lib/blockable";
-import NotionTextRenderer from "@/blocks/helpers/text-renderer.vue";
+import { Blockable, blockComputed } from "../lib/blockable";
+import NotionTextRenderer from "../blocks/helpers/text-renderer.vue";
 
 export default {
   extends: Blockable,

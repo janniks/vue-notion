@@ -1,9 +1,11 @@
 <template>
-  <pre :class="['notion-code', langClass]"><code :class="langClass">{{ properties.title[0][0] }}</code></pre>
+  <pre
+    :class="['notion-code', langClass]"
+  ><code :class="langClass">{{ properties.title[0][0] }}</code></pre>
 </template>
 
 <script>
-import { Blockable, blockComputed, blockProps } from "@/lib/blockable";
+import { Blockable, blockComputed, blockProps } from "../lib/blockable";
 
 export default {
   extends: Blockable,

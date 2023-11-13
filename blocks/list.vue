@@ -1,5 +1,8 @@
 <template>
-  <ul v-if="isTopLevel && type === 'bulleted_list'" class="notion-list notion-list-disc">
+  <ul
+    v-if="isTopLevel && type === 'bulleted_list'"
+    class="notion-list notion-list-disc"
+  >
     <li>
       <NotionTextRenderer :text="title" v-bind="pass" />
     </li>
@@ -7,7 +10,11 @@
       <slot />
     </NotionNestedList>
   </ul>
-  <ol v-else-if="isTopLevel && type === 'numbered_list'" class="notion-list notion-list-numbered" :start="start">
+  <ol
+    v-else-if="isTopLevel && type === 'numbered_list'"
+    class="notion-list notion-list-numbered"
+    :start="start"
+  >
     <li>
       <NotionTextRenderer :text="title" v-bind="pass" />
     </li>
@@ -26,11 +33,11 @@
 </template>
 
 <script>
-import { Blockable, blockComputed } from "@/lib/blockable";
-import NotionNestedList from "@/blocks/helpers/nested-list.vue";
-import NotionTextRenderer from "@/blocks/helpers/text-renderer.vue";
+import { Blockable, blockComputed } from "../lib/blockable";
+import NotionNestedList from "../blocks/helpers/nested-list.vue";
+import NotionTextRenderer from "../blocks/helpers/text-renderer.vue";
 
-import { getListNumber } from "@/lib/utils";
+import { getListNumber } from "../lib/utils";
 
 export default {
   extends: Blockable,

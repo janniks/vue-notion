@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { Blockable } from "@/lib/blockable";
+import { Blockable } from "../lib/blockable";
 
 export default {
   extends: Blockable,
