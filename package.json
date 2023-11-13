@@ -1,8 +1,7 @@
 {
   "name": "vue-notion",
-  "version": "3.0.0-beta.1",
+  "version": "0.0.0",
   "description": "A Vue renderer for Notion pages",
-  "repository": "github:janniks/vue-notion",
   "type": "module",
   "main": "index.js",
   "scripts": {
