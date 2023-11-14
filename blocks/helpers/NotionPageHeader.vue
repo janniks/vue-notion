@@ -8,7 +8,7 @@
 
 <script>
   import { Blockable } from '../../lib/blockable';
-  import Decorator from '../decorator.vue';
+  import Decorator from '../Decorator.vue';
 
   export default {
     name: 'NotionPageHeader',

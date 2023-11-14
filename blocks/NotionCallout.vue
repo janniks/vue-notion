@@ -11,8 +11,8 @@
 
 <script>
   import { Blockable } from '../lib/blockable';
-  import NotionPageIcon from '../blocks/helpers/page-icon.vue';
-  import NotionTextRenderer from '../blocks/helpers/text-renderer.vue';
+  import NotionPageIcon from '../blocks/helpers/NotionPageIcon.vue';
+  import NotionTextRenderer from '../blocks/helpers/NotionTextRenderer.vue';
 
   export default {
     name: 'NotionCallout',

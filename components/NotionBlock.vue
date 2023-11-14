@@ -64,23 +64,23 @@
 
   import { Blockable, blockComputed } from '../lib/blockable';
 
-  import NotionBookmark from '../blocks/bookmark.vue';
-  import NotionCallout from '../blocks/callout.vue';
-  import NotionCode from '../blocks/code.vue';
-  import NotionColumn from '../blocks/column.vue';
-  import NotionEquation from '../blocks/equation.vue';
-  import NotionFigure from '../blocks/helpers/figure.vue';
-  import NotionHeader from '../blocks/header.vue';
-  import NotionList from '../blocks/list.vue';
-  import NotionPage from '../blocks/page.vue';
-  import NotionQuote from '../blocks/quote.vue';
-  import NotionSyncPointer from '../blocks/sync-pointer.vue';
-  import NotionTable from '../blocks/table.vue';
-  import NotionTableRow from '../blocks/table-row.vue';
-  import NotionText from '../blocks/text.vue';
-  import NotionTodo from '../blocks/todo.vue';
-  import NotionToggle from '../blocks/toggle.vue';
-  import NotionTableOfContents from '../blocks/table-of-contents.vue';
+  import NotionBookmark from '../blocks/NotionBookmark.vue';
+  import NotionCallout from '../blocks/NotionCallout.vue';
+  import NotionCode from '../blocks/NotionCode.vue';
+  import NotionColumn from '../blocks/NotionColumn.vue';
+  import NotionEquation from '../blocks/NotionEquation.vue';
+  import NotionFigure from '../blocks/helpers/NotionFigure.vue';
+  import NotionHeader from '../blocks/NotionHeader.vue';
+  import NotionList from '../blocks/NotionList.vue';
+  import NotionPage from '../blocks/NotionPage.vue';
+  import NotionQuote from '../blocks/NotionQuote.vue';
+  import NotionSyncPointer from '../blocks/NotionSyncPointer.vue';
+  import NotionTable from '../blocks/NotionTable.vue';
+  import NotionTableRow from '../blocks/NotionTableRow.vue';
+  import NotionText from '../blocks/NotionText.vue';
+  import NotionTodo from '../blocks/NotionTodo.vue';
+  import NotionToggle from '../blocks/NotionToggle.vue';
+  import NotionTableOfContents from '../blocks/NotionTableOfContents.vue';
 
   export default {
     name: 'NotionBlock',
