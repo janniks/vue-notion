@@ -11,6 +11,9 @@
   <NotionHeader
     v-else-if="isType(['header', 'sub_header', 'sub_sub_header'])"
     v-bind="pass" />
+  <NotionTableOfContents
+    v-else-if="isType('table_of_contents')"
+    v-bind="pass" />
   <NotionBookmark v-else-if="isType('bookmark')" v-bind="pass" />
   <NotionCallout v-else-if="isType('callout')" v-bind="pass" />
   <NotionCode v-else-if="isType('code')" v-bind="pass" />
@@ -77,6 +80,7 @@
   import NotionText from '../blocks/text.vue';
   import NotionTodo from '../blocks/todo.vue';
   import NotionToggle from '../blocks/toggle.vue';
+  import NotionTableOfContents from '../blocks/table-of-contents.vue';
 
   export default {
     name: 'NotionBlock',
@@ -98,6 +102,7 @@
       NotionText,
       NotionTodo,
       NotionToggle,
+      NotionTableOfContents,
     },
     extends: Blockable,
     computed: {

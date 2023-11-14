@@ -720,3 +720,8 @@ img.notion-nav-icon {
   background: rgb(247, 246, 243);
   font-weight: 500;
 }
+
+.notion-table-of-contents,
+.notion-table-of-contents ul {
+  list-style: none;
+}
