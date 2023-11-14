@@ -54,12 +54,11 @@
 
 <script>
   import { Blockable, blockComputed } from '../lib/blockable';
-  import NotionPageHeader from '../blocks/helpers/page-header.vue';
-  import NotionPageIcon from '../blocks/helpers/page-icon.vue';
-  import NotionTextRenderer from '../blocks/helpers/text-renderer.vue';
+  import NotionPageHeader from './NotionPageHeader.vue';
+  import NotionPageIcon from './NotionPageIcon.vue';
+  import NotionTextRenderer from './NotionTextRenderer.vue';
 
   export default {
-    name: 'NotionPage',
     components: { NotionPageHeader, NotionPageIcon, NotionTextRenderer },
     extends: Blockable,
     computed: {

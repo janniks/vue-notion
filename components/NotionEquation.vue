@@ -11,10 +11,9 @@
 
 <script>
   import { Blockable, blockComputed } from '../lib/blockable';
-  import NotionCode from '../blocks/code.vue';
+  import NotionCode from './NotionCode.vue';
 
   export default {
-    name: 'NotionEquation',
     components: { NotionCode },
     extends: Blockable,
     computed: {

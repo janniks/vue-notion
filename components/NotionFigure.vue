@@ -11,13 +11,12 @@
 </template>
 
 <script>
-  import { Blockable } from '../../lib/blockable';
-  import NotionAsset from './asset.vue';
-  import NotionImage from './image.vue';
-  import NotionTextRenderer from './text-renderer.vue';
+  import { Blockable } from '../lib/blockable';
+  import NotionAsset from './NotionAsset.vue';
+  import NotionImage from './NotionImage.vue';
+  import NotionTextRenderer from './NotionTextRenderer.vue';
 
   export default {
-    name: 'NotionFigure',
     components: {
       NotionAsset,
       NotionImage,

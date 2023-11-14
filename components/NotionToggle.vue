@@ -11,10 +11,9 @@
 
 <script>
   import { Blockable } from '../lib/blockable';
-  import NotionTextRenderer from '../blocks/helpers/text-renderer.vue';
+  import NotionTextRenderer from './NotionTextRenderer.vue';
 
   export default {
-    name: 'NotionToggle',
     components: { NotionTextRenderer },
     extends: Blockable,
   };

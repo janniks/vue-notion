@@ -13,12 +13,11 @@
 
 <script>
   import { Blockable } from '../lib/blockable';
-  import NotionBlock from './block.vue';
+  import NotionBlock from './NotionBlock.vue';
 
   import { defaultMapImageUrl, defaultMapPageUrl } from '../lib/utils';
 
   export default {
-    name: 'NotionRenderer',
     components: {
       NotionBlock,
     },

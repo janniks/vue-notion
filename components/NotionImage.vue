@@ -21,10 +21,9 @@
 </template>
 
 <script>
-  import { Blockable, blockComputed } from '../../lib/blockable';
+  import { Blockable, blockComputed } from '../lib/blockable';
 
   export default {
-    name: 'NotionImage',
     extends: Blockable,
     computed: {
       ...blockComputed,

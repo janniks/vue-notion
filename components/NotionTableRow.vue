@@ -15,10 +15,9 @@
 
 <script>
   import { Blockable, blockComputed } from '../lib/blockable';
-  import NotionTextRenderer from '../blocks/helpers/text-renderer.vue';
+  import NotionTextRenderer from './NotionTextRenderer.vue';
 
   export default {
-    name: 'NotionTableRow',
     components: {
       NotionTextRenderer,
     },

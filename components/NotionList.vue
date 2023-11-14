@@ -32,13 +32,12 @@
 
 <script>
   import { Blockable, blockComputed } from '../lib/blockable';
-  import NotionNestedList from '../blocks/helpers/nested-list.vue';
-  import NotionTextRenderer from '../blocks/helpers/text-renderer.vue';
+  import NotionNestedList from './NotionNestedList.vue';
+  import NotionTextRenderer from './NotionTextRenderer.vue';
 
   import { getListNumber } from '../lib/utils';
 
   export default {
-    name: 'NotionList',
     components: { NotionNestedList, NotionTextRenderer },
     extends: Blockable,
     computed: {

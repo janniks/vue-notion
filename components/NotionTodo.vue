@@ -16,10 +16,9 @@
   // TODO: add strikethrough
 
   import { Blockable } from '../lib/blockable';
-  import NotionTextRenderer from '../blocks/helpers/text-renderer.vue';
+  import NotionTextRenderer from './NotionTextRenderer.vue';
 
   export default {
-    name: 'NotionTodo',
     components: {
       NotionTextRenderer,
     },
