@@ -59,7 +59,6 @@
   import NotionTextRenderer from '../blocks/NotionTextRenderer.vue';
 
   export default {
-    name: 'NotionPage',
     components: { NotionPageHeader, NotionPageIcon, NotionTextRenderer },
     extends: Blockable,
     computed: {

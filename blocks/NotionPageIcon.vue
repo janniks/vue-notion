@@ -23,7 +23,6 @@
 <script>
   import { Blockable, blockProps } from '../../lib/blockable';
   export default {
-    name: 'NotionPageIcon',
     extends: Blockable,
     props: { ...blockProps, big: Boolean },
   };

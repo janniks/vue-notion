@@ -83,7 +83,6 @@
   import NotionTableOfContents from '../blocks/NotionTableOfContents.vue';
 
   export default {
-    name: 'NotionBlock',
     components: {
       NotionBookmark,
       NotionCallout,

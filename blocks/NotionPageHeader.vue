@@ -11,7 +11,6 @@
   import Decorator from '../Decorator.vue';
 
   export default {
-    name: 'NotionPageHeader',
     components: { Decorator },
     extends: Blockable,
   };

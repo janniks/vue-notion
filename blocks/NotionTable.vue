@@ -12,7 +12,6 @@
   import { Blockable } from '../lib/blockable';
 
   export default {
-    name: 'NotionTable',
     extends: Blockable,
   };
 </script>

@@ -9,7 +9,6 @@
   import NotionTextRenderer from '../blocks/NotionTextRenderer.vue';
 
   export default {
-    name: 'NotionQuote',
     components: { NotionTextRenderer },
     extends: Blockable,
   };

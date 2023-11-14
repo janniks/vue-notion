@@ -14,7 +14,6 @@
   import NotionCode from '../blocks/NotionCode.vue';
 
   export default {
-    name: 'NotionEquation',
     components: { NotionCode },
     extends: Blockable,
     computed: {

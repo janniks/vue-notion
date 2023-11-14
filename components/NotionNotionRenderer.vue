@@ -18,7 +18,6 @@
   import { defaultMapImageUrl, defaultMapPageUrl } from '../lib/utils';
 
   export default {
-    name: 'NotionRenderer',
     components: {
       NotionBlock,
     },

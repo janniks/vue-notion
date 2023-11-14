@@ -8,7 +8,6 @@
   import { Blockable, blockComputed } from '../../lib/blockable';
 
   export default {
-    name: 'NotionAsset',
     extends: Blockable,
     computed: {
       ...blockComputed,

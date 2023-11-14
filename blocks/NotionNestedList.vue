@@ -13,7 +13,6 @@
   import { getListNumber } from '../../lib/utils';
 
   export default {
-    name: 'NotionNestedList',
     extends: Blockable,
     computed: {
       ...blockComputed,

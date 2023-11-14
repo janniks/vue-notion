@@ -38,7 +38,6 @@
   import { getListNumber } from '../lib/utils';
 
   export default {
-    name: 'NotionList',
     components: { NotionNestedList, NotionTextRenderer },
     extends: Blockable,
     computed: {

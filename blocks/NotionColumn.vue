@@ -9,7 +9,6 @@
   const baseWidth = 46; // todo: add magic numbers to a config json
 
   export default {
-    name: 'NotionColumn',
     props: ['format'],
     computed: {
       columnStyle() {

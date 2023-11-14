@@ -15,7 +15,6 @@
   import { uuidToId } from '../../lib/utils';
 
   export default {
-    name: 'NotionTableOfContentsItem',
     props: ['item'],
     extends: Blockable,
     methods: { uuidToId },

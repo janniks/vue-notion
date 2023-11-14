@@ -36,7 +36,6 @@
   import NotionTextRenderer from '../blocks/NotionTextRenderer.vue';
 
   export default {
-    name: 'NotionBookmark',
     components: { NotionTextRenderer },
     extends: Blockable,
   };

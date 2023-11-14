@@ -13,7 +13,6 @@
   import NotionTableOfContentsItem from './helpers/NotionTableOfContentsItem.vue';
 
   export default {
-    name: 'NotionTableOfContents',
     extends: Blockable,
     components: {
       NotionTableOfContentsItem,

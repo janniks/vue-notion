@@ -14,7 +14,6 @@
   import NotionDecorator from '../NotionDecorator.vue';
 
   export default {
-    name: 'NotionTextRenderer',
     components: {
       NotionDecorator,
     },

@@ -9,7 +9,6 @@
   import { Blockable, blockComputed } from '../lib/blockable';
 
   export default {
-    name: 'NotionSyncPointer',
     extends: Blockable,
     computed: {
       ...blockComputed,

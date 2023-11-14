@@ -10,7 +10,6 @@
   import { Blockable, blockComputed, blockProps } from '../lib/blockable';
 
   export default {
-    name: 'NotionCode',
     extends: Blockable,
     props: { ...blockProps, overrideLang: String, overrideLangClass: String },
 

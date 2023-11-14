@@ -65,7 +65,6 @@
   import { Blockable, blockProps } from '../lib/blockable';
 
   export default {
-    name: 'NotionDecorator',
     extends: Blockable,
     props: { ...blockProps, content: Array },
     computed: {

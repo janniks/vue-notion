@@ -24,7 +24,6 @@
   import { Blockable, blockComputed } from '../../lib/blockable';
 
   export default {
-    name: 'NotionImage',
     extends: Blockable,
     computed: {
       ...blockComputed,

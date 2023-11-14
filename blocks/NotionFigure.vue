@@ -17,7 +17,6 @@
   import NotionTextRenderer from './NotionTextRenderer.vue';
 
   export default {
-    name: 'NotionFigure',
     components: {
       NotionAsset,
       NotionImage,

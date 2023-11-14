@@ -19,7 +19,6 @@
   import NotionTextRenderer from '../blocks/NotionTextRenderer.vue';
 
   export default {
-    name: 'NotionTodo',
     components: {
       NotionTextRenderer,
     },
