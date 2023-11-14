@@ -1,9 +1,9 @@
 # Docs
 
-- `NotionRenderer`: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#notionrenderer)
-- Syntax-Highlighting in Code Blocks (with Prism.js): [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#syntax-highlighting)
-- Equations: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#equations)
-- Notion API: [`docs/`](https://github.com/janniks/vue-notion/tree/main/docs#notion-api)
+- `NotionRenderer`: [`docs/`](https://github.com/tough-dev-school/vue-notion/tree/main/docs#notionrenderer)
+- Syntax-Highlighting in Code Blocks (with Prism.js): [`docs/`](https://github.com/tough-dev-school/vue-notion/tree/main/docs#syntax-highlighting)
+- Equations: [`docs/`](https://github.com/tough-dev-school/vue-notion/tree/main/docs#equations)
+- Notion API: [`docs/`](https://github.com/tough-dev-school/vue-notion/tree/main/docs#notion-api)
 
 ## `NotionRenderer`
 
@@ -183,23 +183,3 @@ Vue.use(Vue3Katex);
 -<NotionRenderer :blockMap="blockMap" />
 +<NotionRenderer :blockMap="blockMap" katex />
 ```
-
-> For usage with Nuxt, look at the `/example` (`plugins` in `nuxt.config.js`, `plugins/vue-katex.js`)
-
-## Notion API
-
-The official Notion API is currently in [private beta](https://www.notion.so/api-beta).
-Until the public release of the official API the team at [Splitbee](https://splitbee.io/) has created [notion-api-worker](https://github.com/splitbee/notion-api-worker).
-This is a shared [Cloudflare worker](https://workers.cloudflare.com/) (with 100,000 requests a day).
-The `getPageBlocks` and `getPageTable` methods simply run GET requests the worker.
-That means, every time you use the methods, a request is sent to the [notion-api-worker](https://github.com/splitbee/notion-api-worker).
-Since, the endpoint is rate limited, please consider hosting your own instance (check the [notion-api-worker](https://github.com/splitbee/notion-api-worker) repository for more information).
-
-A custom endpoint URL can be passed to the methods as a second argument:
-
-```js
-const blockMap = await getPageBlocks('PAGE_ID', 'optional ENDPOINT_URL');
-const pageTable = await getPageTable('PAGE_ID', 'optional ENDPOINT_URL');
-```
-
-> Feel free to open an issue if something is unclear or additional documentation is needed...
