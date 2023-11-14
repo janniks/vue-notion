@@ -1,3 +1,3 @@
-import NotionRenderer from './components/NotionRenderer';
+import NotionRenderer from './components/NotionRenderer.vue';
 
-export default NotionRenderer;
+export { NotionRenderer };

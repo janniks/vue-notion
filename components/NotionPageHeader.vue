@@ -7,11 +7,9 @@
 </template>
 
 <script>
-  import { Blockable } from '../../lib/blockable';
-  import Decorator from '../Decorator.vue';
+  import { Blockable } from '../lib/blockable';
 
   export default {
-    components: { Decorator },
     extends: Blockable,
   };
 </script>

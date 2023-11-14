@@ -8,9 +8,9 @@
 </template>
 
 <script>
-  import { Blockable, blockComputed } from '../../lib/blockable';
+  import { Blockable, blockComputed } from '../lib/blockable';
 
-  import { getListNumber } from '../../lib/utils';
+  import { getListNumber } from '../lib/utils';
 
   export default {
     extends: Blockable,

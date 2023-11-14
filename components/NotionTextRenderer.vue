@@ -9,9 +9,9 @@
 </template>
 
 <script>
-  import { Blockable, blockProps } from '../../lib/blockable';
+  import { Blockable, blockProps } from '../lib/blockable';
 
-  import NotionDecorator from '../NotionDecorator.vue';
+  import NotionDecorator from './NotionDecorator.vue';
 
   export default {
     components: {

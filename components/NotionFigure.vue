@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import { Blockable } from '../../lib/blockable';
+  import { Blockable } from '../lib/blockable';
   import NotionAsset from './NotionAsset.vue';
   import NotionImage from './NotionImage.vue';
   import NotionTextRenderer from './NotionTextRenderer.vue';
