@@ -21,7 +21,7 @@
 <script>
 import { Blockable } from "@/lib/blockable";
 import NotionPageIcon from "@/blocks/helpers/page-icon.vue";
-import NotionRenderer from "@/components/NotionRenderer.vue";
+import NotionRenderer from "@/components/notion-renderer.vue";
 import NotionTextRenderer from "@/blocks/helpers/text-renderer.vue";
 
 export default {
