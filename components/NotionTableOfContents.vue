@@ -10,7 +10,7 @@
 <script>
   import { Blockable } from '../lib/blockable';
   import { computed } from 'vue';
-  import NotionTableOfContentsItem from './helpers/NotionTableOfContentsItem.vue';
+  import NotionTableOfContentsItem from './NotionTableOfContentsItem.vue';
 
   export default {
     extends: Blockable,

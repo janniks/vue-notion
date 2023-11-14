@@ -11,8 +11,8 @@
 
 <script>
   import { Blockable } from '../lib/blockable';
-  import NotionPageIcon from '../blocks/NotionPageIcon.vue';
-  import NotionTextRenderer from '../blocks/NotionTextRenderer.vue';
+  import NotionPageIcon from './NotionPageIcon.vue';
+  import NotionTextRenderer from './NotionTextRenderer.vue';
 
   export default {
     components: {

@@ -1,13 +1,12 @@
 <template>
-  <p v-if="properties" :class="['notion-text', blockColorClass()]">
+  <blockquote v-if="properties" class="notion-quote">
     <NotionTextRenderer :text="title" v-bind="pass" />
-  </p>
-  <div v-else class="notion-blank">&nbsp;</div>
+  </blockquote>
 </template>
 
 <script>
   import { Blockable } from '../lib/blockable';
-  import NotionTextRenderer from '../blocks/NotionTextRenderer.vue';
+  import NotionTextRenderer from './NotionTextRenderer.vue';
 
   export default {
     components: { NotionTextRenderer },

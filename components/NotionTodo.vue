@@ -16,7 +16,7 @@
   // TODO: add strikethrough
 
   import { Blockable } from '../lib/blockable';
-  import NotionTextRenderer from '../blocks/NotionTextRenderer.vue';
+  import NotionTextRenderer from './NotionTextRenderer.vue';
 
   export default {
     components: {

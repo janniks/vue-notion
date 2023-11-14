@@ -64,23 +64,23 @@
 
   import { Blockable, blockComputed } from '../lib/blockable';
 
-  import NotionBookmark from '../blocks/NotionBookmark.vue';
-  import NotionCallout from '../blocks/NotionCallout.vue';
-  import NotionCode from '../blocks/NotionCode.vue';
-  import NotionColumn from '../blocks/NotionColumn.vue';
-  import NotionEquation from '../blocks/NotionEquation.vue';
-  import NotionFigure from '../blocks/helpers/NotionFigure.vue';
-  import NotionHeader from '../blocks/NotionHeader.vue';
-  import NotionList from '../blocks/NotionList.vue';
-  import NotionPage from '../blocks/NotionPage.vue';
-  import NotionQuote from '../blocks/NotionQuote.vue';
-  import NotionSyncPointer from '../blocks/NotionSyncPointer.vue';
-  import NotionTable from '../blocks/NotionTable.vue';
-  import NotionTableRow from '../blocks/NotionTableRow.vue';
-  import NotionText from '../blocks/NotionText.vue';
-  import NotionTodo from '../blocks/NotionTodo.vue';
-  import NotionToggle from '../blocks/NotionToggle.vue';
-  import NotionTableOfContents from '../blocks/NotionTableOfContents.vue';
+  import NotionBookmark from './NotionBookmark.vue';
+  import NotionCallout from './NotionCallout.vue';
+  import NotionCode from './NotionCode.vue';
+  import NotionColumn from './NotionColumn.vue';
+  import NotionEquation from './NotionEquation.vue';
+  import NotionFigure from './NotionFigure.vue';
+  import NotionHeader from './NotionHeader.vue';
+  import NotionList from './NotionList.vue';
+  import NotionPage from './NotionPage.vue';
+  import NotionQuote from './NotionQuote.vue';
+  import NotionSyncPointer from './NotionSyncPointer.vue';
+  import NotionTable from './NotionTable.vue';
+  import NotionTableRow from './NotionTableRow.vue';
+  import NotionText from './NotionText.vue';
+  import NotionTodo from './NotionTodo.vue';
+  import NotionToggle from './NotionToggle.vue';
+  import NotionTableOfContents from './NotionTableOfContents.vue';
 
   export default {
     components: {
