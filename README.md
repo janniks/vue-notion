@@ -5,7 +5,7 @@ This is a fork of [vue-notion](https://github.com/janniks/vue-notion).
 It has building and publishing to npm removed, no dedicated nuxt support, and some new features and bugfixes:
 
 - [x] Table of Contents support added
-- [ ] Bug with empty callouts is fixed
+- [x] Bug with empty callouts is fixed
 
 ## Usage
 
