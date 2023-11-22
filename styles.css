@@ -725,3 +725,49 @@ img.notion-nav-icon {
 .notion-table-of-contents ul {
   list-style: none;
 }
+
+.notion-to-do-item {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 2px;
+  min-height: calc(1.5em + 3px + 3px);
+  position: relative;
+}
+
+.notion-to-do-item .notion-to-do-checked {
+  text-decoration: line-through;
+  text-decoration-color: #b9747459;
+  opacity: 0.5;
+}
+
+.notion-to-do-body {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.notion-to-do-item .notion-checkbox-wrapper {
+  margin-right: 8px;
+}
+
+.notion-to-do-item input[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 2px solid rgba(71, 71, 71, 0.918);
+  outline: none;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  min-width: 1em;
+  min-height: 1em;
+  vertical-align: sub;
+}
+
+.notion-to-do-item input[type='checkbox']:checked {
+  border: 2px solid rgb(46, 170, 220);
+  background-color: rgb(46, 170, 220);
+  background: rgb(46, 170, 220)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' class='check' style='width: 12px; height: 12px; display: block; fill: white; flex-shrink: 0; backface-visibility: hidden;'%3E%3Cpolygon points='5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039'%3E%3C/polygon%3E%3C/svg%3E");
+}
