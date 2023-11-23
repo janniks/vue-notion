@@ -32,7 +32,7 @@
         return Object.keys(headings.value).map((key) => {
           const block = props.blockMap[key].value;
           return {
-            title: block.properties.title.flat(100).join(' '),
+            title: block.properties.title[0][0], // because title property can be ['foobar', [['b']]]
             level: block.type
               .split('_')
               .reduce((acc, value) => (value === 'sub' ? acc + 1 : acc), 1),
