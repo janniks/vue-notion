@@ -1,7 +1,7 @@
 <template>
   <ul class="notion-table-of-contents" style="margin-left: -16px">
     <NotionTableOfContentsItem
-      v-for="item in hierarchy"
+      v-for="item in toc"
       :key="item.id"
       :item="item" />
   </ul>
@@ -18,9 +18,21 @@
       NotionTableOfContentsItem,
     },
     setup(props) {
+      // This computed retreives a correct order of block directly from page block,
+      // because blockMap order can be wrong
+      const blockKeys = computed(() => {
+        const pageKey = Object.keys(props.blockMap).find((key) => {
+          return props.blockMap[key].value.type === 'page';
+        });
+
+        return props.blockMap[pageKey].value.content;
+      });
+
+      // This computed assembles map of heading using correct order
       const headings = computed(() => {
         const output = {};
-        Object.keys(props.blockMap).forEach((key) => {
+
+        blockKeys.value.forEach((key) => {
           if (props.blockMap[key].value.type.includes('header')) {
             output[key] = props.blockMap[key];
           }
@@ -28,7 +40,8 @@
         return output;
       });
 
-      const toc = computed(() => {
+      // This computed creates flat ToC
+      const flatToc = computed(() => {
         return Object.keys(headings.value).map((key) => {
           const block = props.blockMap[key].value;
           return {
@@ -42,7 +55,7 @@
         });
       });
 
-      function buildTree(items) {
+      const buildTree = (items) => {
         let stack = [];
         let nestedItems = [];
 
@@ -80,11 +93,11 @@
         }
 
         return nestedItems;
-      }
+      };
 
-      const hierarchy = computed(() => buildTree(toc.value));
+      const toc = computed(() => buildTree(flatToc.value));
 
-      return { hierarchy };
+      return { toc };
     },
   };
 </script>
