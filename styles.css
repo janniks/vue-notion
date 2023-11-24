@@ -46,59 +46,61 @@
 .notion-gray {
   color: rgb(155, 154, 151);
 }
+
 .notion-red_background {
-  background-color: rgb(251, 228, 228);
+  background-color: rgb(224, 62, 62);
 }
 .notion-pink_background {
-  background-color: rgb(244, 223, 235);
+  background-color: rgb(173, 26, 114);
 }
 .notion-blue_background {
-  background-color: rgb(221, 235, 241);
+  background-color: rgb(11, 110, 153);
 }
 .notion-purple_background {
-  background-color: rgb(234, 228, 242);
+  background-color: rgb(105, 64, 165);
 }
 .notion-teal_background {
-  background-color: rgb(221, 237, 234);
+  background-color: rgb(15, 123, 108);
 }
 .notion-yellow_background {
-  background-color: rgb(251, 243, 219);
+  background-color: rgb(223, 171, 1);
 }
 .notion-orange_background {
-  background-color: rgb(250, 235, 221);
+  background-color: rgb(217, 115, 13);
 }
 .notion-brown_background {
-  background-color: rgb(233, 229, 227);
+  background-color: rgb(100, 71, 58);
 }
 .notion-gray_background {
-  background-color: rgb(235, 236, 237);
+  background-color: rgb(155, 154, 151);
 }
+
 .notion-red_background_co {
-  background-color: rgb(251, 228, 228, 0.3);
+  background-color: rgba(224, 62, 62, 0.25);
 }
 .notion-pink_background_co {
-  background-color: rgb(244, 223, 235, 0.3);
+  background-color: rgba(173, 26, 114, 0.25);
 }
 .notion-blue_background_co {
-  background-color: rgb(221, 235, 241, 0.3);
+  background-color: rgba(11, 110, 153, 0.25);
 }
 .notion-purple_background_co {
-  background-color: rgb(234, 228, 242, 0.3);
+  background-color: rgba(105, 64, 165, 0.25);
 }
 .notion-teal_background_co {
-  background-color: rgb(221, 237, 234, 0.3);
+  background-color: rgba(15, 123, 108, 0.25);
 }
 .notion-yellow_background_co {
-  background-color: rgb(251, 243, 219, 0.3);
+  background-color: rgba(223, 171, 1, 0.25);
 }
 .notion-orange_background_co {
-  background-color: rgb(250, 235, 221, 0.3);
+  background-color: rgba(217, 115, 13, 0.25);
 }
 .notion-brown_background_co {
-  background-color: rgb(233, 229, 227, 0.3);
+  background-color: rgba(100, 71, 58, 0.25);
 }
 .notion-gray_background_co {
-  background-color: rgb(235, 236, 237, 0.3);
+  background-color: rgba(155, 154, 151, 0.25);
 }
 
 .notion b {
