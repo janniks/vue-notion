@@ -21,4 +21,4 @@ Docs can be found [here](https://github.com/tough-dev-school/vue-notion/tree/mai
 
 ## Credits
 
-All credits to [Jannik Siebert and his vue-notion](https://github.com/janniks/vue-notion).
+All credits to [Jannik Siebert and his vue-notion](https://github.com/janniks/vue-notion). And big thanks to [zernonia](https://github.com/zernonia/vue3-notion) for clever hacks we borrowed from his port.
