@@ -55,8 +55,6 @@
     todo: {{ type }}
     <slot />
   </div>
-  <!-- todo: maybe add message on !production if block type unsupported -->
-  <!-- <div v-else-if="visible"><slot /></div> -->
 </template>
 
 <script>

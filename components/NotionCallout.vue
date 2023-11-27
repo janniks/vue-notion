@@ -1,6 +1,8 @@
 <template>
   <div :class="['notion-callout', blockColorClass(), blockColorClass('_co')]">
-    <div><NotionPageIcon v-bind="pass" /></div>
+    <div>
+      <NotionPageIcon v-bind="pass" />
+    </div>
     <div class="notion-callout-text">
       <NotionRenderer
         v-if="block.value.content"

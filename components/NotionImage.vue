@@ -1,23 +1,8 @@
 <template>
-  <div v-if="f.block_aspect_ratio" :style="style">
-    <component
-      :is="imageOptions.component"
-      v-if="hasImageComponent"
-      class="notion-image-inset"
-      :alt="alt || 'Notion image'"
-      v-bind="imageProps" />
-    <img
-      v-else
-      class="notion-image-inset"
-      :alt="alt || 'Notion image'"
-      v-bind="imageProps" />
+  <div v-if="this.f.block_aspect_ratio" :style="aspectRatioStyle">
+    <img class="notion-image-inset" :alt="alt || 'Notion image'" :src="src" />
   </div>
-  <component
-    :is="imageOptions.component"
-    v-else-if="hasImageComponent"
-    :alt="alt || 'Notion image'"
-    v-bind="imageProps" />
-  <img v-else :alt="alt" v-bind="imageProps" />
+  <img v-else :alt="alt" :src="src" :style="basicStyle" />
 </template>
 
 <script>
@@ -30,19 +15,25 @@
       hasImageComponent() {
         return !!this.imageOptions?.component;
       },
-      imageProps() {
-        const { component, ...attrs } = this.imageOptions || {};
+      basicStyle() {
         return {
-          ...attrs,
-          [this.imageOptions?.src || 'src']: this.src,
+          width: this.f.block_width == 1 ? '100%' : `${this.f.block_width}px`,
+          height:
+            this.f.block_height == 1 ? '100%' : `${this.f.block_height}px`,
         };
       },
-      style() {
-        const aspectRatio =
-          this.f.block_aspect_ratio || this.f.block_height / this.f.block_width;
+      aspectRatioStyle() {
+        let aspectRatio =
+          this.f.block_width == 1 || this.f.block_height == 1
+            ? 1 / this.f.block_aspect_ratio
+            : `${this.f.block_width} / ${this.f.block_height} `;
+
         return {
-          paddingBottom: `${aspectRatio * 100}%`,
+          width: `${this.f.block_width}px`,
+          height: `100%`,
+          maxWidth: '100%',
           position: 'relative',
+          aspectRatio,
         };
       },
     },
