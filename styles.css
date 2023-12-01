@@ -219,7 +219,14 @@ img.notion-page-icon-offset {
   word-break: break-word;
   text-decoration: underline;
   text-decoration-color: inherit;
+  opacity: 70%;
+  transition: opacity 100ms ease-in;
 }
+
+.notion-link:hover {
+  opacity: 100%;
+}
+
 .notion-blank {
   min-height: 1rem;
   padding: 3px 2px;
