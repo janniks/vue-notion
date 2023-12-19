@@ -5,7 +5,7 @@
       format.page_cover && 'notion-page-icon-offset',
       big ? 'notion-page-icon-cover' : 'notion-page-icon',
     ]"
-    :src="mapImageUrl(icon, block)"
+    :src="icon"
     :alt="title ? getTextContent(title) : 'Icon'" />
   <span
     v-else-if="icon"

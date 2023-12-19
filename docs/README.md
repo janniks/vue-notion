@@ -16,7 +16,6 @@ The `NotionRenderer` component offers a few properties
 - [`fullPage`](#fullPage) – default: `false`
 - [`hideList`](#hideList) – default: `[]`
 - [`imageOptions`](#imageOptions) – default: `undefined`
-- [`mapImageUrl`](#mapImageUrl) – default: `defaultMapImageUrl()`
 - [`mapPageUrl`](#mapPageUrl) – default: `defaultMapPageUrl()`
 - [`pageLinkOptions`](#pageLinkOptions) – default: `undefined`
 - [`pageLinkTarget`](#pageLinkTarget) – default: `"_self"`
@@ -77,13 +76,6 @@ imageOptions: {
   // src: 'src', // (default) can be overridden to customize the key of the `src` attribute
 }
 ```
-
-### `mapImageUrl`: Function
-
-– a function that receives `(imageUrl: String, block: Object)` and returns a `url: String` that should be used during rendering.
-The default function resolves images as they are used in Notion.
-
-> This function could be used to upload the Notion hosted images to an own provider and replace the image URLs with new ones.
 
 ### `mapPageUrl`: Function
 

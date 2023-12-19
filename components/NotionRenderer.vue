@@ -15,7 +15,7 @@
   import { Blockable } from '../lib/blockable';
   import NotionBlock from './NotionBlock.vue';
 
-  import { defaultMapImageUrl, defaultMapPageUrl } from '../lib/utils';
+  import { defaultMapPageUrl } from '../lib/utils';
 
   export default {
     components: {
@@ -29,7 +29,6 @@
       fullPage: { type: Boolean, default: false },
       hideList: { type: Array, default: () => [] },
       level: { type: Number, default: 0 },
-      mapImageUrl: { type: Function, default: defaultMapImageUrl },
       mapPageUrl: { type: Function, default: defaultMapPageUrl },
       pageLinkOptions: Object,
       imageOptions: Object,

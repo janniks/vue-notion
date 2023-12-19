@@ -8,7 +8,7 @@
       class="notion-page-cover"
       :style="coverStyle"
       :alt="getTextContent(title)"
-      :src="mapImageUrl(format.page_cover, block)" />
+      :src="format.page_cover" />
     <main
       :class="[
         'notion-page',
