@@ -40,6 +40,8 @@ export const getListNumber = (blockId, blockMap) => {
 };
 
 export const defaultMapImageUrl = (image = "", block) => {
+  if (image.startsWith("data:")) return image;
+
   const url = new URL(
     `https://www.notion.so${
       image.startsWith("/image") ? image : `/image/${encodeURIComponent(image)}`

@@ -1,5 +1,5 @@
 <template>
-  <NotionRenderer v-bind="pass" :contentId="referencePointerId" />
+  <NotionRenderer v-bind="pass" :contentId="aliasPointerId" />
 </template>
 
 <script>
@@ -7,11 +7,11 @@ import { Blockable, blockComputed } from "@/lib/blockable";
 
 export default {
   extends: Blockable,
-  name: "NotionSyncPointer",
+  name: "NotionPageAlias",
   computed: {
     ...blockComputed,
-    referencePointerId() {
-      return this.format?.transclusion_reference_pointer?.id;
+    aliasPointerId() {
+      return this.format?.alias_pointer?.id;
     },
   },
 };
