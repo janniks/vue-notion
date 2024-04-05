@@ -21,7 +21,7 @@
     "clean": "rm -rf node_modules dist example/node_modules example/dist example/.nuxt",
     "example": "npm run example:generate && cd example && npm start",
     "example:generate": "npm run example:install && cd example && npm run build && npm run generate",
-    "example:install": "npm pack && cd example && npm install && npm install ../*.tgz",
+    "example:install": "npm pack && cd example && npm ci && npm install ../*.tgz",
     "prepare": "rm -rf dist *.tgz && npm run build",
     "postpublish": "echo \"\\033[31m !!! Now, manually run: ./scripts/postpublish.sh !!! \\033[00m\"",
     "release:minor": "npm version minor -m 'Release %s' && npm publish",
