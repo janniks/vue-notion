@@ -719,3 +719,10 @@ img.notion-nav-icon {
   background: rgb(247, 246, 243);
   font-weight: 500;
 }
+
+/* more experimental additional rules */
+.notion-indent {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5em;
+}

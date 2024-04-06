@@ -37,7 +37,9 @@
 <script>
 export default {
   async asyncData({ $notion, params, error }) {
-    const pageTable = await $notion.getPageTable("10327f9074b7433aad577ccd0020e971");
+    const pageTable = await $notion.getPageTable(
+      "10327f9074b7433aad577ccd0020e971"
+    );
 
     // sort published pages
     const posts = pageTable
@@ -48,6 +50,8 @@ export default {
     const postsByTag = pageTable
       .filter((page) => page.published)
       .reduce((map, currentPage) => {
+        if (!currentPage.tags) return map;
+
         currentPage.tags.forEach((tag) =>
           map.has(tag)
             ? map.set(tag, [...map.get(tag), currentPage])

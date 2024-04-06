@@ -3,12 +3,18 @@
     v-if="blockOverrides.hasOwnProperty(type)"
     :is="blockOverrides[type]"
     v-bind="pass"
-  />
+  >
+    <slot />
+  </component>
   <div v-else-if="isType('page')">
     <NotionPage v-bind="pass">
       <slot />
     </NotionPage>
   </div>
+  <NotionPageAlias
+    v-else-if="isRendererRegistered && isType('alias')"
+    v-bind="pass"
+  />
   <NotionHeader
     v-else-if="isType(['header', 'sub_header', 'sub_sub_header'])"
     v-bind="pass"
@@ -17,7 +23,9 @@
   <NotionCallout v-else-if="isType('callout')" v-bind="pass" />
   <NotionCode v-else-if="isType('code')" v-bind="pass" />
   <NotionEquation v-else-if="isType('equation')" v-bind="pass" />
-  <NotionText v-else-if="isType('text')" v-bind="pass" />
+  <NotionText v-else-if="isType('text')" v-bind="pass">
+    <slot />
+  </NotionText>
   <NotionQuote v-else-if="isType('quote')" v-bind="pass" />
   <NotionTodo v-else-if="isType('to_do')" v-bind="pass" />
   <NotionToggle v-else-if="isType('toggle')" v-bind="pass">
@@ -74,6 +82,7 @@ import NotionFigure from "@/blocks/helpers/figure";
 import NotionHeader from "@/blocks/header";
 import NotionList from "@/blocks/list";
 import NotionPage from "@/blocks/page";
+import NotionPageAlias from "@/blocks/page-alias";
 import NotionQuote from "@/blocks/quote";
 import NotionSyncPointer from "@/blocks/sync-pointer";
 import NotionTable from "@/blocks/table";
@@ -96,6 +105,7 @@ export default {
     NotionHeader,
     NotionList,
     NotionPage,
+    NotionPageAlias,
     NotionQuote,
     NotionSyncPointer,
     NotionTable,
