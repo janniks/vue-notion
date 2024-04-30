@@ -1,5 +1,5 @@
 <template>
-  <div v-if="this.f.block_aspect_ratio" :style="aspectRatioStyle">
+  <div v-if="f.block_aspect_ratio" :style="aspectRatioStyle">
     <img class="notion-image-inset" :alt="alt || 'Notion image'" :src="src" />
   </div>
   <img v-else :alt="alt" :src="src" :style="basicStyle" />
@@ -24,7 +24,9 @@
       },
       aspectRatioStyle() {
         let aspectRatio =
-          this.f.block_width == 1 || this.f.block_height == 1
+          this.f.block_width == 1 ||
+          this.f.block_height == 1 ||
+          this.f.block_aspect_ratio
             ? 1 / this.f.block_aspect_ratio
             : `${this.f.block_width} / ${this.f.block_height} `;
 
