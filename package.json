@@ -1,6 +1,6 @@
 {
   "name": "vue-notion",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A Vue renderer for Notion pages",
   "type": "module",
   "main": "index.js",
