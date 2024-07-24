@@ -22,6 +22,7 @@ export { default as NotionColumnSpacer } from "../blocks/helpers/column-spacer.v
 export { default as NotionFigure } from "../blocks/helpers/figure.vue";
 export { default as NotionFragment } from "../blocks/helpers/fragment.vue";
 export { default as NotionImage } from "../blocks/helpers/image.vue";
+export { default as NotionMention } from "../blocks/helpers/mention.vue";
 export { default as NotionNestedList } from "../blocks/helpers/nested-list.vue";
 export { default as NotionPageHeader } from "../blocks/helpers/page-header.vue";
 export { default as NotionPageIcon } from "../blocks/helpers/page-icon.vue";

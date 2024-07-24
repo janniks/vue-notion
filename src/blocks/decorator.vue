@@ -72,19 +72,13 @@
 
 <script>
 import { Blockable, blockProps } from "@/lib/blockable";
-import NotionMention from "@/blocks/mention";
+import NotionMention from "@/blocks/helpers/mention";
 
 export default {
   extends: Blockable,
   name: "NotionDecorator",
   props: { ...blockProps, content: Array },
   components: { NotionMention },
-  mounted() {
-    console.log("content", this.content);
-    console.log("decorators", this.decorators);
-    console.log("decoratorValue", this.decoratorValue);
-    console.log("isValueArray", this.isValueArray);
-  },
   computed: {
     text() {
       return this.content?.[0];
