@@ -726,3 +726,18 @@ img.notion-nav-icon {
   flex-direction: column;
   padding-left: 1.5em;
 }
+
+.notion-text-mention-icon {
+  padding: 0;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 3px;
+  vertical-align: -0.15em;
+  margin-right: 0.3em;
+}
+
+.notion-text-mention-title {
+  border-bottom: 0.05em solid solid rgba(55, 55, 55, 1);
+  font-weight: 500;
+  flex-shrink: 0;
+}

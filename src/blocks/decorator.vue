@@ -7,6 +7,11 @@
   >
     {{ pageLinkTitle }}
   </component>
+  <NotionMention
+    v-else-if="isPageLink && decoratorKey === 'lm'"
+    :mention="decoratorValue"
+    v-bind="pass"
+  />
   <a
     v-else-if="isPageLink"
     class="notion-link"
@@ -67,11 +72,19 @@
 
 <script>
 import { Blockable, blockProps } from "@/lib/blockable";
+import NotionMention from "@/blocks/mention";
 
 export default {
   extends: Blockable,
   name: "NotionDecorator",
   props: { ...blockProps, content: Array },
+  components: { NotionMention },
+  mounted() {
+    console.log("content", this.content);
+    console.log("decorators", this.decorators);
+    console.log("decoratorValue", this.decoratorValue);
+    console.log("isValueArray", this.isValueArray);
+  },
   computed: {
     text() {
       return this.content?.[0];
