@@ -16,6 +16,7 @@ The `NotionRenderer` component offers a few properties
 - [`blockMap`](#blockMap) – required
 - [`blockOverrides`](#blockOverrides) – default: `{}`
 - [`contentId`](#contentId) – default: `undefined`
+- [`decoratorOverrides`](#decoratorOverrides) – default: `{}`
 - [`embedAllow`](#embedAllow) – default: `"fullscreen"`
 - [`fullPage`](#fullPage) – default: `false`
 - [`hideList`](#hideList) – default: `[]`
@@ -51,6 +52,11 @@ blockOverrides: {
 – the id of the block that should be rendered.
 If this is `undefined` the _first_ block is rendered.
 _Usually the first block contains the rest of the page._
+
+### `decoratorOverrides`: Object
+
+– the Notion text decorators that should be overriden by custom registered Vue components.
+A key-value pair Object of Notion decorator names to Vue component names.
 
 ### `embedAllow`: String
 
@@ -223,7 +229,7 @@ There are a few required steps to allow Nuxt to work with vue-notion
 // nuxt.config.js
 export default {
   // ...
-  buildModules: ["vue-notion/nuxt"]
+  buildModules: ["vue-notion/nuxt"],
 };
 ```
 
