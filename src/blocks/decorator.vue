@@ -82,10 +82,6 @@ import NotionMention from "@/blocks/helpers/mention";
 export default {
   extends: Blockable,
   name: "NotionDecorator",
-  mounted() {
-    console.log(this);
-    console.log(this.content);
-  },
   props: { ...blockProps, content: Array },
   components: { NotionMention },
   computed: {
