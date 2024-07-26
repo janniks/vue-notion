@@ -1,6 +1,16 @@
 <template>
   <component
-    v-if="isPageLink && hasPageLinkOptions"
+    v-if="decoratorOverrides.hasOwnProperty(decoratorKey)"
+    :is="decoratorOverrides[decoratorKey]"
+    v-bind="pass"
+  />
+  <NotionMention
+    v-else-if="isPageLink && decoratorKey === 'lm'"
+    :mention="decoratorValue"
+    v-bind="pass"
+  />
+  <component
+    v-else-if="isPageLink && hasPageLinkOptions"
     class="notion-link"
     v-bind="pageLinkProps(decoratorValue)"
     :is="pageLinkOptions.component"
@@ -8,7 +18,7 @@
     {{ pageLinkTitle }}
   </component>
   <a
-    v-else-if="isPageLink"
+    v-else-if="isPageLink && typeof decoratorValue === 'string'"
     class="notion-link"
     :target="pageLinkTarget"
     :href="mapPageUrl(decoratorValue)"
@@ -67,11 +77,13 @@
 
 <script>
 import { Blockable, blockProps } from "@/lib/blockable";
+import NotionMention from "@/blocks/helpers/mention";
 
 export default {
   extends: Blockable,
   name: "NotionDecorator",
   props: { ...blockProps, content: Array },
+  components: { NotionMention },
   computed: {
     text() {
       return this.content?.[0];

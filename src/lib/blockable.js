@@ -5,6 +5,7 @@ export const blockProps = {
   blockOverrides: { type: Object, default: () => ({}) },
   contentId: { type: String, required: false },
   contentIndex: { type: Number, default: 0 },
+  decoratorOverrides: { type: Object, default: () => ({}) },
   embedAllow: { type: String, default: "fullscreen" },
   fullPage: { type: Boolean, default: false },
   hideList: { type: Array, default: () => [] },
@@ -17,7 +18,7 @@ export const blockProps = {
   pageLinkTarget: { type: String, default: "_self" },
   prism: { type: Boolean, default: false },
   textLinkTarget: { type: String, default: "_blank" },
-  todo: { type: Boolean, default: false }
+  todo: { type: Boolean, default: false },
 };
 
 export const blockComputed = {
@@ -28,6 +29,7 @@ export const blockComputed = {
       blockOverrides: this.blockOverrides,
       contentId: this.contentId,
       contentIndex: this.contentIndex,
+      decoratorOverrides: this.decoratorOverrides,
       embedAllow: this.embedAllow,
       fullPage: this.fullPage,
       hideList: this.hideList,
@@ -38,7 +40,7 @@ export const blockComputed = {
       mapPageUrl: this.mapPageUrl,
       pageLinkOptions: this.pageLinkOptions,
       prism: this.prism,
-      todo: this.todo
+      todo: this.todo,
     };
   },
   alt() {
@@ -63,7 +65,7 @@ export const blockComputed = {
       block_color: this.format?.block_color,
       bookmark_icon: this.format?.bookmark_icon,
       bookmark_cover: this.format?.bookmark_cover,
-      display_source: this.format?.display_source
+      display_source: this.format?.display_source,
     };
   },
   icon() {
@@ -98,7 +100,7 @@ export const blockComputed = {
   },
   parent() {
     return this.blockMap[this.value?.parent_id];
-  }
+  },
 };
 
 export const Blockable = {
@@ -119,8 +121,8 @@ export const Blockable = {
     },
     pageLinkProps(id) {
       return {
-        [this.pageLinkOptions?.href || "href"]: this.mapPageUrl(id)
+        [this.pageLinkOptions?.href || "href"]: this.mapPageUrl(id),
       };
-    }
-  }
+    },
+  },
 };
