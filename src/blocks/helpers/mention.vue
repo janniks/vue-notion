@@ -1,6 +1,10 @@
 <template>
   <a :href="mention.href" class="notion-text-mention">
-    <img class="notion-text-mention-icon" :src="mention.icon_url" />
+    <img
+      class="notion-text-mention-icon"
+      v-if="mention.icon_url"
+      :src="mention.icon_url"
+    />
     <span class="notion-text-mention-title">{{ mention.title }}</span>
   </a>
 </template>
