@@ -24,8 +24,8 @@
     "example:install": "npm pack && cd example && npm ci && npm install ../*.tgz",
     "prepare": "rm -rf dist *.tgz && npm run build",
     "postpublish": "echo \"\\033[31m !!! Now, manually run: ./scripts/postpublish.sh !!! \\033[00m\"",
-    "release:minor": "npm version minor -m 'Release %s' && npm publish",
-    "release:patch": "npm version patch -m 'Release %s' && npm publish",
+    "release:minor": "npm version minor -m 'Release %s' && npm publish --tag vue2",
+    "release:patch": "npm version patch -m 'Release %s' && npm publish --tag vue2",
     "serve": "vue-cli-service serve dev/serve.js"
   },
   "dependencies": {
