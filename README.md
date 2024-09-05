@@ -189,7 +189,7 @@ Please, feel free to [open an issue](https://github.com/janniks/vue-notion/issue
 - [samwightt](https://github.com/samwightt) – react-notion Inspiration & API Typings
 - [react-notion Contributors 💕](https://github.com/splitbee/react-notion/graphs/contributors)
 
-- Big thanks to [NuxtJS](https://nuxtjs.org) for being awesome!
+* Big thanks to [NuxtJS](https://nuxtjs.org) for being awesome!
 
 ## License ⚖️
 
