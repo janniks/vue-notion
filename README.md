@@ -51,7 +51,7 @@
 ### Vue
 
 ```bash
-npm install vue-notion@3.0.0-beta.1
+npm install vue-notion
 ```
 
 ### NuxtJS Module
