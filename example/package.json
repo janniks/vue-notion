@@ -12,6 +12,6 @@
   },
   "dependencies": {
     "katex": "^0.16.4",
-    "vue-notion": "^3.0.0-beta.1"
+    "vue-notion": "^3.0.0"
   }
 }
