@@ -5,6 +5,7 @@
     </div>
     <div class="notion-callout-text">
       <NotionTextRenderer :text="title" v-bind="pass" />
+      <slot />
     </div>
   </div>
 </template>
