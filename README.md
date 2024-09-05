@@ -181,7 +181,7 @@ Please, feel free to [open an issue](https://github.com/janniks/vue-notion/issue
 
 ## Credits
 
-- [Jannik Siebert](https://twitter.com/jnnksbrt) – vue-notion Code
+- [janniksco](https://twitter.com/janniksco) – vue-notion Code
 - [Dominik Sobe](https://twitter.com/sobedominik) – vue-notion Inspiration, Debugging
 - [vue-notion Contributors 💕](https://github.com/janniks/vue-notion/graphs/contributors)
 - [Tobias Lins](https://tobi.sh) – react-notion Idea, Code
@@ -193,4 +193,4 @@ Please, feel free to [open an issue](https://github.com/janniks/vue-notion/issue
 
 ## License ⚖️
 
-MIT © [Jannik Siebert](https://twitter.com/jnnksbrt)
+MIT © [janniksco](https://twitter.com/janniksco)
