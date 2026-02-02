@@ -6,6 +6,15 @@
   "type": "module",
   "main": "./dist/vue-notion.umd.cjs",
   "module": "./dist/vue-notion.js",
+  "exports": {
+    ".": {
+      "types": "./dist/vue-notion.d.ts",
+      "import": "./dist/vue-notion.js",
+      "require": "./dist/vue-notion.umd.cjs"
+    },
+    "./nuxt": "./nuxt/index.js",
+    "./styles.css": "./src/styles.css"
+  },
   "files": [
     "dist/",
     "src/**/*.css",
