@@ -24,6 +24,7 @@
     "serve": "vue-cli-service serve dev/serve.js"
   },
   "dependencies": {
+    "@notionhq/client": "^5.9.0",
     "defu": "^6.1.2"
   },
   "devDependencies": {
