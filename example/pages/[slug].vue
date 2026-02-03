@@ -43,6 +43,6 @@ const { data: blockMap } = await useAsyncData(
 </script>
 
 <style>
-@import "vue-notion/src/styles.css";
+@import "vue-notion/styles.css";
 @import "katex/dist/katex.min.css";
 </style>
