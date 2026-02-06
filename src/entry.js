@@ -13,3 +13,4 @@ export * from "@/components/index";
 export * from "@/lib/api";
 export * from "@/lib/blockable";
 export * from "@/lib/utils";
+export * from "@/notion-api-transformer";

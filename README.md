@@ -71,7 +71,51 @@ Check out the `/example` folder for a full working example using Nuxt 3.
 > Check out a full working demo at [vue-notion.now.sh](https://vue-notion.now.sh/) ✨
 > The code for the demo is in [`example/`](https://github.com/janniks/vue-notion/tree/main/example).
 
-## Examples
+## Usage
+You can use this package using two methods:
+
+### 1. Official Notion API (Recommended)
+
+The official Notion API is now publicly available and is the recommended approach for production applications.
+
+**Getting Started:**
+
+1. Get your API key from [Notion Integrations](https://www.notion.so/my-integrations)
+2. Share your Notion page with the integration
+3. Use `fetchNotionPage` to fetch and transform the page:
+
+```js
+import { fetchNotionPage } from 'vue-notion';
+
+const blockMap = await fetchNotionPage(apiKey, pageId);
+```
+
+> **Note:** For security, API keys should be kept server-side. For a complete Nuxt setup guide with environment variables and server routes, check out the [example folder](https://github.com/janniks/vue-notion/tree/main/example) or visit the [live documentation](https://vue-notion.now.sh/official-api).
+
+### 2. Quick Setup with getPageBlocks (Legacy)
+
+For quick prototyping and client-side usage (no server required), you can use `getPageBlocks`:
+
+```vue
+<template>
+  <NotionRenderer :blockMap="blockMap" />
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue';
+import { NotionRenderer, getPageBlocks } from 'vue-notion';
+
+const blockMap = ref(null);
+
+onMounted(async () => {
+  blockMap.value = await getPageBlocks('your-page-id');
+});
+</script>
+```
+
+The `getPageBlocks` method works directly in the browser without needing a backend server. It wraps the [notion-api-worker](https://github.com/splitbee/notion-api-worker), a shared Cloudflare worker with rate limits. For heavy usage, consider [hosting your own instance](https://github.com/splitbee/notion-api-worker#getting-started).
+
+## Live Examples
 
 These examples use a simple wrapper around the [`notion-api-worker`](https://github.com/splitbee/notion-api-worker) to access the Notion page data.
 It is also possible to store a page received from the Notion API in `.json` and use it without the `async/await` part.
@@ -106,7 +150,7 @@ export default {
 
 <style>
 /* optional Notion-like styles */
-@import "vue-notion/src/styles.css";
+@import "vue-notion/styles.css";
 </style>
 ```
 
@@ -130,7 +174,7 @@ const { data: blockMap } = useAsyncData("page_nuxt", () =>
 </script>
 
 <style>
-@import "vue-notion/src/styles.css"; /* optional Notion-like styles */
+@import "vue-notion/styles.css"; /* optional Notion-like styles */
 </style>
 ```
 

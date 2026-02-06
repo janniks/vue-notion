@@ -6,6 +6,15 @@
   "type": "module",
   "main": "./dist/vue-notion.umd.cjs",
   "module": "./dist/vue-notion.js",
+  "exports": {
+    ".": {
+      "types": "./dist/vue-notion.d.ts",
+      "import": "./dist/vue-notion.js",
+      "require": "./dist/vue-notion.umd.cjs"
+    },
+    "./nuxt": "./nuxt/index.js",
+    "./styles.css": "./src/styles.css"
+  },
   "files": [
     "dist/",
     "src/**/*.css",
@@ -21,9 +30,10 @@
     "prepack": "npm run build",
     "release:patch": "npm version patch -m 'Release %s' && npm publish",
     "release:minor": "npm version minor -m 'Release %s' && npm publish",
-    "serve": "vue-cli-service serve dev/serve.js"
+    "serve": "vite"
   },
   "dependencies": {
+    "@notionhq/client": "^5.9.0",
     "defu": "^6.1.2"
   },
   "devDependencies": {

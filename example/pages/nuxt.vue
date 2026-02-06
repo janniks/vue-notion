@@ -12,5 +12,5 @@ const { data: blockMap } = useAsyncData("page_nuxt", () =>
 </script>
 
 <style>
-@import "vue-notion/src/styles.css"; /* optional Notion-like styles */
+@import "vue-notion/styles.css";
 </style>
