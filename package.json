@@ -30,7 +30,7 @@
     "prepack": "npm run build",
     "release:patch": "npm version patch -m 'Release %s' && npm publish",
     "release:minor": "npm version minor -m 'Release %s' && npm publish",
-    "serve": "vue-cli-service serve dev/serve.js"
+    "serve": "vite"
   },
   "dependencies": {
     "@notionhq/client": "^5.9.0",
