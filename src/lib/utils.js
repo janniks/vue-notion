@@ -10,7 +10,7 @@ const groupBlockContent = (blockMap) => {
   let index = -1;
 
   Object.keys(blockMap).forEach((id) => {
-    blockMap[id].value.content?.forEach((blockId) => {
+    blockMap[id]?.value?.content?.forEach((blockId) => {
       const blockType = blockMap[blockId]?.value?.type;
 
       if (blockType && blockType !== lastType) {
