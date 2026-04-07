@@ -49,7 +49,12 @@ export const blockComputed = {
     return this.blockMap[id];
   },
   value() {
-    return this.block?.value;
+    // The Notion API (via notion-api-worker/splitbee) changed its response format:
+    // Old: block.value = { id, type, properties, ... }
+    // New: block.value = { value: { id, type, properties, ... }, role: "reader" }
+    // We support both formats for backwards compatibility.
+    const v = this.block?.value;
+    return v?.value ?? v;
   },
   format() {
     return this.value?.format;
