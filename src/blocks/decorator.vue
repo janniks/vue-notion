@@ -79,7 +79,7 @@ export default {
     },
     pageLinkTitle() {
       return (
-        this.blockMap?.[this.decoratorValue]?.value?.properties
+        this.blockMap?.[this.decoratorValue]?.value?.value?.properties
           ?.title?.[0]?.[0] || "link"
       );
     },

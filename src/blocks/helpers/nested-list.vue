@@ -18,7 +18,7 @@ export default {
   computed: {
     ...blockComputed,
     start() {
-      return getListNumber(this.value?.id, this.blockMap);
+      return getListNumber(this.value?.value?.id, this.blockMap);
     },
   },
 };

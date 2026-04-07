@@ -48,9 +48,9 @@ export const defaultMapImageUrl = (image = "", block) => {
 
   if (block && !image.includes("/images/page-cover/")) {
     const table =
-      block.value.parent_table === "space" ? "block" : block.value.parent_table;
+      block.value.value.parent_table === "space" ? "block" : block.value.value.parent_table;
     url.searchParams.set("table", table);
-    url.searchParams.set("id", block.value.id);
+    url.searchParams.set("id", block.value.value.id);
     url.searchParams.set("cache", "v2");
   }
 

@@ -23,13 +23,13 @@ export default {
   computed: {
     ...blockComputed,
     hasHeaderColumn() {
-      return this.parent?.value?.format?.table_block_column_header;
+      return this.parent?.value?.value?.format?.table_block_column_header;
     },
     hasHeaderRow() {
-      return this.parent?.value?.format?.table_block_row_header;
+      return this.parent?.value?.value?.format?.table_block_row_header;
     },
     columns() {
-      return this.parent?.value?.format?.table_block_column_order;
+      return this.parent?.value?.value?.format?.table_block_column_order;
     },
   },
   methods: {

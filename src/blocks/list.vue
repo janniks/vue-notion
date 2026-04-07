@@ -39,10 +39,10 @@ export default {
   computed: {
     ...blockComputed,
     start() {
-      return getListNumber(this.value?.id, this.blockMap);
+      return getListNumber(this.value?.value?.id, this.blockMap);
     },
     isTopLevel() {
-      return this.type !== this.blockMap[this.value?.parent_id]?.value?.type;
+      return this.type !== this.blockMap[this.value?.value?.parent_id]?.value?.value?.type;
     },
   },
 };
